@@ -56,9 +56,4 @@ dkms.conf
 ._.DS_Store
 .env
 node_modules/
-*.psd
-**/images
 .gif
-sources/so_long
-sources/so_long_bonus
-*.mp4
