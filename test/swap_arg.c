@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "../sources/libft/inc/ft_printf.h"
+#include "../sources/libft/inc/libft.h"
 
 #define MAX_STACK_SIZE 1000
 
@@ -148,14 +150,21 @@ int is_sorted(int stack_a[], int top_a)
 }
 #include <stdio.h>
 
-int main()
+int main(int argc, char *argv[])
 {
 	// Insertar números en el stack a
 
-	push(stack_a, &top_a, 3);
-	push(stack_a, &top_a, 1);
-	push(stack_a, &top_a, 4);
-	push(stack_a, &top_a, 2);
+	int n = 1;
+	while (n < argc)
+	{
+		push(stack_a, &top_a, ft_atoi(argv[n]));
+		n++;
+	}
+
+	// push(stack_a, &top_a, 3);
+	// push(stack_a, &top_a, 1);
+	// push(stack_a, &top_a, 4);
+	// push(stack_a, &top_a, 2);
 
 	int i = 0;
 	while (i < 4)
@@ -168,12 +177,12 @@ int main()
 	sa();
 	pb();
 	ra();
-	pb();
+	// pb();
 	sa();
 	ra();
-	ra();
+	// ra();
 	pa();
-	pa();
+	// pa();
 	i = 0;
 	while (i < 4)
 	{
