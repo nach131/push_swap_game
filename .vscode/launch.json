@@ -7,9 +7,10 @@
 		{
 			"type": "lldb",
 			"request": "launch",
-			"name": "lldb active file",
-			"program": "${fileDirname}/${fileBasenameNoExtension}.out",
-			"args": [],
+			"name": "push_swap",
+			// "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+			"program": "${workspaceFolder}/sources/push_swap",
+			"args": ["2", "12","5","42"],
 			"stopOnEntry": false,
 			"cwd": "${fileDirname}"
 		}
