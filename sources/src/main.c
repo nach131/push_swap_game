@@ -1,18 +1,9 @@
 #include "push_swap.h"
 
-// void ft_max_min(int n)
-// {
-// 	int min = -1;
-// 	int max = 1;
-
-// 	if (n > max)
-// 		max = n;
-// 	else if (n < min)
-// 		min = n;
-// }
-
 int main(int argc, char *argv[])
 {
+
+	ctrl_argv(argc - 1, argv);
 
 	int i = 1;
 	int stack_a[argc];
@@ -35,6 +26,7 @@ int main(int argc, char *argv[])
 	{
 		// ft_max_min(ft_atoi(argv[i]));
 		// ft_printf(GREEN " %d\n", ft_atoi(argv[i]));
+		// ft_printf(RED " S:%s\n", argv[i]);
 		ft_printf(GREEN " a:%d\n", ps.stack_a[i]);
 		ft_printf(YELLOW " b:%d\n", ps.stack_b[i]);
 		i++;

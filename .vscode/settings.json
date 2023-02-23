@@ -4,6 +4,7 @@
 		"*.js": "javascriptreact",
 		"*.hbs": "handlebars",
 		"*.c": "c",
-		"sstream": "c"
+		"sstream": "c",
+		"libft.h": "c"
 	}
 }
