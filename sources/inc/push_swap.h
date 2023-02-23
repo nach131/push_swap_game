@@ -8,4 +8,11 @@
 
 #define TOMATE "Test define"
 
+typedef struct s_ps
+{
+	int len;
+	int *stack_a;
+	int *stack_b;
+} t_ps;
+
 #endif
