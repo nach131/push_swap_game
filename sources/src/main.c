@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/06 18:05:53 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/06 19:30:29 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 int main(int argc, char *argv[])
 {
 
-	ctrl_argv(argc - 1, argv);
+	t_ps data;
+
+	ft_bzero(&data, sizeof(t_ps));
+	data.len = argc - 1;
+
+	ctrl_argv(argv, &data);
 
 	int i = 1;
 	int stack_a[argc];
@@ -33,9 +38,6 @@ int main(int argc, char *argv[])
 	ps.stack_b = stack_b;
 
 	(void)tomate;
-
-	ft_message(WARNING, "WARNING");
-	ft_message(DANGER, "tiene que ser rojo");
 
 	while (i < argc)
 	{

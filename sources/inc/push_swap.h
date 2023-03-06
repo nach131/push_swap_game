@@ -15,6 +15,6 @@ typedef struct s_ps
 	int *stack_b;
 } t_ps;
 
-void ctrl_argv(int len, char **ch);
+void ctrl_argv(char **ch, t_ps *data);
 
 #endif
