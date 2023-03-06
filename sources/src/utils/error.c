@@ -17,3 +17,4 @@ void ctrl_argv(char **ch, t_ps *data)
 		i++;
 	}
 }
+
