@@ -1,35 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   add_num.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/07 09:55:41 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/07 09:55:00 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// int main(int argc, char *argv[])
-int main(int argc, char **argv)
+#include <stdlib.h>
+
+void add_num(t_ps *data, char **n)
 {
-	t_ps data;
-
-	ft_bzero(&data, sizeof(t_ps));
-	data.stack_a = ft_calloc(argc, sizeof(int));
-	data.stack_b = ft_calloc(argc, sizeof(int));
-	data.len = argc - 1;
-
-	add_num(&data, argv);
-
-	int i = 0;
-	while (i < argc - 1)
+	int i = 1;
+	int j = 0;
+	while (i <= data->len)
 	{
-		ft_printf(YELLOW " a:%d, b:%d\n", data.stack_a[i], data.stack_b[i]);
+		if (*n[i] >= '0' && *n[i] <= '9')
+		{
+			data->stack_a[j] = ft_atoi(n[j + 1]);
+			data->stack_b[j] = atoi(n[j + 1]);
+		}
+		else
+		{
+			ft_message(DANGER, ERROR_1);
+			exit(1);
+		}
 		i++;
+		j++;
 	}
-	free(data.stack_a);
-	free(data.stack_b);
 }

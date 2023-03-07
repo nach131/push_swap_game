@@ -7,7 +7,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 
 # This program built for i386-apple-darwin11.3.0
 
-# Make data base, printed on Mon Mar  6 17:18:32 2023
+# Make data base, printed on Tue Mar  7 09:48:07 2023
 
 # Variables
 
@@ -24,11 +24,11 @@ VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
 # automatic
 @F = $(notdir $@)
 # makefile
-CURDIR := /Users/nmota-bu/Desktop/push_swap
+CURDIR := /Volumes/1TB/Dropbox/00_42Barcelona/42Barcelona/C2/push_swap
 # makefile
 SHELL = /bin/sh
 # environment
-VSCODE_NLS_CONFIG = {"locale":"us","availableLanguages":{"*":"es"},"_languagePackId":"89b4ea9c2251973c8237ba96a95f68ac.es","_translationsConfigFile":"/Users/nmota-bu/Library/Application Support/Code/clp/89b4ea9c2251973c8237ba96a95f68ac.es/tcf.json","_cacheRoot":"/Users/nmota-bu/Library/Application Support/Code/clp/89b4ea9c2251973c8237ba96a95f68ac.es","_corruptedFile":"/Users/nmota-bu/Library/Application Support/Code/clp/89b4ea9c2251973c8237ba96a95f68ac.es/corrupted.info","_resolvedLanguagePackCoreLocation":"/Users/nmota-bu/Library/Application Support/Code/clp/89b4ea9c2251973c8237ba96a95f68ac.es/92da9481c0904c6adfe372c12da3b7748d74bdcb","_languagePackSupport":true}
+VSCODE_NLS_CONFIG = {"locale":"es-es","availableLanguages":{"*":"es"},"_languagePackId":"9e806e740bfd9cd42a2ea2d02f9a6078.es","_translationsConfigFile":"/Users/nacho/Library/Application Support/Code/clp/9e806e740bfd9cd42a2ea2d02f9a6078.es/tcf.json","_cacheRoot":"/Users/nacho/Library/Application Support/Code/clp/9e806e740bfd9cd42a2ea2d02f9a6078.es","_corruptedFile":"/Users/nacho/Library/Application Support/Code/clp/9e806e740bfd9cd42a2ea2d02f9a6078.es/corrupted.info","_resolvedLanguagePackCoreLocation":"/Users/nacho/Library/Application Support/Code/clp/9e806e740bfd9cd42a2ea2d02f9a6078.es/92da9481c0904c6adfe372c12da3b7748d74bdcb","_languagePackSupport":true}
 # environment
 _ = /usr/bin/make
 # makefile
@@ -36,29 +36,35 @@ MAKEFILE_LIST :=
 # environment
 VSCODE_CWD = /
 # environment
-PATH = /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
+Apple_PubSub_Socket_Render = /private/tmp/com.apple.launchd.dtv3TpXR1s/Render
+# environment
+PATH = /Library/Frameworks/Python.framework/Versions/3.10/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/opt/X11/bin:/usr/local/mongodb/bin
+# environment
+LSCOLORS = ExFxBxDxCxegedabagacad
 # environment
 ELECTRON_RUN_AS_NODE = 1
 # default
 .FEATURES := target-specific order-only second-expansion else-if archives jobserver check-symlink
 # environment
-SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.gyLZFGjhnq/Listeners
+SSH_AUTH_SOCK = /private/tmp/com.apple.launchd.bf7rF28Dcj/Listeners
 # automatic
 %F = $(notdir $%)
 # environment
-PWD = /Users/nmota-bu/Desktop/push_swap
+DISPLAY = /private/tmp/com.apple.launchd.44ta8Zc0xV/org.xquartz:0
+# environment
+PWD = /Volumes/1TB/Dropbox/00_42Barcelona/42Barcelona/C2/push_swap
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
-HOME = /Users/nmota-bu
+HOME = /Users/nacho
 # default
 MAKEFILEPATH := /Applications/Xcode.app/Contents/Developer/Makefiles
 # environment
-VSCODE_CODE_CACHE_PATH = /Users/nmota-bu/Library/Application Support/Code/CachedData/92da9481c0904c6adfe372c12da3b7748d74bdcb
+VSCODE_CODE_CACHE_PATH = /Users/nacho/Library/Application Support/Code/CachedData/92da9481c0904c6adfe372c12da3b7748d74bdcb
 # environment
-LOGNAME = nmota-bu
+LOGNAME = nacho
 # environment
 APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
@@ -72,11 +78,11 @@ MAKE = $(MAKE_COMMAND)
 # default
 MAKECMDGOALS := all
 # environment
-SHLVL = 1
+SHLVL = 2
 # default
 MAKE_VERSION := 3.81
 # environment
-USER = nmota-bu
+USER = nacho
 # makefile
 .DEFAULT_GOAL := 
 # automatic
@@ -86,11 +92,11 @@ MAKE_COMMAND := /Applications/Xcode.app/Contents/Developer/usr/bin/make
 # default
 .VARIABLES := 
 # environment
-TMPDIR = /var/folders/zz/zyxvpxvq6csfxvn_n000cbt00032yh/T/
+TMPDIR = /var/folders/4n/804bwxpj5vl86x7z5h4zk0_h0000gn/T/
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /Users/nmota-bu/Library/Application Support/Code/1.76-main.sock
+VSCODE_IPC_HOOK = /Users/nacho/Library/Application Support/Code/1.76-main.sock
 # environment
 MallocNanoZone = 0
 # makefile
@@ -100,17 +106,17 @@ MFLAGS = -Rrqp
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-MAIL = nmota-bu@student.42barcelona.com
+NVM_DIR = /Users/nacho/.nvm
 # environment
-XPC_SERVICE_NAME = com.microsoft.VSCode.2576
+XPC_SERVICE_NAME = com.microsoft.VSCode.9956
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
-VSCODE_L10N_BUNDLE_LOCATION = file:///Users/nmota-bu/.vscode/extensions/ms-ceintl.vscode-language-pack-es-1.76.2023030109/translations/extensions/vscode.json-language-features.i18n.json
+VSCODE_L10N_BUNDLE_LOCATION = file:///Users/nacho/.vscode/extensions/ms-ceintl.vscode-language-pack-es-1.76.2023030109/translations/extensions/vscode.json-language-features.i18n.json
 # automatic
 +F = $(notdir $+)
 # environment
-__CF_USER_TEXT_ENCODING = 0x18BD0:0x0:0x0
+__CF_USER_TEXT_ENCODING = 0x1F5:0x0:0x8
 # default
 MAKEFILES := 
 # automatic
@@ -121,16 +127,20 @@ LC_ALL = C
 ^F = $(notdir $^)
 # default
 SUFFIXES := 
+# environment
+GREP_OPTIONS = --color=auto
 # default
-.INCLUDE_DIRS = /usr/local/include
+.INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # environment
 MAKELEVEL := 0
 # environment
+CLICOLOR = 1
+# environment
 LANG = C
 # environment
-VSCODE_PID = 3673
+VSCODE_PID = 81382
 # variable set hash-table stats:
-# Load=59/1024=6%, Rehash=0, Collisions=1/80=1%
+# Load=64/1024=6%, Rehash=0, Collisions=1/89=1%
 
 # Pattern-specific Variable Values
 
@@ -138,9 +148,9 @@ VSCODE_PID = 3673
 
 # Directories
 
-# . (device 16777228, inode 270108): 19 files, no impossibilities.
+# . (device 16777219, inode 836896): 20 files, no impossibilities.
 
-# 19 files, no impossibilities in 1 directories.
+# 20 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -212,7 +222,7 @@ GNUmakefile:
 # strcache size: total = 0 / max = 0 / min = 4096 / avg = 0
 # strcache free: total = 0 / max = 0 / min = 4096 / avg = 0
 
-# Finished Make data base on Mon Mar  6 17:18:32 2023
+# Finished Make data base on Tue Mar  7 09:48:07 2023
 
  
 make: *** No rule to make target `all'.  Stop.

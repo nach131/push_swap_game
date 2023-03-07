@@ -6,7 +6,7 @@
 #include "../libft/inc/ft_printf.h"
 #include "../libft/inc/error.h"
 
-#define TOMATE "Test define"
+#define ERROR_1 "Error: Argument is not an integer"
 
 typedef struct s_ps
 {
@@ -16,5 +16,6 @@ typedef struct s_ps
 } t_ps;
 
 void ctrl_argv(char **ch, t_ps *data);
+void add_num(t_ps *data, char **n);
 
 #endif

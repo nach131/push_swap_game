@@ -1,6 +1,6 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory `/Users/nmota-bu/Desktop/push_swap'
-make: Leaving directory `/Users/nmota-bu/Desktop/push_swap'
+make --dry-run --keep-going --print-directory
+make: Entering directory `/Volumes/1TB/Dropbox/00_42Barcelona/42Barcelona/C2/push_swap'
+make: Leaving directory `/Volumes/1TB/Dropbox/00_42Barcelona/42Barcelona/C2/push_swap'
  
 make: *** No targets specified and no makefile found.  Stop.
 
