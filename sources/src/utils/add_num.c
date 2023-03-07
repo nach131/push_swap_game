@@ -6,13 +6,25 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/07 10:22:04 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:29:00 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 #include <stdlib.h>
+
+// -2147483648
+// 2147483647
+
+void static ctrl_int(const char *str)
+{
+	if (ft_atoi_long(str) > 2147483647 || ft_atoi_long(str) < -2147483648)
+	{
+		ft_message(DANGER, ERROR_3);
+		exit(1);
+	}
+}
 
 void add_num(t_ps *data, char **n)
 {
@@ -23,12 +35,11 @@ void add_num(t_ps *data, char **n)
 	j = 0;
 	while (i <= data->len)
 	{
-		if (*n[i] >= '0' && *n[i] <= '9')
+		if ((*n[i] >= '0' && *n[i] <= '9') || *n[i] == '-')
 		{
-			data->stack_a[j] = ft_atoi(n[j + 1]);
-			data->stack_b[j] = atoi(n[j + 1]);
-			// aqui hay que controlar si es mas grande que int
-			//  quizas hacer un atoi especial.
+			ctrl_int(n[i]);
+			data->stack_a[j] = ft_atoi(n[i]);
+			data->stack_b[j] = atoi(n[i]);
 		}
 		else
 		{

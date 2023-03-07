@@ -8,6 +8,7 @@
 
 #define ERROR_1 "Error: Argument is not an integer"
 #define ERROR_2 "Error: Duplicate numbers"
+#define ERROR_3 "Error: Numbers greater than int"
 
 typedef struct s_ps
 {
