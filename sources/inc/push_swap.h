@@ -7,6 +7,7 @@
 #include "../libft/inc/error.h"
 
 #define ERROR_1 "Error: Argument is not an integer"
+#define ERROR_2 "Error: Duplicate numbers"
 
 typedef struct s_ps
 {
@@ -15,7 +16,8 @@ typedef struct s_ps
 	int *stack_b;
 } t_ps;
 
-void ctrl_argv(char **ch, t_ps *data);
 void add_num(t_ps *data, char **n);
+void ctrl_num_dupl(t_ps *data);
 
+void ctrl_argv(char **ch, t_ps *data);
 #endif
