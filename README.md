@@ -7,3 +7,10 @@ Para redirijir la salida de error a un archivo.
 ```c
 ./push_swap 42 84 2> error.txt
 ```
+
+
+brew install coreutils
+	export NUMEROS=$(jot -n 10 1 1000 | tr '\n' ' ')
+
+
+	export NUMEROS=$(shuf -i 100-500 -n 10 | tr '\n' ' ')

@@ -8,7 +8,7 @@
 
 #define ERROR_1 "Error: Argument is not an integer"
 #define ERROR_2 "Error: Duplicate numbers"
-#define ERROR_3 "Error: Numbers greater than int"
+#define ERROR_3 "Error: Numbers greater than integer"
 
 typedef struct s_ps
 {
@@ -20,5 +20,4 @@ typedef struct s_ps
 void add_num(t_ps *data, char **n);
 void ctrl_num_dupl(t_ps *data);
 
-void ctrl_argv(char **ch, t_ps *data);
 #endif

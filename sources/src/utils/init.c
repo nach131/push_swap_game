@@ -1,25 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   add_num.c                                          :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/07 17:29:00 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/07 17:39:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-#include <stdlib.h>
-
-// -2147483648
-// 2147483647
+#include <limits.h>
 
 void static ctrl_int(const char *str)
 {
-	if (ft_atoi_long(str) > 2147483647 || ft_atoi_long(str) < -2147483648)
+	if (ft_atoi_long(str) > INT_MAX || ft_atoi_long(str) < INT_MIN)
 	{
 		ft_message(DANGER, ERROR_3);
 		exit(1);
