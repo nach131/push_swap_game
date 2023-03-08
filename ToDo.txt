@@ -3,3 +3,13 @@ https://www.youtube.com/watch?v=8nix1eqoMHM
 
 -2147483648
  2147483647
+
+hacer control is number
+ controlar el + y el -
+
+liberar antes deexit en los ctrl
+
+
+controlar el valor dento del array cada vez que se pasen los datos de stack
+
+posible solucion cambiar eel valor
