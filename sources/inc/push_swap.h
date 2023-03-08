@@ -21,4 +21,9 @@ void add_num(t_ps *data, char **n);
 void ctrl_num(int len, char **str);
 void ctrl_num_dupl(t_ps *data);
 
+void swap(int *a, int *b);
+void sa(t_ps *data);
+void sb(t_ps *data);
+void ss(t_ps *data);
+
 #endif
