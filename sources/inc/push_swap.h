@@ -18,6 +18,7 @@ typedef struct s_ps
 } t_ps;
 
 void add_num(t_ps *data, char **n);
+void ctrl_num(int len, char **str);
 void ctrl_num_dupl(t_ps *data);
 
 #endif

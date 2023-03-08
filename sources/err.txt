@@ -1,1 +1,1 @@
-[0;31mError: Argument is not an integer
+[0;31mError: Duplicate numbers

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/07 17:39:11 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/08 15:21:16 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,31 @@ void static ctrl_int(const char *str)
 	}
 }
 
+void ctrl_num(int len, char **str)
+{
+	int i;
+	int j;
+
+	i = 1;
+
+	while (i <= len)
+	{
+		j = 0;
+		if (str[i][j] == '-' || str[i][j] == '+')
+			j++;
+		while (str[i][j])
+		{
+			if (ft_isdigit(str[i][j]) == 0)
+			{
+				ft_message(DANGER, ERROR_1);
+				exit(1);
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
 void add_num(t_ps *data, char **n)
 {
 	int i;
@@ -31,17 +56,9 @@ void add_num(t_ps *data, char **n)
 	j = 0;
 	while (i <= data->len)
 	{
-		if ((*n[i] >= '0' && *n[i] <= '9') || *n[i] == '-')
-		{
-			ctrl_int(n[i]);
-			data->stack_a[j] = ft_atoi(n[i]);
-			data->stack_b[j] = atoi(n[i]);
-		}
-		else
-		{
-			ft_message(DANGER, ERROR_1);
-			exit(1);
-		}
+		ctrl_int(n[i]);
+		data->stack_a[j] = ft_atoi(n[i]);
+		data->stack_b[j] = atoi(n[i]);
 		i++;
 		j++;
 	}
