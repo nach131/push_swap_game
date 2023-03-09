@@ -1,0 +1,19 @@
+{
+	// Use IntelliSense para saber los atributos posibles.
+	// Mantenga el puntero para ver las descripciones de los existentes atributos.
+	// Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "push_swap",
+			// "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+			"program": "${workspaceFolder}/sources/push_swap",
+			// "args": ["42", "84","5","42"],
+			"args": ["42", "84","5","42"],
+			"stopOnEntry": false,
+			"cwd": "${fileDirname}"
+		}
+	]
+}

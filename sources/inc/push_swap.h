@@ -9,21 +9,37 @@
 #define ERROR_1 "Error: Argument is not an integer"
 #define ERROR_2 "Error: Duplicate numbers"
 #define ERROR_3 "Error: Numbers greater than integer"
+#define ERROR_4 "Error: Error: Stack overflow"
+
+// typedef struct s_ps
+// {
+// 	int len;
+// 	int *stack_a;
+// 	int *stack_b;
+// } t_ps;
 
 typedef struct s_ps
 {
-	int len;
-	int *stack_a;
-	int *stack_b;
+	int *stack;
+	int top;
 } t_ps;
 
-void add_num(t_ps *data, char **n);
-void ctrl_num(int len, char **str);
-void ctrl_num_dupl(t_ps *data);
+typedef struct s_data
+{
+	int size;
+	t_ps a;
+	t_ps b;
+} t_data;
 
+void add_num(t_data *data, char **n);
+void ctrl_num(int len, char **str);
+// void init_data(t_data *data, int len);
+void ctrl_num_dupl(t_data *data);
+
+void push(int *stack, int *top, int value, int size);
 void swap(int *a, int *b);
-void sa(t_ps *data);
-void sb(t_ps *data);
-void ss(t_ps *data);
+void sa(t_data *data);
+void sb(t_data *data);
+void ss(t_data *data);
 
 #endif
