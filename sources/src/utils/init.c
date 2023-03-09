@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/09 10:51:53 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/09 12:05:18 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,16 @@ void ctrl_num(int size, char **str)
 void add_num(t_data *data, char **n)
 {
 	int i;
-	int j = 0; // QUITAR
+	// int j = 0; // QUITAR
 
 	i = 1;
 	while (i <= data->size)
 	{
 		ctrl_int(n[i]);
 		push(data->a.stack, &data->a.top, ft_atoi(n[i]), data->size);
-		// data->a.stack[j] = ft_atoi(n[i]);
-		data->b.stack[j] = atoi(n[i]); // QUITAR
+		// data->b.stack[j] = atoi(n[i]); // QUITAR
 		i++;
-		j++;
+		// j++;
 	}
 }
 

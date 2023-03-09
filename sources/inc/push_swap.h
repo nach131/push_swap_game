@@ -9,7 +9,8 @@
 #define ERROR_1 "Error: Argument is not an integer"
 #define ERROR_2 "Error: Duplicate numbers"
 #define ERROR_3 "Error: Numbers greater than integer"
-#define ERROR_4 "Error: Error: Stack overflow"
+#define ERROR_4 "Error: Stack overflow"
+#define ERROR_5 "Error: Stack underflow"
 
 // typedef struct s_ps
 // {
@@ -41,5 +42,7 @@ void swap(int *a, int *b);
 void sa(t_data *data);
 void sb(t_data *data);
 void ss(t_data *data);
+void pb(t_data *data);
+void ra(t_data *data);
 
 #endif

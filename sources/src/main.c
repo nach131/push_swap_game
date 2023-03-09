@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/09 11:07:51 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/09 12:35:39 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,21 @@ int main(int argc, char **argv)
 
 	// sa(&data);
 	// sb(&data);
-	ss(&data);
+	// ss(&data);
+	// pb(&data);
+	ra(&data);
 
 	printf(RED "top_a:%d, top_b:%d\n", data.a.top, data.b.top);
 	int i = 0;
-	while (i < argc - 1)
+	while (i <= data.a.top)
 	{
-		printf(YELLOW " a:%d, b:%d\n", data.a.stack[i], data.b.stack[i]);
+		printf(YELLOW "A:%d\n", data.a.stack[i]);
+		i++;
+	}
+	i = 0;
+	while (i <= data.b.top)
+	{
+		printf(GREEN "B:%d\n", data.b.stack[i]);
 		i++;
 	}
 	free(data.a.stack);

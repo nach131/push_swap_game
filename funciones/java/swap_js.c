@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap_js.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/09 11:51:04 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/09 12:40:18 by nmota-bu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
 #define MAX_STACK_SIZE 1000
@@ -69,13 +81,13 @@ void pa()
 		push(stack_a, &top_a, value);
 	}
 }
-
+// OK
 void pb()
 {
 	if (top_a >= 0)
 	{
-		int value = pop(stack_a, &top_a);
-		push(stack_b, &top_b, value);
+		// int value = pop(stack_a, &top_a);
+		push(stack_b, &top_b, stack_a[0]);
 	}
 }
 
@@ -165,17 +177,12 @@ int main()
 		printf("%d\n", stack_a[i]);
 		i++;
 	}
-	printf("-----\n");
+	printf("--Despues--\n");
 	// Ejecutar operaciones de ordenamiento
-	sa();
-	pb();
 	ra();
-	pb();
-	sa();
-	ra();
-	ra();
-	pa();
-	pa();
+
+	//===========================================================================================
+
 	i = 0;
 	while (i < 4)
 	{
@@ -197,6 +204,12 @@ int main()
 	else
 	{
 		printf("El stack b no está vacío\n");
+		i = 0;
+		while (i < 4)
+		{
+			printf("%d\n", stack_b[i]);
+			i++;
+		}
 	}
 	return 0;
 }
