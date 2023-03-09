@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/09 13:58:22 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/09 20:43:12 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int main(int argc, char **argv)
 	// pb(&data);
 	// ra(&data);
 	rb(&data);
+	// rr(&data);
+	rra(&data);
 
 	printf(RED "top_a:%d, top_b:%d\n", data.a.top, data.b.top);
 	int i = 0;
