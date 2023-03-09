@@ -44,5 +44,6 @@ void sb(t_data *data);
 void ss(t_data *data);
 void pb(t_data *data);
 void ra(t_data *data);
+void rb(t_data *data);
 
 #endif
