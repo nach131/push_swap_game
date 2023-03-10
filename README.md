@@ -2,10 +2,21 @@
 
 > **sa: swap a**
 
- Intercambia los dos primeros elementos encima del stack a. No hace nada si hay uno o menos elementos.
+ Intercambia los dos primeros elementos encima del ```stack A```. No hace nada si hay uno o menos elementos.
 
 <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/sa__swap_a.png" alt="drawing" width="300"/>
 
+> **sb: swap b**
+
+ Intercambia los dos primeros elementos encima del ```stack B```. No hace nada si hay uno o menos elementos.
+
+ <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/sb__swap_b.png" alt="drawing" width="300"/>
+
+**ss: swap sa y swap sb**
+
+ Intercambia los dos primeros elementos encima del ```stack A``` e intercambia los dos primeros elementos encima del ```stack B```. No hace nada si hay uno o menos elementos.
+
+ <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/ss__swap_a_&_swap_b.png" alt="drawing" width="300"/>
 
 La salida de error estándar `(stderr)` normalmente se muestra en la consola junto con la salida estándar `(stdout)`, a menos que se redirija a otro lugar como un archivo o una tubería. Por lo tanto, si un programa escribe en stderr y se ejecuta desde la consola, la salida de error debería ser visible en la consola.
 
