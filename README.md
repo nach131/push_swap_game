@@ -22,13 +22,13 @@
 
 Toma el primer elemento del ``stack B``` y lo pone encima del ```stack A```. No hace nada si b está vacío.
 
- <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/pa__push_a" alt="drawing" width="250"/>
+ <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/pa__push_a.png" alt="drawing" width="250"/>
 
   **pb: push b**
 
 Toma el primer elemento del ```stack B``` y lo pone encima del ```stack A```. No hace nada si b está vacío.
 
- <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/pb__push_a" alt="drawing" width="250"/>
+ <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/pb__push_a.png" alt="drawing" width="250"/>
 
 
 
