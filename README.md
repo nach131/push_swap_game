@@ -4,6 +4,7 @@
 
 <details>
   <summary>Swap</summary>
+
 > **sa: swap a**
 
  Intercambia los dos primeros elementos encima del ```stack A```. No hace nada si hay uno o menos elementos.
@@ -21,6 +22,7 @@
  Intercambia los dos primeros elementos encima del ```stack A``` e intercambia los dos primeros elementos encima del ```stack B```. No hace nada si hay uno o menos elementos.
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/ss__swap_a_&_swap_b.png" alt="drawing" width="250"/>
+
 <details>
 
 ## Push
@@ -46,6 +48,7 @@ Toma el primer elemento del ```stack A``` y lo pone encima del ```stack B```. No
 
 <details>
   <summary>Rotate</summary>
+
 > **ra: rotate a**
 
 Desplaza hacia arriba todos los elementos del ```stack A``` una posición, de forma que el primer elemento se convierte en el último.
@@ -67,8 +70,10 @@ Desplaza al mismo tiempo todos los elementos del ```stack A``` y del ```stack B`
 </details>
 
 ## Reverse
+
 <details>
   <summary>Reverse</summary>
+
 > **rra: reverse rotate a**
 
 Desplaza hacia abajo todos los elementos del ```stack A``` una posición, de forma que el último elemento se convierte en el primero.
@@ -83,6 +88,7 @@ Desplaza hacia abajo todos los elementos del ```stack B```una posición, de for
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rrb__reverse_rotate_b.png" alt="drawing" width="250"/>
 
  > **rrr: reverse rotate a y reverse rotate b**
+ 
 </details>
 
 Desplaza hacia abajo todos los elementos del ```stack A``` una posición y desplaza hacia abajo todos los elementos del ```stack B```una posición, de forma que el último elemento se convierte en el primero.
