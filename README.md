@@ -121,6 +121,21 @@ Desplaza hacia abajo todos los elementos del ```stack A``` una posición y desp
 
 </details>
 
+```mermaid
+flowchart TD
+    inicio[38,27,43,3,82,9,10]--> A
+    inicio --> B[9,82,10]
+    A[38,27,43,3] --> A1[43,3]-->A1b
+    A --> A2[38,27]-->A3a[38]-->A4
+    A2 --> A3b[27]-->A4[27,38]-->A5
+A1-->A1a[43]-->A4b
+A1b[3]-->A4b[3,43]-->A5
+A5[3,27,38,43]-->fin
+B-->B1a[82,9]-->B2a[82]-->B3
+B1a-->B2b[9]-->B3[9,82]-->B4
+B-->B1b[10]-->B4[9,10,82]-->fin[3,9,10,27,38,43,82]
+```
+
 ## Salida error
 
 La salida de error estándar `(stderr)` normalmente se muestra en la consola junto con la salida estándar `(stdout)`, a menos que se redirija a otro lugar como un archivo o una tubería. Por lo tanto, si un programa escribe en stderr y se ejecuta desde la consola, la salida de error debería ser visible en la consola.
