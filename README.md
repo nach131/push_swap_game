@@ -1,6 +1,9 @@
 # push_swap
 
 ## Swap
+
+<details>
+  <summary>Swap</summary>
 > **sa: swap a**
 
  Intercambia los dos primeros elementos encima del ```stack A```. No hace nada si hay uno o menos elementos.
@@ -18,8 +21,12 @@
  Intercambia los dos primeros elementos encima del ```stack A``` e intercambia los dos primeros elementos encima del ```stack B```. No hace nada si hay uno o menos elementos.
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/ss__swap_a_&_swap_b.png" alt="drawing" width="250"/>
+<details>
 
 ## Push
+
+<details>
+  <summary>Push</summary>
 
 > **pa: push a**
 
@@ -32,8 +39,13 @@ Toma el primer elemento del ```stack B``` y lo pone encima del ```stack A```. No
 Toma el primer elemento del ```stack A``` y lo pone encima del ```stack B```. No hace nada si b está vacío.
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/pb__push_a.png" alt="drawing" width="250"/>
+ 
+</details>
 
 ## Rotate
+
+<details>
+  <summary>Rotate</summary>
 > **ra: rotate a**
 
 Desplaza hacia arriba todos los elementos del ```stack A``` una posición, de forma que el primer elemento se convierte en el último.
@@ -52,7 +64,11 @@ Desplaza al mismo tiempo todos los elementos del ```stack A``` y del ```stack B`
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rr_rotate_a_&&_rotate_b.png" alt="drawing" width="250"/>
 
+</details>
+
 ## Reverse
+<details>
+  <summary>Reverse</summary>
 > **rra: reverse rotate a**
 
 Desplaza hacia abajo todos los elementos del ```stack A``` una posición, de forma que el último elemento se convierte en el primero.
@@ -67,6 +83,7 @@ Desplaza hacia abajo todos los elementos del ```stack B```una posición, de for
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rrb__reverse_rotate_b.png" alt="drawing" width="250"/>
 
  > **rrr: reverse rotate a y reverse rotate b**
+</details>
 
 Desplaza hacia abajo todos los elementos del ```stack A``` una posición y desplaza hacia abajo todos los elementos del ```stack B```una posición, de forma que el último elemento se convierte en el primero.
 
