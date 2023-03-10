@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/09 12:30:45 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/09 23:12:06 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,16 @@ int pop(t_ps *stack, int *top)
 
 // //  toma el primer elemento del stack b y lo pone encima del stack a.
 // // No hace nada si b está vacío.
-// void pa(t_data *data)
-// {
-// 	if (top_b >= 0)
-// 	{
-// 		int value;
 
-// 		value = pop(stack_b, &top_b);
-// 		push(stack_a, &top_a, value);
-// 	}
-// }
+void pa(t_data *data)
+{
+	if (data->b.top >= 0)
+	{
+		push(data->a.stack, &data->a.top, data->b.stack[0], data->size);
+		rb(data);
+		data->b.top--;
+	}
+}
 
 // toma el primer elemento del stack a y lo pone encima del stack b.
 // No hace nada si a está vacío.
@@ -62,6 +62,7 @@ void pb(t_data *data)
 	if (data->a.top >= 0)
 	{
 		push(data->b.stack, &data->b.top, data->a.stack[0], data->size);
-		// data->a.top -= 1;
+		ra(data);
+		data->a.top--;
 	}
 }

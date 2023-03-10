@@ -7,9 +7,18 @@ https://www.youtube.com/watch?v=8nix1eqoMHM
 hacer control is number
  controlar el + y el -
 
-liberar antes deexit en los ctrl
+liberar antes de exit en los ctrl
 
 
 controlar el valor dento del array cada vez que se pasen los datos de stack
 
-posible solucion cambiar eel valor
+posible solucion cambiar el valor
+
+
+push
+reverse⏪
+rotate🔄
+swap
+🔃
+🔀
+⤴️⤵️🔽🔼⏬⏫⏪⏩⏸⏯⏺⏹⏮

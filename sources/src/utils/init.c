@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/09 18:16:44 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/09 22:25:56 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void add_num(t_data *data, char **n)
 	{
 		ctrl_int(n[i]);
 		push(data->a.stack, &data->a.top, ft_atoi(n[i]), data->size);
-		push(data->b.stack, &data->b.top, ft_atoi(n[i]), data->size);
+		// push(data->b.stack, &data->b.top, ft_atoi(n[i]), data->size);
 
 		i++;
 	}
