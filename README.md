@@ -106,7 +106,7 @@ Desplaza hacia abajo todos los elementos del ```stack B```una posición, de for
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rrb__reverse_rotate_b.png" alt="drawing" width="250"/>  
 	
-<br>
+<br><br/>
 
  > **rrr: reverse rotate a y reverse rotate b**  
 	
