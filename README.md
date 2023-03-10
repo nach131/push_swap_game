@@ -121,6 +121,10 @@ Desplaza hacia abajo todos los elementos del ```stack A``` una posición y desp
 
 </details>
 
+## Merge Sort (Ordenado por fusión)
+
+Merge Sort es un algoritmo de divide y vencerás. Divide el stack de entrada de longitud n por la mitad sucesivamente hasta que haya n stack de tamaño 1. Luego, los pares de stack se fusionan con el primer elemento más pequeño entre el par de stack que se agregan en cada paso. A través de la fusión sucesiva y la comparación de los primeros elementos, se construye el stack ordenado.
+
 ```mermaid
 flowchart TD
     inicio[38,27,43,3,82,9,10]--> A
