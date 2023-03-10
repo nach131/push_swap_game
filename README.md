@@ -29,7 +29,7 @@ Toma el primer elemento del ```stack B``` y lo pone encima del ```stack A```. No
 
 > **pb: push b**
 
-Toma el primer elemento del ```stack B``` y lo pone encima del ```stack A```. No hace nada si b está vacío.
+Toma el primer elemento del ```stack A``` y lo pone encima del ```stack B```. No hace nada si b está vacío.
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/pb__push_a.png" alt="drawing" width="250"/>
 
@@ -40,7 +40,7 @@ Desplaza hacia arriba todos los elementos del ```stack A``` una posición, de f
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/ra__rotate_a.png" alt="drawing" width="250"/>
 
-> **rb: rotate a**
+> **rb: rotate b**
 
 Desplaza hacia arriba todos los elementos del ```stack B``` una posición, de forma que el primer elemento se convierte en el último.
 
@@ -59,7 +59,7 @@ Desplaza hacia abajo todos los elementos del ```stack A``` una posición, de fo
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rra__reverse_rotate_a.png" alt="drawing" width="250"/>
 
-> **rrb: reverse rotate a**
+> **rrb: reverse rotate b**
 
 Desplaza hacia abajo todos los elementos del ```stack B```una posición, de forma que el último elemento se convierte en el primero.
 
