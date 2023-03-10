@@ -143,7 +143,7 @@ B-->B1b[10]-->B4[9,10,82]-->fin[3,9,10,27,38,43,82]
 
 $$T(n)       = 2T(n/2)       + Θ(n)$$
 
-La recurrencia anterior se puede resolver utilizando el método de árbol de recurrencia o el método maestro. Cae en el caso II del Método Maestro y la solución de la recurrencia es $$Θ(nLogn)$$. La complejidad de tiempo de Merge Sort es $$Θ(nLogn)$$ en los 3 casos (peor, promedio y mejor) ya que merge sort siempre divide la matriz en dos mitades y toma un tiempo lineal para fusionar dos mitades.
+La recurrencia anterior se puede resolver utilizando el método de árbol de recurrencia o el método maestro. Cae en el caso II del Método Maestro y la solución de la recurrencia es $Θ(nLogn)$ La complejidad de tiempo de Merge Sort es $Θ(nLogn)$ en los 3 casos (peor, promedio y mejor) ya que merge sort siempre divide la matriz en dos mitades y toma un tiempo lineal para fusionar dos mitades.
 
 ## Salida error
 
