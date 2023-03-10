@@ -95,7 +95,8 @@ Desplaza al mismo tiempo todos los elementos del ```stack A``` y del ```stack B`
 Desplaza hacia abajo todos los elementos del ```stack A``` una posición, de forma que el último elemento se convierte en el primero.
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rra__reverse_rotate_a.png" alt="drawing" width="250"/>
- 
+	
+\
 \
 
 > **rrb: reverse rotate b**
@@ -107,7 +108,7 @@ Desplaza hacia abajo todos los elementos del ```stack B```una posición, de for
 	
 \
 \
-\
+
 
  > **rrr: reverse rotate a y reverse rotate b**  
 	
