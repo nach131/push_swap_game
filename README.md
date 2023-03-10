@@ -4,14 +4,16 @@
 
 <details>
   <summary>Detalle</summary>
-
+	
+<br><br/>
+	
 > **sa: swap a**
 
  Intercambia los dos primeros elementos encima del ```stack A```. No hace nada si hay uno o menos elementos.
 
-<br><br/>
-
 <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/sa__swap_a.png" alt="drawing" width="250"/>
+
+<br><br/>
 
 > **sb: swap b**
 
@@ -36,6 +38,8 @@
 <details>
   <summary>Detalle</summary>
 
+<br><br/>
+
 > **pa: push a**
 
 Toma el primer elemento del ```stack B``` y lo pone encima del ```stack A```. No hace nada si b está vacío.
@@ -58,6 +62,8 @@ Toma el primer elemento del ```stack A``` y lo pone encima del ```stack B```. No
 
 <details>
   <summary>Detalle</summary>
+
+<br><br/>
 
 > **ra: rotate a**
 
