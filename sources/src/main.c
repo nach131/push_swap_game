@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/10 14:05:46 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/10 18:18:00 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,27 @@ int main(int argc, char **argv)
 	// sa(&data);
 	// sb(&data);
 	// ss(&data);
-	pb(&data);
-	pb(&data);
-	pb(&data);
-	pb(&data);
-	pb(&data);
-	// pa(&data);
-	// ra(&data);
-	// rb(&data);
-	// rr(&data);
-	// rra(&data);
+	// pb(&data);
+	// pb(&data);
+	// pb(&data);
+	// pb(&data);
+	// pb(&data);
+	// // pa(&data);
+	// // ra(&data);
+	// // rb(&data);
+	// // rr(&data);
+	// // rra(&data);
 
-	rrb(&data);
-	pa(&data);
-	rrb(&data);
-	pa(&data);
-	rrb(&data);
-	pa(&data);
-	rrb(&data);
-	pa(&data);
-	rrb(&data);
-	pa(&data);
+	// rrb(&data);
+	// pa(&data);
+	// rrb(&data);
+	// pa(&data);
+	// rrb(&data);
+	// pa(&data);
+	// rrb(&data);
+	// pa(&data);
+	// rrb(&data);
+	// pa(&data);
 
 	// pa(&data);
 
@@ -62,7 +62,7 @@ int main(int argc, char **argv)
 	int i = 0;
 	while (i <= data.a.top)
 	{
-		printf(YELLOW "A:%d\n", data.a.stack[i]);
+		printf(YELLOW "A:%d_%d\n", data.a.stack[i], i);
 		i++;
 	}
 	i = 0;
