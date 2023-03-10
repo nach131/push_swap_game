@@ -9,7 +9,7 @@
 
  Intercambia los dos primeros elementos encima del ```stack A```. No hace nada si hay uno o menos elementos.
 
-\
+<br><br/>
 
 <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/sa__swap_a.png" alt="drawing" width="250"/>
 
@@ -19,7 +19,7 @@
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/sb__swap_b.png" alt="drawing" width="250"/>
 
-\
+<br><br/>
 
 > **ss: swap sa y swap sb**
 
@@ -27,7 +27,7 @@
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/ss__swap_a_&_swap_b.png" alt="drawing" width="250"/>
 
-\
+<br><br/>
 
 </details>
 
@@ -42,7 +42,7 @@ Toma el primer elemento del ```stack B``` y lo pone encima del ```stack A```. No
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/pa__push_b.png" alt="drawing" width="250"/>
 
-\
+<br><br/>
 
 > **pb: push b**
 
@@ -50,7 +50,7 @@ Toma el primer elemento del ```stack A``` y lo pone encima del ```stack B```. No
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/pb__push_a.png" alt="drawing" width="250"/>
 
-\
+<br><br/>
 
 </details>
 
@@ -65,7 +65,7 @@ Desplaza hacia arriba todos los elementos del ```stack A``` una posición, de f
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/ra__rotate_a.png" alt="drawing" width="250"/>
 
-\
+<br><br/>
 
 > **rb: rotate b**
 
@@ -73,7 +73,7 @@ Desplaza hacia arriba todos los elementos del ```stack B``` una posición, de f
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rb_rotate_b.png" alt="drawing" width="250"/>
 
-\
+<br><br/>
 
 > **rr: rotate a y rotate b**
 
@@ -81,7 +81,7 @@ Desplaza al mismo tiempo todos los elementos del ```stack A``` y del ```stack B`
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rr_rotate_a_&&_rotate_b.png" alt="drawing" width="250"/>
 
-\
+<br><br/>
 
 </details>
 
@@ -96,8 +96,7 @@ Desplaza hacia abajo todos los elementos del ```stack A``` una posición, de fo
 
  <img src="https://github.com/nach131/push_swap/blob/Two-Struct/img/rra__reverse_rotate_a.png" alt="drawing" width="250"/>
 	
-\
-\
+<br><br/>
 
 > **rrb: reverse rotate b**
 
