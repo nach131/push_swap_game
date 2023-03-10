@@ -91,7 +91,7 @@ Desplaza hacia abajo todos los elementos del ```stack B```una posición, de for
 
  > **rrr: reverse rotate a y reverse rotate b**
 
- \
+ 	\
 
 Desplaza hacia abajo todos los elementos del ```stack A``` una posición y desplaza hacia abajo todos los elementos del ```stack B```una posición, de forma que el último elemento se convierte en el primero.
 
