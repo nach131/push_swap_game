@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/09 23:12:06 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/10 14:06:44 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,26 +42,53 @@ int pop(t_ps *stack, int *top)
 	return value;
 }
 
-// //  toma el primer elemento del stack b y lo pone encima del stack a.
-// // No hace nada si b está vacío.
+//  Toma el primer elemento del stack b y lo pone encima del stack a.
+// No hace nada si b está vacío.
 
 void pa(t_data *data)
 {
+	int i;
 	if (data->b.top >= 0)
 	{
-		push(data->a.stack, &data->a.top, data->b.stack[0], data->size);
+		if (data->a.top >= 0)
+		{
+			data->a.top++;
+			i = data->a.top - 1;
+			while (i >= 0)
+			{
+				swap(&data->a.stack[i], &data->a.stack[i + 1]);
+				i--;
+			}
+			swap(&data->b.stack[0], &data->a.stack[0]);
+		}
+		else
+			push(data->a.stack, &data->a.top, data->b.stack[0], data->size);
 		rb(data);
 		data->b.top--;
 	}
 }
 
-// toma el primer elemento del stack a y lo pone encima del stack b.
-// No hace nada si a está vacío.
+// Toma el primer elemento del stack A y lo pone encima del stack B.
+// No hace nada si A está vacío.
+
 void pb(t_data *data)
 {
+	int i;
 	if (data->a.top >= 0)
 	{
-		push(data->b.stack, &data->b.top, data->a.stack[0], data->size);
+		if (data->b.top >= 0)
+		{
+			data->b.top++;
+			i = data->b.top - 1;
+			while (i >= 0)
+			{
+				swap(&data->b.stack[i], &data->b.stack[i + 1]);
+				i--;
+			}
+			swap(&data->a.stack[0], &data->b.stack[0]);
+		}
+		else
+			push(data->b.stack, &data->b.top, data->a.stack[0], data->size);
 		ra(data);
 		data->a.top--;
 	}
