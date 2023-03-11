@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/10 18:18:00 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/11 11:57:55 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int main(int argc, char **argv)
 
 	add_num(&data, argv);
 	ctrl_num_dupl(&data);
+	ctrl_orde(&data);
 
 	printf(RED "top_a:%d, top_b:%d\n", data.a.top, data.b.top);
 	// sa(&data);

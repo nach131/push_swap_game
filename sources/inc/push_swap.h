@@ -11,6 +11,7 @@
 #define ERROR_3 "Error: Numbers greater than integer"
 #define ERROR_4 "Error: Stack overflow"
 #define ERROR_5 "Error: Stack underflow"
+#define INFO_1 "Info: It's already sorted"
 
 // typedef struct s_ps
 // {
@@ -36,6 +37,7 @@ void add_num(t_data *data, char **n);
 void ctrl_num(int len, char **str);
 // void init_data(t_data *data, int len);
 void ctrl_num_dupl(t_data *data);
+void ctrl_orde(t_data *data);
 
 void push(int *stack, int *top, int value, int size);
 void swap(int *a, int *b);

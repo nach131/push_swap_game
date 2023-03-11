@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/09 22:25:56 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/11 12:09:02 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,25 @@ void ctrl_num_dupl(t_data *data)
 			j++;
 		}
 		i++;
+	}
+}
+
+void ctrl_orde(t_data *data)
+{
+	int i;
+	int order;
+
+	order = 1;
+	i = 0;
+	while (i < data->size - 1)
+	{
+		if (data->a.stack[i] > data->a.stack[i + 1])
+			order = 0;
+		i++;
+	}
+	if (order)
+	{
+		ft_message(INFO, INFO_1);
+		exit(1);
 	}
 }
