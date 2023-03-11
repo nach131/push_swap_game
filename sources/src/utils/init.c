@@ -6,9 +6,13 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/11 12:09:02 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:10:50 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/* ╔════════════════════════════════════════════════════════════════════════╗ */
+/* ║                 https://github.com/nach131/42Barcelona                 ║ */
+/* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "push_swap.h"
 #include <limits.h>
@@ -101,7 +105,7 @@ void ctrl_num_dupl(t_data *data)
 	}
 }
 
-void ctrl_orde(t_data *data)
+void ctrl_sorted(t_data *data)
 {
 	int i;
 	int order;

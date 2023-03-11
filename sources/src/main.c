@@ -6,11 +6,26 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/11 11:57:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/11 14:10:47 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/* ╔════════════════════════════════════════════════════════════════════════╗ */
+/* ║                 https://github.com/nach131/42Barcelona                 ║ */
+/* ╚════════════════════════════════════════════════════════════════════════╝ */
+
 #include "push_swap.h"
+
+void print_stack(t_ps stack)
+{
+	int i = 0;
+
+	while (i <= stack.top)
+	{
+		printf(YELLOW "%d :%d\n", stack.stack[i], i);
+		i++;
+	}
+}
 
 int main(int argc, char **argv)
 {
@@ -27,9 +42,13 @@ int main(int argc, char **argv)
 
 	add_num(&data, argv);
 	ctrl_num_dupl(&data);
-	ctrl_orde(&data);
+	ctrl_sorted(&data);
 
 	printf(RED "top_a:%d, top_b:%d\n", data.a.top, data.b.top);
+
+	print_stack(data.a);
+
+	selection(&data);
 	// sa(&data);
 	// sb(&data);
 	// ss(&data);
@@ -59,19 +78,13 @@ int main(int argc, char **argv)
 
 	// rrr(&data);
 
-	printf(RED "top_a:%d, top_b:%d\n", data.a.top, data.b.top);
-	int i = 0;
-	while (i <= data.a.top)
-	{
-		printf(YELLOW "A:%d_%d\n", data.a.stack[i], i);
-		i++;
-	}
-	i = 0;
-	while (i <= data.b.top)
-	{
-		printf(GREEN "B:%d\n", data.b.stack[i]);
-		i++;
-	}
+	printf(CYAN "top_a:%d, top_b:%d\n", data.a.top, data.b.top);
+
+	print_stack(data.a);
+	if (data.b.top > 0)
+		ft_printf(GREEN "----\n");
+	print_stack(data.b);
+
 	free(data.a.stack);
 	free(data.b.stack);
 }
