@@ -27,6 +27,7 @@ INCLUDES 	= inc/
 SRC_DIR 	= src/
 OBJ_DIR 	= obj/
 UTILS_DIR	= utils/
+ORDER_DIR = order/
 
 # ▖▖▖▖▖▖▖▖▖▖▖▖▖▖ BONUS ▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖#
 
@@ -40,15 +41,22 @@ LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
 UTILS_FILES	= init swap push rotate reverse selection
-SRC_MAIN_FILES	+=$(MAIN_FILES)
-SRC_UTILS_FILES	+=$(addprefix $(UTILS_DIR),$(UTILS_FILES))
+ORDER_FILES = first
 
+SRC_MAIN_FILES	+=$(MAIN_FILES)
 SRCS_MAIN = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_MAIN_FILES)))
 OBJS_MAIN = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_MAIN_FILES)))
 DEPS_MAIN = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_MAIN_FILES)))
+
+SRC_UTILS_FILES	+=$(addprefix $(UTILS_DIR),$(UTILS_FILES))
 SRCS_UTILS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_UTILS_FILES)))
 OBJS_UTILS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_UTILS_FILES)))
 DEPS_UTILS = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_UTILS_FILES)))
+
+SRC_ORDER_FILES	+=$(addprefix $(ORDER_DIR),$(ORDER_FILES))
+SRCS_ORDER = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_ORDER_FILES)))
+OBJS_ORDER = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_ORDER_FILES)))
+DEPS_ORDER = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_ORDER_FILES)))
 
 # ▖▖▖▖▖▖▖▖▖▖▖▖▖▖ BONUS ▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖#
 
@@ -87,13 +95,13 @@ all: LIBFS $(NAME)
 LIBFS:
 			@make -C $(LIBFT_DIR)
 
-$(NAME):	$(OBJS_MAIN) $(OBJS_UTILS)
+$(NAME):	$(OBJS_MAIN) $(OBJS_UTILS) $(OBJS_ORDER)
 			@$(CC) $(CFLAGS) $(LIBSFT) $^ -o $@
 			@echo "$(ORANGE) Compilando Ejecutable  ➟  $(RED)$@ $(WHITE)"
 
-$(NAME_BONUS):	$(OBJS_MAIN_BONUS) $(OBJS_UTILS_BONUS)
-			@$(CC) $(CFLAGS)  $(LIBSFT) $^ -o $@
-			@echo "$(ORANGE) Compilando Ejecutable  ➟  $(RED)$@ $(WHITE)"
+# $(NAME_BONUS):	$(OBJS_MAIN_BONUS) $(OBJS_UTILS_BONUS)
+# 			@$(CC) $(CFLAGS)  $(LIBSFT) $^ -o $@
+# 			@echo "$(ORANGE) Compilando Ejecutable  ➟  $(RED)$@ $(WHITE)"
 
 clean :
 			@make fclean -s -C $(LIBFT_DIR)
@@ -109,14 +117,15 @@ fclean : clean
 re: fclean all
 			@echo "$(YELLOW) Borrado todo y recompilado...✌🏼$(WHITE)"
 
-reb: fclean bonus
-			@echo "$(YELLOW) Borrado todo y recompilado...✌🏼$(WHITE)"
+# reb: fclean bonus
+# 			@echo "$(YELLOW) Borrado todo y recompilado...✌🏼$(WHITE)"
 
 norm:
-			@norminette $(SRCS_MAIN) $(SRCS_UTILS) $(INCLUDES) | grep -v Norme -B1 || true
+# @norminette $(SRCS_MAIN) $(SRCS_UTILS) $(INCLUDES) | grep -v Norme -B1 || true
+			@norminette $(SRC_DIR) | grep -v Norme -B1 || true
 
-norm_bonus:
-			@norminette $(SRCS_MAIN_BONUS) $(SRCS_UTILS_BONUS) $(INCLUDES) | grep -v Norme -B1 || true
+# norm_bonus:
+# 			@norminette $(SRCS_MAIN_BONUS) $(SRCS_UTILS_BONUS) $(INCLUDES) | grep -v Norme -B1 || true
 
 -include $(DEPS)
 

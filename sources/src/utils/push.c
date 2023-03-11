@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/10 14:06:44 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:41:51 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ void pa(t_data *data)
 		rb(data);
 		data->b.top--;
 	}
+	ft_printf(YELLOW "pa\n");
 }
 
 // Toma el primer elemento del stack A y lo pone encima del stack B.
@@ -92,4 +93,5 @@ void pb(t_data *data)
 		ra(data);
 		data->a.top--;
 	}
+	ft_printf(YELLOW "pb\n");
 }

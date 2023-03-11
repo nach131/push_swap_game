@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/11 13:54:17 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/11 22:02:09 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,8 @@ void selection(t_data *data)
 {
 	if (data->size == 2)
 		sa(data);
+	else if (data->size == 3)
+		order_three(data);
+	else if (data->size > 3 && data->size <= 5)
+		ft_printf(BGRED "mas de 2 menos de 5\n");
 }
