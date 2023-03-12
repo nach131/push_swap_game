@@ -139,6 +139,9 @@ B-->B1a[82,9]-->B2a[82]-->B3
 B1a-->B2b[9]-->B3[9,82]-->B4
 B-->B1b[10]-->B4[9,10,82]-->fin[3,9,10,27,38,43,82]
 ```
+
+<br><br/>
+
 **Complejidad del tiempo:**
 
 $$T(n) = 2T(n/2) + Θ(n)$$
@@ -146,16 +149,6 @@ $$T(n) = 2T(n/2) + Θ(n)$$
 La recurrencia anterior se puede resolver utilizando el método de árbol de recurrencia o el método maestro. Cae en el caso II del Método Maestro y la solución de la recurrencia es $Θ(nLogn)$.
 
 La complejidad de tiempo de Merge Sort es $Θ(nLogn)$ en los 3 casos (peor, promedio y mejor) ya que merge sort siempre divide la matriz en dos mitades y toma un tiempo lineal para fusionar dos mitades.
-
-## Salida error
-
-La salida de error estándar `(stderr)` normalmente se muestra en la consola junto con la salida estándar `(stdout)`, a menos que se redirija a otro lugar como un archivo o una tubería. Por lo tanto, si un programa escribe en stderr y se ejecuta desde la consola, la salida de error debería ser visible en la consola.
-
-Para redirigir la salida de error a un archivo.
-
-```c
-./push_swap 42 84 2> error.txt
-```
 
 ## Quick Sort (Ordenado "rapida")
 
@@ -183,6 +176,8 @@ graph TD;
   K --> fin
   ```
 
+<br><br/>
+
 **Complejidad del tiempo:**
 
 $$T(n) = T(k) + T(n-k-1) + Θ(n)$$
@@ -193,6 +188,15 @@ La fórmula indica que el tiempo de ejecución de QuickSort depende del tiempo d
 
 El mejor caso para QuickSort es cuando el stack está pre-ordenada o cuando todos los elementos son iguales, en cuyo caso la complejidad de tiempo es de $O(n log n)$. El peor caso es cuando la lista está ordenada en orden inverso, en cuyo caso la complejidad de tiempo es de $O(n^2)$. En el caso promedio, QuickSort tiene una complejidad de tiempo de $O(n log n)$.
 
+## Salida error
+
+La salida de error estándar `(stderr)` normalmente se muestra en la consola junto con la salida estándar `(stdout)`, a menos que se redirija a otro lugar como un archivo o una tubería. Por lo tanto, si un programa escribe en stderr y se ejecuta desde la consola, la salida de error debería ser visible en la consola.
+
+Para redirigir la salida de error a un archivo.
+
+```c
+./push_swap 42 84 2> error.txt
+```
 
 brew install coreutils
 	export NUMEROS=$(jot -n 10 1 1000 | tr '\n' ' ')
