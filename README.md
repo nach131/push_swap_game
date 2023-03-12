@@ -123,6 +123,8 @@ Desplaza hacia abajo todos los elementos del ```stack A``` una posición y desp
 
 ## Merge Sort (Ordenado por fusión)
 
+[código](https://github.com/nach131/push_swap/blob/Two-Struct/funciones/merge_sort/libro_nach.c)
+
 Merge Sort es un algoritmo de divide y vencerás. Divide el stack de entrada de longitud n por la mitad sucesivamente hasta que haya n stack de tamaño 1. Luego, los pares de stack se fusionan con el primer elemento más pequeño entre el par de stack que se agregan en cada paso. A través de la fusión sucesiva y la comparación de los primeros elementos, se construye el stack ordenado.
 
 ```mermaid
@@ -151,8 +153,6 @@ La recurrencia anterior se puede resolver utilizando el método de árbol de rec
 La complejidad de tiempo de Merge Sort es $Θ(nLogn)$ en los 3 casos (peor, promedio y mejor) ya que merge sort siempre divide la matriz en dos mitades y toma un tiempo lineal para fusionar dos mitades.
 
 ## Quick Sort (Ordenado "rapida")
-
-[código](https://github.com/nach131/push_swap/blob/Two-Struct/funciones/merge_sort/libro_nach.c)
 
 ```mermaid
 graph TD;
