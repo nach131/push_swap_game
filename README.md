@@ -152,6 +152,8 @@ La complejidad de tiempo de Merge Sort es $Θ(nLogn)$ en los 3 casos (peor, prom
 
 ## Quick Sort (Ordenado "rapida")
 
+[código](https://github.com/nach131/push_swap/blob/Two-Struct/funciones/merge_sort/libro_nach.c)
+
 ```mermaid
 graph TD;
   A(38, 27, 43, 3, 82, 10, 9)
