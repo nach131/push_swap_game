@@ -37,7 +37,7 @@ void quickSort(int arr[], int low, int high)
 
 int main()
 {
-	int stack1[] = {10, 7, 8, 9, 1, 5};
+	int stack1[] = {4, 7, 9, 6, 3, 5, 10, 1, 2, 8};
 	int stack2[] = {3, 2, 4, 6, 0, 12};
 
 	int n = sizeof(stack1) / sizeof(stack1[0]);

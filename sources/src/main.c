@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/11 23:22:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/12 21:12:39 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ int main(int argc, char **argv)
 
 	selection(&data);
 
+	write(1, "----\n", 5);
 	print_stack(data.a);
+
 	if (data.b.top > 0)
 		ft_printf(GREEN "----\n");
 	print_stack(data.b);

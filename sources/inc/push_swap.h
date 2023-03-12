@@ -56,5 +56,6 @@ void rrb(t_data *data);
 void rrr(t_data *data);
 
 void order_three(t_data *data);
+void quickSort(int arr[], int low, int high);
 
 #endif

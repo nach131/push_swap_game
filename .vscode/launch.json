@@ -14,6 +14,17 @@
 			"args": ["42", "84","5","42"],
 			"stopOnEntry": false,
 			"cwd": "${fileDirname}"
+		},
+		{
+			"type": "lldb",
+			"request": "launch",
+			"name": "a.out",
+			// "program": "${fileDirname}/${fileBasenameNoExtension}.out",
+			"program": "${fileDirname}/a.out",
+			// "args": ["4", "7", "9", "6", "3", "5", "10", "1", "2", "8"],
+			"args": ["4", "7", "6", "3", "5", "1", "2"],
+			"stopOnEntry": false,
+			"cwd": "${fileDirname}"
 		}
 	]
 }

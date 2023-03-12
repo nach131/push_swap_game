@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 20:15:36 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/12 20:17:41 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/12 21:40:38 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ int main(int n, char **str)
 
 	// int n = sizeof(stack1) / sizeof(stack1[0]);
 
-	quickSort(stack, 0, n - 1);
+	quickSort(stack, 0, n - 2);
 
 	// printf("Original : ");
 	// print_arr(stack, n - 1);
