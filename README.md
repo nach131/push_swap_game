@@ -141,7 +141,7 @@ B-->B1b[10]-->B4[9,10,82]-->fin[3,9,10,27,38,43,82]
 ```
 **Complejidad del tiempo:**
 
-$$T(n)       = 2T(n/2)       + Θ(n)$$
+$$T(n) = 2T(n/2) + Θ(n)$$
 
 La recurrencia anterior se puede resolver utilizando el método de árbol de recurrencia o el método maestro. Cae en el caso II del Método Maestro y la solución de la recurrencia es $Θ(nLogn)$.
 
@@ -156,6 +156,42 @@ Para redirigir la salida de error a un archivo.
 ```c
 ./push_swap 42 84 2> error.txt
 ```
+
+## Quick Sort (Ordenado "rapida")
+
+```mermaid
+graph TD;
+  A(38, 27, 43, 3, 82, 10, 9)
+  A --> B(9, 3)
+  A --> C(27, 10)
+  A --> D(82, 43)
+  B --> B1(3)
+  B --> B2(9)
+  D --> D1(43)
+  D --> D2(82)
+  C --> C1(10)
+  C --> C2(27)
+  B1 --> E(3, 9)
+  D1 --> F(43, 82)
+  C1 --> G(10, 27)
+  E --> H(3, 9, 27)
+  H --> I(3, 9, 10, 27)
+  F --> J(3, 9, 10, 27, 43, 82)
+  G --> K(3, 9, 10, 27, 43, 82)
+  I --> fin(3, 9, 10, 27, 43, 82)
+  J --> fin
+  K --> fin
+  ```
+
+**Complejidad del tiempo:**
+
+$$T(n) = T(k) + T(n-k-1) + Θ(n)$$
+
+Donde ```n``` es el tamaño de la lista a ordenar, ```k``` es la posición del pivote (el elemento elegido para dividir la stack en dos sub-stacks) después de la partición y $Θ(n)$ es el tiempo de procesamiento necesario para dividir el stack en dos sub-stack.
+
+La fórmula indica que el tiempo de ejecución de QuickSort depende del tiempo de ejecución de los dos sub-stacks creados después de la partición, así como del tiempo necesario para dividir la lista original.
+
+El mejor caso para QuickSort es cuando el stack está pre-ordenada o cuando todos los elementos son iguales, en cuyo caso la complejidad de tiempo es de $O(n log n)$. El peor caso es cuando la lista está ordenada en orden inverso, en cuyo caso la complejidad de tiempo es de $O(n^2)$. En el caso promedio, QuickSort tiene una complejidad de tiempo de $O(n log n)$.
 
 
 brew install coreutils
