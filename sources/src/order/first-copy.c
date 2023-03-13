@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   selection.c                                        :+:      :+:    :+:   */
+/*   first.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/13 15:33:00 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/11 14:52:01 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/13 12:06:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,36 @@
 
 #include "push_swap.h"
 
-void sort_stack(t_data *data)
+int partition(int arr[], int low, int high)
 {
-	int size = data->size;
+	int pivot;
+	int i;
+	int j;
 
-	// Ordenar la pila B
-	quickSort(data, 0, size - 1);
-
-	// Mover los elementos de la pila B a la pila A
-	while (data->b.top >= 0)
-		pa(data);
-
-	// Ordenar la pila A
-	quickSort(data, 0, size - 1);
+	pivot = arr[high];
+	i = (low - 1);
+	j = low;
+	while (j <= high)
+	{
+		if (arr[j] < pivot)
+		{
+			i++;
+			swap(&arr[i], &arr[j]);
+		}
+		j++;
+	}
+	swap(&arr[i + 1], &arr[high]);
+	return (i + 1);
 }
 
-void selection(t_data *data)
+void quickSort(int arr[], int low, int high)
 {
-	if (data->size == 2)
-		sa(data);
-	else if (data->size == 3)
-		sort_three(data);
-	else if (data->size > 3 && data->size <= 5)
-		sort_five(data);
-	else
-		sort_five(data);
-	// quickSort(data->a.stack, 0, data->size - 1);
-	// quickSort(data, 0, data->size - 1);
-	// sort_stack(data);
+	if (low < high)
+	{
+		int pi;
+
+		pi = partition(arr, low, high);
+		quickSort(arr, low, pi - 1);
+		quickSort(arr, pi + 1, high);
+	}
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   selection.c                                        :+:      :+:    :+:   */
+/*   three_items.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/13 15:33:00 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/13 15:35:05 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,55 @@
 
 #include "push_swap.h"
 
-void sort_stack(t_data *data)
+void sort_three(t_data *data)
 {
-	int size = data->size;
+	int one;
+	int two;
+	int three;
 
-	// Ordenar la pila B
-	quickSort(data, 0, size - 1);
+	one = data->a.stack[0];
+	two = data->a.stack[1];
+	three = data->a.stack[2];
 
-	// Mover los elementos de la pila B a la pila A
-	while (data->b.top >= 0)
-		pa(data);
-
-	// Ordenar la pila A
-	quickSort(data, 0, size - 1);
+	if (one > two && two < three)
+	{
+		sa(data);
+		rra(data);
+	}
+	else if (one > two && one < three)
+		sa(data);
+	else if (one < two && one > three)
+		rra(data);
+	else if (one < two && two > three)
+	{
+		sa(data);
+		ra(data);
+	}
+	else if (one > two && one > three)
+		rra(data);
 }
 
-void selection(t_data *data)
+// ORDENA TODOS EN EL A
+void sort_five(t_data *data)
 {
-	if (data->size == 2)
-		sa(data);
-	else if (data->size == 3)
-		sort_three(data);
-	else if (data->size > 3 && data->size <= 5)
-		sort_five(data);
-	else
-		sort_five(data);
-	// quickSort(data->a.stack, 0, data->size - 1);
-	// quickSort(data, 0, data->size - 1);
-	// sort_stack(data);
+	int i = 0;
+	int lap = 0;
+
+	while (lap < data->size)
+	{
+		while (i < data->size - 1)
+		{
+			if (data->a.stack[i] > data->a.stack[i + 1])
+				swap(&data->a.stack[i], &data->a.stack[i + 1]);
+			i++;
+		}
+		i = 0;
+		lap++;
+	}
+	i = 0;
+	while (i < data->size)
+	{
+		printf(GREEN "%d :%d\n", data->a.stack[i], i);
+		i++;
+	}
 }

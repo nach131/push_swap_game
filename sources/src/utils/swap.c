@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:46:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/12 21:47:40 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/13 00:51:27 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void swap(int *a, int *b)
 	int t = *a;
 	*a = *b;
 	*b = t;
+	ft_printf(GREEN "sa\n");
 }
 
 // intercambia los dos primeros elementos encima del stack a

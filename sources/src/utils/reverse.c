@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/11 22:40:41 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/13 10:37:49 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void rra(t_data *data)
 
 	int last;
 	i = data->a.top - 1;
-	ft_printf(MAGENTA "%d\n", data->a.top);
 	if (data->a.top > 0)
 	{
 		last = data->a.stack[data->a.top];
@@ -39,7 +38,7 @@ void rra(t_data *data)
 	ft_printf(RED "rra\n");
 }
 
-// desplaza hacia abajo todos los elementos del stack B una posición,
+// Desplaza hacia abajo todos los elementos del stack B una posición,
 // de forma que el último elemento se convierte en el primero.
 
 void rrb(t_data *data)
