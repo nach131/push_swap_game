@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/13 12:07:31 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/14 14:39:44 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,16 +44,17 @@ int main(int argc, char **argv)
 	ctrl_num_dupl(&data);
 	ctrl_sorted(&data);
 
-	print_stack(data.a);
+	// print_stack(data.a);
 
 	selection(&data);
 
 	write(1, "----\n", 5);
 	print_stack(data.a);
 
-	// if (data.b.top > 0)
-	// 	ft_printf(GREEN "----\n");
-	// print_stack(data.b);
+	if (data.b.top > 0)
+		ft_printf(GREEN "----\n");
+	print_stack(data.b);
+	ft_printf(ORANGE "%d\n", data.count);
 
 	free(data.a.stack);
 	free(data.b.stack);

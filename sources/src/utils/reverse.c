@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/13 10:37:49 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/14 12:00:34 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void rra(t_data *data)
 		}
 		swap(&last, &data->a.stack[0]);
 	}
+	data->count++;
 	ft_printf(RED "rra\n");
 }
 
@@ -47,7 +48,6 @@ void rrb(t_data *data)
 
 	int last;
 	i = data->b.top - 1;
-	ft_printf(MAGENTA "%d\n", data->b.top);
 	if (data->b.top > 0)
 	{
 		last = data->b.stack[data->b.top];
@@ -58,6 +58,7 @@ void rrb(t_data *data)
 		}
 		swap(&last, &data->b.stack[0]);
 	}
+	data->count++;
 	ft_printf(RED "rrb\n");
 }
 

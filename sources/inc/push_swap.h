@@ -29,6 +29,7 @@ typedef struct s_ps
 typedef struct s_data
 {
 	int size;
+	int count;
 	t_ps a;
 	t_ps b;
 } t_data;
@@ -59,6 +60,8 @@ void sort_three(t_data *data);
 void sort_five(t_data *data);
 
 void quickSort(t_data *data, int low, int high);
+
+void sort_big(t_data *data);
 
 // void quickSort(int arr[], int low, int high);
 
