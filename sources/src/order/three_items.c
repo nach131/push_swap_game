@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/14 14:42:24 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/15 14:06:23 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,7 @@ void sort_three(t_data *data)
 	three = data->a.stack[2];
 
 	if (one > two && two < three)
-	{
 		sa(data);
-		rra(data);
-	}
 	else if (one > two && one < three)
 		sa(data);
 	else if (one < two && one > three)
@@ -41,7 +38,10 @@ void sort_three(t_data *data)
 		ra(data);
 	}
 	else if (one > two && one > three)
+	{
+		sa(data);
 		rra(data);
+	}
 }
 
 // // ORDENA TODOS EN EL A
@@ -96,7 +96,7 @@ void sort_five(t_data *data)
 		// 	if (data->b.top > 0 && data->b.stack[0] < data->b.stack[1])
 		// 		sb(data);
 		// 	pa(data);
-		// }
+		// }c
 	}
 
 	// // Step 5

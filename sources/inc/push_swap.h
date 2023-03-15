@@ -32,6 +32,7 @@ typedef struct s_data
 	int count;
 	t_ps a;
 	t_ps b;
+	t_ps tp;
 } t_data;
 
 void add_num(t_data *data, char **n);
@@ -63,6 +64,8 @@ void quickSort(t_data *data, int low, int high);
 
 void sort_big(t_data *data);
 
+void init_data(t_data *data, int len);
+//
 // void quickSort(int arr[], int low, int high);
 
 #endif

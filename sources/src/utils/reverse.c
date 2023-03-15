@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/14 12:00:34 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:33:47 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void rra(t_data *data)
 		swap(&last, &data->a.stack[0]);
 	}
 	data->count++;
-	ft_printf(RED "rra\n");
+	ft_printf("rra\n");
 }
 
 // Desplaza hacia abajo todos los elementos del stack B una posición,
@@ -59,7 +59,7 @@ void rrb(t_data *data)
 		swap(&last, &data->b.stack[0]);
 	}
 	data->count++;
-	ft_printf(RED "rrb\n");
+	ft_printf("rrb\n");
 }
 
 void rrr(t_data *data)

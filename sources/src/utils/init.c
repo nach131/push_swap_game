@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/11 14:10:50 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/15 16:32:50 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ void static ctrl_int(const char *str)
 }
 
 // SIGMENTACION FALL
-// void init_data(t_data *data, int len)
-// {
-// 	t_ps a;
-// 	t_ps b;
+void init_data(t_data *data, int len)
+{
+	t_ps *a;
+	t_ps *b;
 
-// 	a = data->a;
-// 	b = data->b;
-// 	ft_bzero(&data, sizeof(t_data));
-// 	a.stack = ft_calloc(len, sizeof(int));
-// 	b.stack = ft_calloc(len, sizeof(int));
-// 	data->len = len - 1;
-// 	data->a.top = -1;
-// 	data->b.top = -1;
-// }
+	a = &data->a;
+	b = &data->b;
+	ft_bzero(data, sizeof(t_data));
+	a->stack = ft_calloc(len, sizeof(int));
+	b->stack = ft_calloc(len, sizeof(int));
+	data->size = len;
+	data->a.top = -1;
+	data->b.top = -1;
+}
 
 void ctrl_num(int size, char **str)
 {
@@ -77,7 +77,6 @@ void add_num(t_data *data, char **n)
 		ctrl_int(n[i]);
 		push(data->a.stack, &data->a.top, ft_atoi(n[i]), data->size);
 		// push(data->b.stack, &data->b.top, ft_atoi(n[i]), data->size);
-
 		i++;
 	}
 }

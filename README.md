@@ -208,3 +208,6 @@ Para redirigir la salida de error a un archivo.
 
 	export NUMEROS=$(shuf -i 100-500 -n 10 | tr '\n' ' ')
 
+/push_swap $ARG | wc -l
+
+./push_swap `ruby -e "puts (1..100).to_a.shuffle.join(' ')"`
