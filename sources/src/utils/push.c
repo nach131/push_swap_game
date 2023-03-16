@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 21:28:12 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 23:00:35 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ t_num push_num(int num, int *top)
 	*top = *top + 1;
 	return (res);
 }
+
 // NO LO USO
 
 // int pop(t_ps *stack, int *top)
@@ -53,7 +54,7 @@ t_num push_num(int num, int *top)
 // 	return value;
 // }
 
-//  Toma el primer elemento del stack b y lo pone encima del stack a.
+//  Pasa el primer elemento del stack b y lo pone encima del stack a.
 // No hace nada si b está vacío.
 
 // void pa(t_data *data)
@@ -67,12 +68,13 @@ t_num push_num(int num, int *top)
 // 			i = data->a.top - 1;
 // 			while (i >= 0)
 // 			{
-// 				swap(&data->a.stack[i], &data->a.stack[i + 1]);
+// 				swap_t(&data->a.stack[i], &data->a.stack[i + 1]);
 // 				i--;
 // 			}
-// 			swap(&data->b.stack[0], &data->a.stack[0]);
+// 			swap_t(&data->b.stack[0], &data->a.stack[0]);
 // 		}
 // 		else
+
 // 			push(data->a.stack, &data->a.top, data->b.stack[0], data->size);
 // 		rb(data);
 // 		data->b.top--;
