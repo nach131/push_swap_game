@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 23:06:33 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 00:37:24 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,13 @@
 
 void print_stack(t_ps stack)
 {
-	int i = 0;
+	int i = stack.top;
 
-	while (i <= stack.top)
+	while (i >= 0)
 	{
 		printf(YELLOW "%d:%d, tb:%d\n", stack.stack[i].num, i, stack.stack[i].index);
-		i++;
+		// printf(YELLOW "%d , tb:%d\n", stack.stack[i].num, stack.stack[i].index);
+		i--;
 	}
 }
 
@@ -51,9 +52,13 @@ int main(int argc, char **argv)
 	quickSort(data.tp, 0, data.size - 1);
 	index_stack(data.tp, data.a.stack, argc - 1);
 
-	print_tp(&data);
-	rb(&data);
-	rr(&data);
+	// print_tp(&data);
+	// sa(&data);
+	// pa(&data);
+	// pa(&data);
+	// pa(&data);
+	// ra(&data);
+	// pb(&data);
 
 	print_stack(data.a);
 
@@ -62,7 +67,7 @@ int main(int argc, char **argv)
 	// write(1, "----\n", 5);
 	// print_stack(data.a);
 
-	if (data.b.top > 0)
+	if (data.b.top >= 0)
 		ft_printf(GREEN "--B--\n");
 	print_stack(data.b);
 

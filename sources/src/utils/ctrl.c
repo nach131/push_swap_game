@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:37:03 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 19:04:57 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 00:42:56 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void ctrl_sorted(t_data *data)
 	i = 0;
 	while (i < data->size - 1)
 	{
-		if (data->tp[i] > data->tp[i + 1])
+		if (data->tp[i] < data->tp[i + 1])
 			order = 0;
 		i++;
 	}
