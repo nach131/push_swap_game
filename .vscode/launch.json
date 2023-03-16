@@ -22,7 +22,7 @@
 			// "program": "${fileDirname}/${fileBasenameNoExtension}.out",
 			"program": "${fileDirname}/a.out",
 			// "args": ["4", "7", "9", "6", "3", "5", "10", "1", "2", "8"],
-			"args": ["4", "7", "6", "3", "5", "1", "2"],
+			"args": ["4", "7", "6"],
 			"stopOnEntry": false,
 			"cwd": "${fileDirname}"
 		}

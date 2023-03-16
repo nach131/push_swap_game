@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/15 16:33:41 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 12:47:49 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,17 @@ void push(int *stack, int *top, int value, int size)
 	*top = *top + 1;
 	stack[*top] = value;
 }
+
+// void push_a(t_ps stack, int *top, int value)
+// {
+// 	t_num tp_num;
+
+// 	tp_num.num = value;
+// 	tp_num.index = -1;
+
+// 	*top = *top + 1;
+// 	stack.stack[*top] = &tp_num;
+// }
 
 int pop(t_ps *stack, int *top)
 {
@@ -66,7 +77,6 @@ void pa(t_data *data)
 		rb(data);
 		data->b.top--;
 	}
-	data->count++;
 	ft_printf("pa\n");
 }
 
@@ -94,6 +104,5 @@ void pb(t_data *data)
 		ra(data);
 		data->a.top--;
 	}
-	data->count++;
 	ft_printf("pb\n");
 }

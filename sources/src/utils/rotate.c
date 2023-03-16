@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/15 16:33:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 10:28:50 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ void ra(t_data *data)
 		}
 		swap(&first, &data->a.stack[data->a.top]);
 	}
-	data->count++;
 	ft_printf("ra\n");
 }
 
@@ -58,7 +57,6 @@ void rb(t_data *data)
 		}
 		swap(&first, &data->b.stack[data->b.top]);
 	}
-	data->count++;
 	ft_printf("rb\n");
 }
 
