@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ctrl.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 18:45:15 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/16 13:37:03 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/16 13:39:38 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,51 +16,73 @@
 
 #include "push_swap.h"
 
-void print_stack(t_ps stack)
+// OK UPGRADE
+void ctrl_num(int size, char **str)
 {
-	int i = 0;
+	int i;
+	int j;
 
-	while (i <= stack.top)
+	i = 1;
+	while (i <= size)
 	{
-		printf(YELLOW "%d :%d, tb:%d\n", stack.stack[i].num, i, stack.stack[i].index);
+		j = 0;
+		if (str[i][j] == '-' || str[i][j] == '+')
+			j++;
+		while (str[i][j])
+		{
+			if (ft_isdigit(str[i][j]) == 0)
+			{
+				ft_message(DANGER, ERROR_1);
+				exit(1);
+			}
+			j++;
+		}
 		i++;
 	}
 }
 
-void print_tp(t_data *data)
+// OK UPGRADE
+void ctrl_num_dupl(t_data *data)
 {
-	int i = 0;
+	int i;
+	int j;
 
+	i = 0;
 	while (i < data->size)
 	{
-		printf(ORANGE "%d :%d\n", data->tp[i], i);
+		j = 0;
+		while (j < data->size)
+		{
+			if (i != j)
+				// if (data->a.stack[i] == data->a.stack[j])
+				if (data->tp[i] == data->tp[j])
+				{
+					ft_message(DANGER, ERROR_2);
+					exit(1);
+				}
+			j++;
+		}
 		i++;
 	}
 }
 
-int main(int argc, char **argv)
+// OK UPGRADE
+void ctrl_sorted(t_data *data)
 {
-	t_data data;
+	int i;
+	int order;
 
-	ctrl_num(argc - 1, argv);
-	init_data(&data, argc);
-
-	add_num(&data, argv - 1);
-	ctrl_num_dupl(&data);
-	ctrl_sorted(&data);
-
-	print_tp(&data);
-	print_stack(data.a);
-
-	// selection(&data);
-
-	// write(1, "----\n", 5);
-	// print_stack(data.a);
-
-	// if (data.b.top > 0)
-	// 	ft_printf(GREEN "----\n");
-	// print_stack(data.b);
-
-	free(data.a.stack);
-	free(data.b.stack);
+	order = 1;
+	i = 0;
+	while (i < data->size - 1)
+	{
+		if (data->tp[i] > data->tp[i + 1])
+			order = 0;
+		i++;
+	}
+	if (order)
+	{
+		ft_message(INFO, INFO_1);
+		exit(1);
+	}
 }

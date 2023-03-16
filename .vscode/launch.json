@@ -11,7 +11,7 @@
 			// "program": "${fileDirname}/${fileBasenameNoExtension}.out",
 			"program": "${workspaceFolder}/sources/push_swap",
 			// "args": ["42", "84","5","42"],
-			"args": ["42", "84","5","42"],
+			"args": ["3","2","1"],
 			"stopOnEntry": false,
 			"cwd": "${fileDirname}"
 		},

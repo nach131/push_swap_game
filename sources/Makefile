@@ -40,8 +40,8 @@ ORDER_DIR = order/
 LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
-UTILS_FILES	= init swap push rotate reverse selection
-ORDER_FILES = first three_items
+UTILS_FILES	= init ctrl push
+ORDER_FILES =  
 
 SRC_MAIN_FILES	+=$(MAIN_FILES)
 SRCS_MAIN = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_MAIN_FILES)))
