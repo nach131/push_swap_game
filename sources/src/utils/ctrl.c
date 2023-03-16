@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:37:03 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 13:39:38 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:04:57 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void ctrl_num_dupl(t_data *data)
 		while (j < data->size)
 		{
 			if (i != j)
-				// if (data->a.stack[i] == data->a.stack[j])
 				if (data->tp[i] == data->tp[j])
 				{
 					ft_message(DANGER, ERROR_2);

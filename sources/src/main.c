@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 18:52:45 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:12:20 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int main(int argc, char **argv)
 	add_num(&data, argv);
 	ctrl_num_dupl(&data);
 	ctrl_sorted(&data);
+	sort_tp(&data);
 
 	print_tp(&data);
 	print_stack(data.a);

@@ -40,8 +40,8 @@ ORDER_DIR = order/
 LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
-UTILS_FILES	= init ctrl push
-ORDER_FILES =  
+UTILS_FILES	= init ctrl push swap
+ORDER_FILES = quick_sort
 
 SRC_MAIN_FILES	+=$(MAIN_FILES)
 SRCS_MAIN = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_MAIN_FILES)))

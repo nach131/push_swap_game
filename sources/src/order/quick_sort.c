@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   first.c                                            :+:      :+:    :+:   */
+/*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:52:01 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/13 12:06:11 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:16:51 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "push_swap.h"
 
-int partition(int arr[], int low, int high)
+int static partition(int arr[], int low, int high)
 {
 	int pivot;
 	int i;

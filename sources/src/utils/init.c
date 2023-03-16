@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 18:45:17 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 19:16:23 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,25 +25,6 @@ void static ctrl_int(const char *str)
 		exit(1);
 	}
 }
-
-// void init_data(t_data *data, int size)
-// {
-// 	// t_ps *a;
-// 	// t_ps *b;
-
-// 	// a = &data->a;
-// 	// b = &data->b;
-
-// 	ft_bzero(data, sizeof(t_data));
-// 	data->tp = ft_calloc(size, sizeof(int));
-
-// 	// a->stack = ft_calloc(size, sizeof(int));
-// 	// b->stack = ft_calloc(size, sizeof(int));
-
-// 	data->size = size;
-// 	data->a.top = -1;
-// 	data->b.top = -1;
-// }
 
 void init_data(t_data *data, int size)
 {
@@ -70,4 +51,9 @@ void add_num(t_data *data, char **n)
 		data->a.stack[i - 1] = push_num(ft_atoi(n[i]), &data->a.top);
 		i++;
 	}
+}
+
+void sort_tp(t_data *data)
+{
+	(void)data;
 }
