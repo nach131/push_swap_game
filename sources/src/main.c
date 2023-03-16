@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 20:24:48 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 21:45:35 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,10 @@ int main(int argc, char **argv)
 	index_stack(data.tp, data.a.stack, argc - 1);
 
 	print_tp(&data);
+	sa(&data);
+	sb(&data);
+	ss(&data);
+
 	print_stack(data.a);
 
 	// selection(&data);
@@ -59,9 +63,9 @@ int main(int argc, char **argv)
 	// write(1, "----\n", 5);
 	// print_stack(data.a);
 
-	// if (data.b.top > 0)
-	// 	ft_printf(GREEN "----\n");
-	// print_stack(data.b);
+	if (data.b.top > 0)
+		ft_printf(GREEN "----\n");
+	print_stack(data.b);
 
 	free(data.a.stack);
 	free(data.b.stack);

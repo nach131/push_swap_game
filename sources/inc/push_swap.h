@@ -49,9 +49,11 @@ void index_stack(int *tp, t_num *stack, int size);
 t_num push_num(int num, int *top);
 
 void swap(int *a, int *b);
-// void sa(t_data *data);
-// void sb(t_data *data);
-// void ss(t_data *data);
+void swap_t(t_num *a, t_num *b);
+
+void sa(t_data *data);
+void sb(t_data *data);
+void ss(t_data *data);
 // void pa(t_data *data);
 // void pb(t_data *data);
 // void ra(t_data *data);
