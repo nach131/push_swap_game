@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 19:16:23 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 20:22:56 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,21 @@ void add_num(t_data *data, char **n)
 	}
 }
 
-void sort_tp(t_data *data)
+void index_stack(int *tp, t_num *stack, int size)
 {
-	(void)data;
+	int i;
+	int j;
+
+	i = 0;
+	while (i < size)
+	{
+		j = 0;
+		while (j < size)
+		{
+			if (tp[i] == stack[j].num)
+				stack[j].index = i;
+			j++;
+		}
+		i++;
+	}
 }

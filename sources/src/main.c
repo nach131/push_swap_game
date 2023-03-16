@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 19:12:20 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/16 20:24:48 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void print_stack(t_ps stack)
 
 	while (i <= stack.top)
 	{
-		printf(YELLOW "%d :%d, tb:%d\n", stack.stack[i].num, i, stack.stack[i].index);
+		printf(YELLOW "%d:%d, tb:%d\n", stack.stack[i].num, i, stack.stack[i].index);
 		i++;
 	}
 }
@@ -48,7 +48,8 @@ int main(int argc, char **argv)
 	add_num(&data, argv);
 	ctrl_num_dupl(&data);
 	ctrl_sorted(&data);
-	sort_tp(&data);
+	quickSort(data.tp, 0, data.size - 1);
+	index_stack(data.tp, data.a.stack, argc - 1);
 
 	print_tp(&data);
 	print_stack(data.a);
@@ -64,4 +65,5 @@ int main(int argc, char **argv)
 
 	free(data.a.stack);
 	free(data.b.stack);
+	free(data.tp);
 }

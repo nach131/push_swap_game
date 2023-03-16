@@ -39,7 +39,8 @@ void add_num(t_data *data, char **n);
 void ctrl_num(int len, char **str);
 void ctrl_num_dupl(t_data *data);
 void ctrl_sorted(t_data *data);
-void sort_tp(t_data *data);
+
+void index_stack(int *tp, t_num *stack, int size);
 
 // void selection(t_data *data);
 
