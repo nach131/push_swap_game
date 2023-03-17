@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 00:37:24 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:40:19 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@ void print_stack(t_ps stack)
 
 	while (i >= 0)
 	{
-		printf(YELLOW "%d:%d, tb:%d\n", stack.stack[i].num, i, stack.stack[i].index);
-		// printf(YELLOW "%d , tb:%d\n", stack.stack[i].num, stack.stack[i].index);
+		// printf(YELLOW "%d:%d, tb:%d\n", stack.stack[i].num, i, stack.stack[i].index);
+		printf(YELLOW "%d, tb:%d\n", stack.stack[i].num, stack.stack[i].index);
 		i--;
 	}
 }
 
 void print_tp(t_data *data)
 {
-	int i = 0;
+	int i = data->size - 1;
 
-	while (i < data->size)
+	while (i >= 0)
 	{
 		printf(ORANGE "%d :%d\n", data->tp[i], i);
-		i++;
+		i--;
 	}
 }
 
@@ -52,8 +52,10 @@ int main(int argc, char **argv)
 	quickSort(data.tp, 0, data.size - 1);
 	index_stack(data.tp, data.a.stack, argc - 1);
 
-	// print_tp(&data);
-	// sa(&data);
+	print_tp(&data);
+	sa(&data);
+	sb(&data);
+	ss(&data);
 	// pa(&data);
 	// pa(&data);
 	// pa(&data);
@@ -63,9 +65,6 @@ int main(int argc, char **argv)
 	print_stack(data.a);
 
 	// selection(&data);
-
-	// write(1, "----\n", 5);
-	// print_stack(data.a);
 
 	if (data.b.top >= 0)
 		ft_printf(GREEN "--B--\n");

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:46:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 00:48:20 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 14:39:51 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,13 @@ void sa(t_data *data)
 // No hace nada si hay uno o menos elementos.
 void sb(t_data *data)
 {
+	int top;
+
 	if (data->b.top > 0)
-		swap_t(&data->b.stack[0], &data->b.stack[1]);
+	{
+		top = data->b.top;
+		swap_t(&data->b.stack[top], &data->b.stack[top - 1]);
+	}
 	ft_printf("sb\n");
 }
 
