@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 16:48:10 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 16:56:08 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int main(int argc, char **argv)
 	print_tp(&data);
 
 	ra(&data);
+	rb(&data);
 	// sa(&data);
 
 	// rrb(&data);
