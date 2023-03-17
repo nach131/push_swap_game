@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/16 23:07:00 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 15:53:03 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,40 @@
 // Desplaza hacia arriba todos los elementos del stack A una posición,
 // de forma que el primer elemento se convierte en el último.
 
+// void ra(t_data *data)
+// {
+// 	int i;
+
+// 	t_num first;
+// 	i = 0;
+// 	if (data->a.top > 0)
+// 	{
+// 		first = data->a.stack[0];
+// 		while (i <= data->a.top)
+// 		{
+// 			swap_t(&data->a.stack[i], &data->a.stack[i + 1]);
+// 			i++;
+// 		}
+// 		swap_t(&first, &data->a.stack[data->a.top]);
+// 	}
+// 	ft_printf("ra\n");
+// }
+
 void ra(t_data *data)
 {
-	int i;
-
+	int i = data->a.top;
 	t_num first;
-	i = 0;
+
 	if (data->a.top > 0)
 	{
-		first = data->a.stack[0];
-		while (i <= data->a.top)
+		first = data->a.stack[data->a.top];
+		while (i >= 0)
 		{
-			swap_t(&data->a.stack[i], &data->a.stack[i + 1]);
-			i++;
+			// swap_t(&data->a.stack[i - 1], &data->a.stack[i]);
+			data->a.stack[i] = data->a.stack[i - 1];
+			i--;
 		}
-		swap_t(&first, &data->a.stack[data->a.top]);
+		swap_t(&first, &data->a.stack[0]);
 	}
 	ft_printf("ra\n");
 }

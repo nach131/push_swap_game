@@ -59,9 +59,9 @@ void rb(t_data *data);
 void rr(t_data *data);
 void pa(t_data *data);
 void pb(t_data *data);
-// void rra(t_data *data);
-// void rrb(t_data *data);
-// void rrr(t_data *data);
+void rra(t_data *data);
+void rrb(t_data *data);
+void rrr(t_data *data);
 
 void quickSort(int arr[], int low, int high);
 // void sort_three(t_data *data);

@@ -40,7 +40,7 @@ ORDER_DIR = order/
 LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
-UTILS_FILES	= init ctrl push swap rotate
+UTILS_FILES	= init ctrl push swap rotate reverse
 ORDER_FILES = quick_sort
 
 SRC_MAIN_FILES	+=$(MAIN_FILES)

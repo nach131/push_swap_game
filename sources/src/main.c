@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 14:40:19 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 16:36:23 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ void print_stack(t_ps stack)
 
 	while (i >= 0)
 	{
-		// printf(YELLOW "%d:%d, tb:%d\n", stack.stack[i].num, i, stack.stack[i].index);
-		printf(YELLOW "%d, tb:%d\n", stack.stack[i].num, stack.stack[i].index);
+		printf(YELLOW "%d:%d, tb:%d\n", stack.stack[i].num, i, stack.stack[i].index);
+		// printf(YELLOW "%d, tb:%d\n", stack.stack[i].num, stack.stack[i].index);
 		i--;
 	}
 }
@@ -53,9 +53,12 @@ int main(int argc, char **argv)
 	index_stack(data.tp, data.a.stack, argc - 1);
 
 	print_tp(&data);
+
+	ra(&data);
 	sa(&data);
-	sb(&data);
-	ss(&data);
+
+	// rrb(&data);
+	// rrr(&data);
 	// pa(&data);
 	// pa(&data);
 	// pa(&data);
