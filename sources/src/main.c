@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/18 09:37:01 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/18 16:53:54 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ int main(int argc, char **argv)
 	// pb(&data);
 	// pb(&data);
 	// pb(&data);
+	pa(&data);
+	pa(&data);
+
+	// pa(&data);
+	// pa(&data);
 	// pa(&data);
 	// pa(&data);
 	// pa(&data);
@@ -77,11 +82,16 @@ int main(int argc, char **argv)
 	int p = 2;
 	while (p >= 0)
 	{
-		printf("%d:%d\n", data.a.stack[p].num, p);
+		printf("%d:%d top:%d\n", data.b.stack[p].num, p, data.b.top);
 		p--;
 	}
+
+	printf(RED "\t%p\n", &data.b.stack[2]);
+	printf(RED "\t%p\n", &data.b.stack[1]);
+	printf(RED "\t%p\n", &data.b.stack[0]);
 
 	free(data.a.stack);
 	free(data.b.stack);
 	free(data.tp);
 }
+//

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 20:58:59 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/18 16:51:33 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,14 @@ void push_t(t_ps ps, int *top, t_num num)
 
 void pa(t_data *data)
 {
-	if (data->b.top >= 0)
+	if (data->b.top >= 0) // si el stack B no está vacío
 	{
-		t_num num = data->b.stack[data->b.top];
+		// sacamos el elemento del stack B y lo ponemos en el stack A
 		data->a.top++;
-		data->a.stack[data->a.top] = num;
-		ft_bzero(&data->b.stack[data->b.top], sizeof(t_num));
-		data->b.top--;
+		data->a.stack[data->a.top] = data->b.stack[data->b.top];
+		data->b.stack[2].num = 1000;
+
+		// data->b.top--;
 	}
 }
 

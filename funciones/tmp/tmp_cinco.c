@@ -98,30 +98,48 @@ void rr(t_data *data)
 	rb(data);
 }
 
+// void pa(t_data *data)
+// {
+// 	int i;
+// 	if (data->b.top >= 0)
+// 	{
+// 		if (data->a.top >= 0)
+// 		{
+// 			data->a.top++;
+// 			i = data->a.top - 1;
+// 			while (i >= 0)
+// 			{
+// 				swap(&data->a.stack[i], &data->a.stack[i + 1]);
+// 				i--;
+// 			}
+// 			swap(&data->b.stack[0], &data->a.stack[0]);
+// 		}
+// 		else
+// 			push(data->a.stack, &data->a.top, data->b.stack[0], data->size);
+// 		rb(data);
+// 		data->b.top--;
+// 	}
+// 	data->count++;
+// }
+
 void pa(t_data *data)
 {
-	int i;
 	if (data->b.top >= 0)
 	{
-		if (data->a.top >= 0)
+		int num = data->b.stack[data->b.top];
+
+		data->a.top++;
+		data->a.stack[data->a.top] = num;
+		int i = 0;
+		while (i < SIZE)
 		{
-			data->a.top++;
-			i = data->a.top - 1;
-			while (i >= 0)
-			{
-				swap(&data->a.stack[i], &data->a.stack[i + 1]);
-				i--;
-			}
-			swap(&data->b.stack[0], &data->a.stack[0]);
+			printf("\t%d:%d\n", data->b.stack[i], i);
+			i++;
 		}
-		else
-			push(data->a.stack, &data->a.top, data->b.stack[0], data->size);
-		rb(data);
 		data->b.top--;
 	}
-	data->count++;
+	printf("-----\n");
 }
-
 void pb(t_data *data)
 {
 	int i;
@@ -193,6 +211,7 @@ void rrr(t_data *data)
 void print_stack(t_ps stack)
 {
 	int i = 0;
+	printf("\t%d\n", stack.top);
 
 	while (i <= stack.top)
 	{
@@ -201,11 +220,11 @@ void print_stack(t_ps stack)
 	}
 }
 
-void add_num(t_data *data)
+void add_num(t_data *data, int a[])
 {
 	int i;
 
-	int a[] = {5, 4, 3, 2, 1};
+	// int a[] = {5, 4, 3, 2, 1};
 
 	i = 0;
 	while (i < data->size)
@@ -215,123 +234,48 @@ void add_num(t_data *data)
 	}
 }
 
-void sort_stack(t_data *data)
+void add_num_s(t_ps *stack, int a[])
 {
-	int i, min, max;
-	while (data->a.top >= 0)
+	int i;
+
+	// int a[] = {5, 4, 3, 2, 1};
+
+	i = 0;
+	while (i < SIZE)
 	{
-		// Step 1
-		min = data->a.stack[0];
-		for (i = 1; i <= data->a.top; i++)
-		{
-			if (data->a.stack[i] < min)
-				min = data->a.stack[i];
-		}
-		while (data->a.top >= 0 && data->a.stack[data->a.top] != min)
-		{
-			if (data->a.top > 0 && data->a.stack[0] > data->a.stack[1])
-				sa(data);
-			pb(data);
-		}
-
-		// // Step 3
-		// max = data->b.stack[0];
-		// for (i = 1; i <= data->b.top; i++)
-		// {
-		// 	if (data->b.stack[i] > max)
-		// 		max = data->b.stack[i];
-		// }
-		// while (data->b.top >= 0 && data->b.stack[data->b.top] != max)
-		// {
-		// 	if (data->b.top > 0 && data->b.stack[0] < data->b.stack[1])
-		// 		sb(data);
-		// 	pa(data);
-		// }
+		stack->stack[i] = a[i];
+		// push(data->a.stack, &data->a.top, a[i], data->size);
+		stack->top++;
+		i++;
 	}
-
-	// // Step 5
-	// while (data->a.stack[data->a.top] != min)
-	// 	rra(data);
 }
-
-// void sort_stack(t_data *data)
-// {
-// 	int i, min, max;
-// 	int found_min;
-
-// 	while (data->a.top >= 0)
-// 	{
-// 		found_min = 1;
-// 		min = data->a.stack[0];
-// 		for (i = 1; i <= data->a.top; i++)
-// 		{
-// 			if (data->a.stack[i] < min)
-// 			{
-// 				min = data->a.stack[i];
-// 			}
-// 		}
-// 		while (data->a.top >= 0 && data->a.stack[data->a.top] != min)
-// 		{
-// 			if (data->a.top > 0 && data->a.stack[0] > data->a.stack[1])
-// 			{
-// 				sa(data);
-// 			}
-// 			pb(data);
-// 		}
-// 		found_min = 2;
-
-// 		if (data->b.top >= 0)
-// 		{
-// 			max = data->b.stack[0];
-// 			for (i = 1; i <= data->b.top; i++)
-// 			{
-// 				if (data->b.stack[i] > max)
-// 				{
-// 					max = data->b.stack[i];
-// 				}
-// 			}
-// 			while (data->b.top >= 0 && data->b.stack[data->b.top] != max)
-// 			{
-// 				if (data->b.top > 0 && data->b.stack[0] < data->b.stack[1])
-// 				{
-// 					sb(data);
-// 				}
-// 				pa(data);
-// 			}
-// 		}
-
-// 		// Si no se ha encontrado el valor mínimo, salimos del bucle
-// 		if (found_min)
-// 		{
-// 			break;
-// 		}
-// 	}
-
-// 	while (data->a.top >= 0 && data->a.stack[data->a.top] != min)
-// 	{
-// 		rra(data);
-// 	}
-// }
 
 int main(void)
 {
 	t_data data;
 	data.size = SIZE;
+	data.count = 0;
 	data.a.stack = calloc(data.size, sizeof(int));
 	data.b.stack = calloc(data.size, sizeof(int));
 	data.a.top = -1;
 	data.b.top = -1;
 
-	add_num(&data);
+	int a[] = {5, 4, 3, 2, 1};
+	int b[] = {50, 40, 30, 20, 10};
+
+	add_num(&data, a);
+	add_num_s(&data.b, b);
+
+	pa(&data);
+	pa(&data);
+	pa(&data);
+	pa(&data);
 
 	print_stack(data.a);
 	printf("\n");
-	// sort_stack(&data);
+	print_stack(data.b);
+	printf("\n");
 
-	print_stack(data.a);
-	printf("%d\n", data.count);
+	// printf("%d\n", data.count);
 	return (0);
 }
-
-// Quicksort
-// Colocar el item mas pequeño de A y poner lo en B, asi hasta que quede vacio
