@@ -14,34 +14,34 @@
 #define ERROR_5 "Error: Stack underflow"
 #define INFO_1 "Info: It's already sorted"
 
-typedef struct s_num
+typedef struct s_stack
 {
 	int num;
 	int index;
-	t_num next;
-} t_num;
+	struct s_stack *next;
+} t_stack;
 
-typedef struct s_ps
-{
-	t_num *stack;
-	int top;
-} t_ps;
+// typedef struct s_ps
+// {
+// 	t_num *stack;
+// 	int top;
+// } t_ps;
 
 typedef struct s_data
 {
 	int size;
 	int *tp;
-	t_num a;
-	t_num b;
+	// t_stack a;
+	// t_stack b;
 } t_data;
 
-void init_data(t_data *data, int len);
-void add_num(t_data *data, char **n);
 void ctrl_num(int len, char **str);
 void ctrl_num_dupl(t_data *data);
 void ctrl_sorted(t_data *data);
+void init_data(t_data *data, int len);
+t_stack *add_num(t_data *data, char **n);
 
-void index_stack(int *tp, t_num *stack, int size);
+// void index_stack(int *tp, t_num *stack, int size);
 
 // void selection(t_data *data);
 
