@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/18 16:53:54 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/18 22:31:25 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,54 +44,31 @@ int main(int argc, char **argv)
 	t_data data;
 
 	ctrl_num(argc - 1, argv);
-	init_data(&data, argc - 1);
+	// init_data(&data, argc - 1);
 
-	add_num(&data, argv);
-	ctrl_num_dupl(&data);
-	ctrl_sorted(&data);
-	quickSort(data.tp, 0, data.size - 1);
-	index_stack(data.tp, data.a.stack, argc - 1);
+	// add_num(&data, argv);
+	// ctrl_num_dupl(&data);
+	// ctrl_sorted(&data);
+	// quickSort(data.tp, 0, data.size - 1);
+	// index_stack(data.tp, data.a.stack, argc - 1);
 
-	print_tp(&data);
+	// print_tp(&data);
 
-	// ra(&data);
-	// pb(&data);
-	// pb(&data);
-	// pb(&data);
-	pa(&data);
-	pa(&data);
-
-	// pa(&data);
-	// pa(&data);
-	// pa(&data);
-	// pa(&data);
-	// pa(&data);
-	// pa(&data);
-	// pa(&data);
-	// pa(&data);
-	// pa(&data);
-
-	print_stack(data.a);
+	// print_stack(data.a);
 
 	// selection(&data);
 
-	if (data.b.top >= 0)
-		ft_printf(GREEN "--B--\n");
-	print_stack(data.b);
-	ft_printf(GREEN "----\n");
-	int p = 2;
-	while (p >= 0)
-	{
-		printf("%d:%d top:%d\n", data.b.stack[p].num, p, data.b.top);
-		p--;
-	}
+	// if (data.b.top >= 0)
+	// 	ft_printf(GREEN "--B--\n");
+	// print_stack(data.b);
+	// ft_printf(GREEN "----\n");
+	// int p = 2;
+	// while (p >= 0)
+	// {
+	// 	printf("%d:%d top:%d\n", data.b.stack[p].num, p, data.b.top);
+	// 	p--;
+	// }
 
-	printf(RED "\t%p\n", &data.b.stack[2]);
-	printf(RED "\t%p\n", &data.b.stack[1]);
-	printf(RED "\t%p\n", &data.b.stack[0]);
-
-	free(data.a.stack);
-	free(data.b.stack);
 	free(data.tp);
 }
 //
