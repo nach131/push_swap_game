@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 00:21:15 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 00:30:50 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,34 @@ t_stack *stack_new(int value)
 	return (new);
 }
 
+t_stack *stack_last(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->next == NULL)
+			return (stack);
+		stack = stack->next;
+	}
+	return (stack);
+}
+
+void stackadd_back(t_stack **stack, t_stack *new)
+{
+	t_stack *item;
+
+	// if (!stack)
+	// 	return (NULL);
+	if (!(*stack))
+		*stack = new;
+	else
+	{
+		item = stack_last(*stack);
+		item->next = new;
+	}
+}
+
 t_stack *add_num(t_data *data, char **n)
 {
 	int i;
@@ -56,6 +84,8 @@ t_stack *add_num(t_data *data, char **n)
 		data->tp[j] = ft_atoi(n[i]);
 		if (i == 1)
 			stack = stack_new(data->tp[j]);
+		else
+			stackadd_back(&stack, stack_new(data->tp[j]));
 
 		i++;
 		j--;
