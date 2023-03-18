@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 00:36:49 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/19 00:34:32 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/19 00:34:56 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,61 +15,41 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "push_swap.h"
-#include <limits.h>
 
-void static ctrl_int(const char *str)
+t_stack *stack_new(int value)
 {
-	if (ft_atoi_long(str) > INT_MAX || ft_atoi_long(str) < INT_MIN)
-	{
-		ft_message(DANGER, ERROR_3);
-		exit(1);
-	}
+	t_stack *new;
+
+	new = ft_calloc(1, sizeof(t_stack));
+	new->num = value;
+	new->index = -1;
+	return (new);
 }
 
-void init_data(t_data *data, int size)
+t_stack *stack_last(t_stack *stack)
 {
-	ft_bzero(data, sizeof(t_data));
-	data->tp = ft_calloc(size, sizeof(int));
-	data->size = size;
-}
-
-t_stack *add_num(t_data *data, char **n)
-{
-	int i;
-	int j;
-	t_stack *stack;
-	i = 1;
-	j = data->size - 1;
-	while (j >= 0)
+	if (!stack)
+		return (NULL);
+	while (stack)
 	{
-		ctrl_int(n[i]);
-		data->tp[j] = ft_atoi(n[i]);
-		if (i == 1)
-			stack = stack_new(data->tp[j]);
-		else
-			stackadd_back(&stack, stack_new(data->tp[j]));
-
-		i++;
-		j--;
+		if (stack->next == NULL)
+			return (stack);
+		stack = stack->next;
 	}
 	return (stack);
 }
 
-// void index_stack(int *tp, t_num *stack, int size)
-// {
-// 	int i;
-// 	int j;
+void stackadd_back(t_stack **stack, t_stack *new)
+{
+	t_stack *item;
 
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		j = 0;
-// 		while (j < size)
-// 		{
-// 			if (tp[i] == stack[j].num)
-// 				stack[j].index = i;
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
+	if (!stack)
+		return;
+	if (!(*stack))
+		*stack = new;
+	else
+	{
+		item = stack_last(*stack);
+		item->next = new;
+	}
+}

@@ -21,25 +21,21 @@ typedef struct s_stack
 	struct s_stack *next;
 } t_stack;
 
-// typedef struct s_ps
-// {
-// 	t_num *stack;
-// 	int top;
-// } t_ps;
-
 typedef struct s_data
 {
 	int size;
 	int *tp;
-	// t_stack a;
-	// t_stack b;
 } t_data;
 
 void ctrl_num(int len, char **str);
 void ctrl_num_dupl(t_data *data);
 void ctrl_sorted(t_data *data);
 void init_data(t_data *data, int len);
+
 t_stack *add_num(t_data *data, char **n);
+t_stack *stack_new(int value);
+t_stack *stack_last(t_stack *stack);
+void stackadd_back(t_stack **stack, t_stack *new);
 
 // void index_stack(int *tp, t_num *stack, int size);
 
