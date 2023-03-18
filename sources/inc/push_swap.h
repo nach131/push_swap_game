@@ -18,6 +18,7 @@ typedef struct s_num
 {
 	int num;
 	int index;
+	t_num next;
 } t_num;
 
 typedef struct s_ps
@@ -30,8 +31,8 @@ typedef struct s_data
 {
 	int size;
 	int *tp;
-	t_ps a;
-	t_ps b;
+	t_num a;
+	t_num b;
 } t_data;
 
 void init_data(t_data *data, int len);
@@ -46,21 +47,21 @@ void index_stack(int *tp, t_num *stack, int size);
 
 // void push(int *stack, int *top, int value, int size);
 
-t_num push_num(int num, int *top);
+// t_num push_num(int num, int *top);
 
-void swap_t(t_num *a, t_num *b);
+// void swap_t(t_num *a, t_num *b);
 
-void sa(t_data *data);
-void sb(t_data *data);
-void ss(t_data *data);
-void ra(t_data *data);
-void rb(t_data *data);
-void rr(t_data *data);
-void pa(t_data *data);
-void pb(t_data *data);
-void rra(t_data *data);
-void rrb(t_data *data);
-void rrr(t_data *data);
+// void sa(t_data *data);
+// void sb(t_data *data);
+// void ss(t_data *data);
+// void ra(t_data *data);
+// void rb(t_data *data);
+// void rr(t_data *data);
+// void pa(t_data *data);
+// void pb(t_data *data);
+// void rra(t_data *data);
+// void rrb(t_data *data);
+// void rrr(t_data *data);
 
 void quickSort(int arr[], int low, int high);
 // void sort_three(t_data *data);
