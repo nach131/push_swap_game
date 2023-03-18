@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 00:13:46 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 20:58:59 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 #include "push_swap.h"
 
-// añade valores al stack
+// Añade valores al stack tp
+
 void push(int *stack, int *top, int value, int size)
 {
 	if (*top >= size - 1)
@@ -38,59 +39,57 @@ t_num push_num(int num, int *top)
 	return (res);
 }
 
-void push_t(t_ps stack, t_num num)
+void push_t(t_ps ps, int *top, t_num num)
 {
-	stack.top++;
-	stack.stack[stack.top] = num;
+
+	*top = *top + 1;
+	ps.stack[ps.top] = num;
 }
 
-//  Pasa el primer elemento del stack b y lo pone encima del stack a.
-// No hace nada si b está vacío.
+// Toma el primer elemento del stack B y lo pone encima del stack A.
+// No hace nada si B está vacío.
 
 // void pa(t_data *data)
 // {
-// 	int i;
+// 	// Verificar si el stack b está vacío
+// 	if (data->b.top < 0)
+// 		return; // No hacer nada
+
+// 	// Obtener el elemento en la cima de b
+// 	t_num *num = &data->b.stack[data->b.top];
+
+// 	// Empujar el elemento a la cima de a
+// 	data->a.top++;
+// 	data->a.stack[data->a.top] = *num;
+
+// 	// Eliminar el elemento de la cima de b
+// 	data->b.top--;
+// 	// if (data->b.top >= 0)
+// 	// 	rb(data);
+// }
+
+// void pa(t_data *data)
+// {
+
 // 	if (data->b.top >= 0)
 // 	{
-// 		if (data->a.top >= 0)
-// 		{
-// 			data->a.top++;
-// 			i = data->a.top - 1;
-// 			while (i >= 0)
-// 			{
-// 				swap_t(&data->a.stack[i], &data->a.stack[i + 1]);
-// 				i--;
-// 			}
-// 			swap_t(&data->b.stack[0], &data->a.stack[0]);
-// 		}
-// 		else
-// 			push_t(data->a, data->b.stack[0]);
-// 		// push(data->a.stack, &data->a.top, data->b.stack[0], data->size);
-// 		if (data->b.top > 0)
-// 			rb(data);
+// 		data->a.top++;
+// 		swap_t(&data->a.stack[data->a.top], &data->b.stack[data->b.top]);
 // 		data->b.top--;
 // 	}
-// 	ft_printf("pa\n");
+// 	ft_printf("ra\n");
 // }
+
 void pa(t_data *data)
 {
-	// Verificar si el stack b está vacío
-	if (data->b.top < 0)
+	if (data->b.top >= 0)
 	{
-		return; // No hacer nada
+		t_num num = data->b.stack[data->b.top];
+		data->a.top++;
+		data->a.stack[data->a.top] = num;
+		ft_bzero(&data->b.stack[data->b.top], sizeof(t_num));
+		data->b.top--;
 	}
-
-	// Obtener el elemento en la cima de b
-	t_num *num = &data->b.stack[data->b.top];
-
-	// Empujar el elemento a la cima de a
-	data->a.top++;
-	data->a.stack[data->a.top] = *num;
-
-	// Eliminar el elemento de la cima de b
-	data->b.top--;
-	// if (data->b.top >= 0)
-	// 	rb(data);
 }
 
 // Toma el primer elemento del stack A y lo pone encima del stack B.
@@ -113,7 +112,7 @@ void pb(t_data *data)
 			swap_t(&data->a.stack[0], &data->b.stack[0]);
 		}
 		else
-			push_t(data->b, data->a.stack[0]);
+			push_t(data->b, &data->b.top, data->a.stack[data->a.top]);
 		// push(data->b.stack, &data->b.top, data->a.stack[0], data->size);
 		rb(data);
 		data->a.top--;

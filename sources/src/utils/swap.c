@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:46:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 14:39:51 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 18:47:42 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,6 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "push_swap.h"
-
-void swap(int *a, int *b)
-{
-	int t = *a;
-	*a = *b;
-	*b = t;
-}
 
 void swap_t(t_num *a, t_num *b)
 {
@@ -32,6 +25,7 @@ void swap_t(t_num *a, t_num *b)
 
 // Intercambia los dos primeros elementos encima del stack a
 // No hace nada si hay uno o menos elementos.
+
 void sa(t_data *data)
 {
 	int top;
@@ -47,6 +41,7 @@ void sa(t_data *data)
 
 // Intercambia los dos primeros elementos encima del stack b
 // No hace nada si hay uno o menos elementos.
+
 void sb(t_data *data)
 {
 	int top;
@@ -60,6 +55,7 @@ void sb(t_data *data)
 }
 
 // Los dos a la vez
+
 void ss(t_data *data)
 {
 	sa(data);

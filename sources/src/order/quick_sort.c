@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:52:01 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 00:47:36 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/17 18:47:37 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "push_swap.h"
+
+void swap(int *a, int *b)
+{
+	int t = *a;
+	*a = *b;
+	*b = t;
+}
 
 int static partition(int arr[], int low, int high)
 {

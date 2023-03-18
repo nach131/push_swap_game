@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 16:56:08 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/18 09:37:01 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,17 @@ int main(int argc, char **argv)
 
 	print_tp(&data);
 
-	ra(&data);
-	rb(&data);
-	// sa(&data);
-
-	// rrb(&data);
-	// rrr(&data);
-	// pa(&data);
-	// pa(&data);
-	// pa(&data);
 	// ra(&data);
 	// pb(&data);
+	// pb(&data);
+	// pb(&data);
+	// pa(&data);
+	// pa(&data);
+	// pa(&data);
+	// pa(&data);
+	// pa(&data);
+	// pa(&data);
+	// pa(&data);
 
 	print_stack(data.a);
 
@@ -73,6 +73,13 @@ int main(int argc, char **argv)
 	if (data.b.top >= 0)
 		ft_printf(GREEN "--B--\n");
 	print_stack(data.b);
+	ft_printf(GREEN "----\n");
+	int p = 2;
+	while (p >= 0)
+	{
+		printf("%d:%d\n", data.a.stack[p].num, p);
+		p--;
+	}
 
 	free(data.a.stack);
 	free(data.b.stack);
