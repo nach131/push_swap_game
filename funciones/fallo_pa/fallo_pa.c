@@ -104,12 +104,24 @@ int main(void)
 	int i = SIZE - 1;
 	while (i >= 0)
 	{
-		printf("%d:%d\n", data.b.stack[i], i);
+		printf("%d:%d\n", data.b.stack[i].num, i);
 		i--;
 	}
 
 	return (0);
 }
+
+// 20:4, tb:0
+// 30:3, tb:0
+// 3:2, tb:0
+// 2:1, tb:0
+// 1:0, tb:0
+// --B--
+// 20:0, tb:0 // ---> se cambia no se por que
+// --REAL--
+// 30:2
+// 20:1
+// 20:0
 
 // // Toma el primer elemento del stack A y lo pone encima del stack B.
 // // No hace nada si A está vacío.
