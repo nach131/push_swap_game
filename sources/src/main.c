@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 12:42:00 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:53:30 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,11 @@ int main(int argc, char **argv)
 
 	// ra_rb(&stack_a, RA);
 	// ra_rb(&stack_b, RB);
-	rr(&stack_a, &stack_b);
+	// rr(&stack_a, &stack_b);
+
+	rra_rrb(&stack_a, RRA);
+	rra_rrb(&stack_b, RRB);
+	rrr(&stack_a, &stack_b);
 
 	print_tp(&data);
 	print_lst(stack_a);

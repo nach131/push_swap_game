@@ -20,6 +20,8 @@ enum
 	SB,
 	RA,
 	RB,
+	RRA,
+	RRB,
 };
 
 typedef struct s_stack
@@ -52,18 +54,13 @@ void clear_stack(t_stack *stack);
 
 // void push(int *stack, int *top, int value, int size);
 
-// t_num push_num(int num, int *top);
-
-// void swap_t(t_num *a, t_num *b);
-
 void sa_sb(t_stack **stack, int order);
 void ss(t_stack **a, t_stack **b);
 void ra_rb(t_stack **stack, int order);
 void rr(t_stack **a, t_stack **b);
+void rra_rrb(t_stack **stack, int order);
+void rrr(t_stack **a, t_stack **b);
 
-// void ra(t_data *data);
-// void rb(t_data *data);
-// void rr(t_data *data);
 // void pa(t_data *data);
 // void pb(t_data *data);
 // void rra(t_data *data);

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 12:41:32 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:44:49 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 
 // Desplaza hacia arriba todos los elementos del stack B una posición,
 // de forma que el primer elemento se convierte en el último.
+
+// Hayq que indicar el que orden a imprimir
 
 void ra_rb(t_stack **stack, int order)
 {
