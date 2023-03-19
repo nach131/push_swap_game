@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 17:12:23 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:41:32 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,52 +19,34 @@
 // Desplaza hacia arriba todos los elementos del stack A una posición,
 // de forma que el primer elemento se convierte en el último.
 
-void ra(t_data *data)
-{
-	int i = data->a.top;
-	t_num first;
-
-	if (data->a.top > 0)
-	{
-		first = data->a.stack[data->a.top];
-		while (i >= 0)
-		{
-			// swap_t(&data->a.stack[i - 1], &data->a.stack[i]);
-			data->a.stack[i] = data->a.stack[i - 1];
-			i--;
-		}
-		swap_t(&first, &data->a.stack[0]);
-	}
-	ft_printf("ra\n");
-}
-
 // Desplaza hacia arriba todos los elementos del stack B una posición,
 // de forma que el primer elemento se convierte en el último.
 
-void rb(t_data *data)
+void ra_rb(t_stack **stack, int order)
 {
-	int i = data->b.top;
-	t_num first;
+	t_stack *last;
 
-	if (data->b.top > 0)
+	if ((*stack) && (*stack)->next)
 	{
-		first = data->b.stack[data->b.top];
-		while (i >= 0)
-		{
-			data->b.stack[i] = data->b.stack[i - 1];
-			i--;
-		}
-		swap_t(&first, &data->b.stack[0]);
+		last = *stack;
+		while (last->next)
+			last = last->next;
+		last->next = *stack;
+		*stack = (*stack)->next;
+		last->next->next = NULL;
 	}
-	ft_printf("rb\n");
+	if (order == RA)
+		ft_printf("ra\n");
+	else if (order == RB)
+		ft_printf("rb\n");
 }
 
 //  Desplaza al mismo tiempo todos los elementos del stack A
 // y del stack B una posición hacia arriba,
 //  de forma que el primer elemento se convierte en el último.
 
-void rr(t_data *data)
+void rr(t_stack **a, t_stack **b)
 {
-	ra(data);
-	rb(data);
+	ra_rb(a, RA);
+	ra_rb(b, RB);
 }

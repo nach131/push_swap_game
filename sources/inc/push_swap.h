@@ -17,7 +17,9 @@
 enum
 {
 	SA,
-	SB
+	SB,
+	RA,
+	RB,
 };
 
 typedef struct s_stack
@@ -56,8 +58,9 @@ void clear_stack(t_stack *stack);
 
 void sa_sb(t_stack **stack, int order);
 void ss(t_stack **a, t_stack **b);
+void ra_rb(t_stack **stack, int order);
+void rr(t_stack **a, t_stack **b);
 
-// void ss(t_data *data);
 // void ra(t_data *data);
 // void rb(t_data *data);
 // void rr(t_data *data);

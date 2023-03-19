@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 12:27:26 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:42:00 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,9 +69,13 @@ int main(int argc, char **argv)
 	int b[] = {30, 20, 10};
 	stack_b = tmp_stack_b(b, 3);
 
-	sa_sb(&stack_a, SA);
-	sa_sb(&stack_b, SB);
-	ss(&stack_a, &stack_b);
+	// sa_sb(&stack_a, SA);
+	// sa_sb(&stack_b, SB);
+	// ss(&stack_a, &stack_b);
+
+	// ra_rb(&stack_a, RA);
+	// ra_rb(&stack_b, RB);
+	rr(&stack_a, &stack_b);
 
 	print_tp(&data);
 	print_lst(stack_a);

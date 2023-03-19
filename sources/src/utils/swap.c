@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:46:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 12:28:00 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 12:43:31 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,21 @@
 
 #include "push_swap.h"
 
-// Intercambia los dos primeros elementos encima del stack a
+// Intercambia los dos primeros elementos encima del stack A
 // No hace nada si hay uno o menos elementos.
+
+// Intercambia los dos primeros elementos encima del stack B
+// No hace nada si hay uno o menos elementos.
+
+// Hayq que indicar el que orden a imprimir
 
 void sa_sb(t_stack **stack, int order)
 {
+	t_stack *tmp;
+
 	if ((*stack) && (*stack)->next)
 	{
-		t_stack *tmp = (*stack)->next;
+		tmp = (*stack)->next;
 		(*stack)->next = tmp->next;
 		tmp->next = (*stack);
 		(*stack) = tmp;
