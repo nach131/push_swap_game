@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 00:34:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 10:48:36 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 11:18:19 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,26 +51,6 @@ void stackadd_back(t_stack **stack, t_stack *new)
 	{
 		item = stack_last(*stack);
 		item->next = new;
-	}
-}
-
-void index_stack(t_stack *stack, int tb[], int size)
-{
-	int i;
-	t_stack *new;
-
-	i = 0;
-	new = stack;
-	while (i <= size)
-	{
-		while (new)
-		{
-			if (tb[i] == new->num)
-				new->index = i;
-			new = new->next;
-		}
-		new = stack;
-		i++;
 	}
 }
 

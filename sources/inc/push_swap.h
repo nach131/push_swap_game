@@ -40,8 +40,6 @@ void index_stack(t_stack *stack, int tb[], int size);
 
 void clear_stack(t_stack *stack);
 
-// void index_stack(int *tp, t_num *stack, int size);
-
 // void selection(t_data *data);
 
 // void push(int *stack, int *top, int value, int size);

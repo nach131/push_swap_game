@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 10:50:10 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 11:47:24 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,27 @@ void print_lst(t_stack *num)
 	}
 }
 
+t_stack *tmp_stack_b(int arr[], int size)
+{
+	int i = 0;
+	t_stack *aux;
+
+	while (i < size)
+	{
+		if (i == 0)
+			aux = stack_new(arr[i]);
+		else
+			stackadd_back(&aux, stack_new(arr[i]));
+		i++;
+	}
+	return (aux);
+}
+
 int main(int argc, char **argv)
 {
 	t_data data;
 	t_stack *stack_a;
+	t_stack *stack_b;
 
 	ctrl_num(argc - 1, argv);
 	init_data(&data, argc - 1);
@@ -70,23 +87,15 @@ int main(int argc, char **argv)
 	// b->num = 200;
 	// data.a.next = b;
 
+	int b[] = {30, 20, 10};
+	stack_b = tmp_stack_b(b, 3);
+
 	print_tp(&data);
 	print_lst(stack_a);
-
-	// print_stack(data.a);
+	printf(GREEN "----B----\n");
+	print_lst(stack_b);
 
 	// selection(&data);
-
-	// if (data.b.top >= 0)
-	// 	ft_printf(GREEN "--B--\n");
-	// print_stack(data.b);
-	// ft_printf(GREEN "----\n");
-	// int p = 2;
-	// while (p >= 0)
-	// {
-	// 	printf("%d:%d top:%d\n", data.b.stack[p].num, p, data.b.top);
-	// 	p--;
-	// }
 
 	free(data.tp);
 	clear_stack(stack_a);

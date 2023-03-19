@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:46:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 18:47:42 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 11:28:32 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,25 +39,25 @@ void sa(t_data *data)
 	ft_printf("sa\n");
 }
 
-// Intercambia los dos primeros elementos encima del stack b
-// No hace nada si hay uno o menos elementos.
+// // Intercambia los dos primeros elementos encima del stack b
+// // No hace nada si hay uno o menos elementos.
 
-void sb(t_data *data)
-{
-	int top;
+// void sb(t_data *data)
+// {
+// 	int top;
 
-	if (data->b.top > 0)
-	{
-		top = data->b.top;
-		swap_t(&data->b.stack[top], &data->b.stack[top - 1]);
-	}
-	ft_printf("sb\n");
-}
+// 	if (data->b.top > 0)
+// 	{
+// 		top = data->b.top;
+// 		swap_t(&data->b.stack[top], &data->b.stack[top - 1]);
+// 	}
+// 	ft_printf("sb\n");
+// }
 
-// Los dos a la vez
+// // Los dos a la vez
 
-void ss(t_data *data)
-{
-	sa(data);
-	sb(data);
-}
+// void ss(t_data *data)
+// {
+// 	sa(data);
+// 	sb(data);
+// }

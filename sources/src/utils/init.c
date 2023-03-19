@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 00:36:49 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 11:32:17 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_stack *add_num(t_data *data, char **n)
 	int i;
 	int j;
 	t_stack *stack;
+
 	i = 1;
 	j = data->size - 1;
 	while (j >= 0)
@@ -48,28 +49,28 @@ t_stack *add_num(t_data *data, char **n)
 			stack = stack_new(data->tp[j]);
 		else
 			stackadd_back(&stack, stack_new(data->tp[j]));
-
 		i++;
 		j--;
 	}
 	return (stack);
 }
 
-// void index_stack(int *tp, t_num *stack, int size)
-// {
-// 	int i;
-// 	int j;
+void index_stack(t_stack *stack, int tb[], int size)
+{
+	int i;
+	t_stack *new;
 
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		j = 0;
-// 		while (j < size)
-// 		{
-// 			if (tp[i] == stack[j].num)
-// 				stack[j].index = i;
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }
+	i = 0;
+	new = stack;
+	while (i <= size)
+	{
+		while (new)
+		{
+			if (tb[i] == new->num)
+				new->index = i;
+			new = new->next;
+		}
+		new = stack;
+		i++;
+	}
+}
