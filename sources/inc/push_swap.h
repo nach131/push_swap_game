@@ -49,10 +49,9 @@ t_stack *stack_new(int value);
 t_stack *stack_last(t_stack *stack);
 void stackadd_back(t_stack **stack, t_stack *new);
 void index_stack(t_stack *stack, int tb[], int size);
-
 void clear_stack(t_stack *stack);
 
-// void selection(t_data *data);
+void selection(t_stack **a, t_stack **b, int size);
 
 void sa_sb(t_stack **stack, int order);
 void ss(t_stack **a, t_stack **b);
@@ -67,8 +66,5 @@ void quickSort(int arr[], int low, int high);
 // void sort_five(t_data *data);
 
 // void sort_big(t_data *data);
-
-//
-// void quickSort(t_data *data, int low, int high);
 
 #endif

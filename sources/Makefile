@@ -41,7 +41,7 @@ LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
 UTILS_FILES	= ctrl init stack swap rotate reverse push
-ORDER_FILES = quick_sort
+ORDER_FILES = quick_sort selection
 
 SRC_MAIN_FILES	+=$(MAIN_FILES)
 SRCS_MAIN = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_MAIN_FILES)))
