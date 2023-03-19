@@ -40,7 +40,7 @@ ORDER_DIR = order/
 LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
-UTILS_FILES	= ctrl init stack
+UTILS_FILES	= ctrl init stack swap
 ORDER_FILES = quick_sort
 
 SRC_MAIN_FILES	+=$(MAIN_FILES)

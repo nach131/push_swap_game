@@ -14,6 +14,12 @@
 #define ERROR_5 "Error: Stack underflow"
 #define INFO_1 "Info: It's already sorted"
 
+enum
+{
+	SA,
+	SB
+};
+
 typedef struct s_stack
 {
 	int num;
@@ -48,8 +54,9 @@ void clear_stack(t_stack *stack);
 
 // void swap_t(t_num *a, t_num *b);
 
-// void sa(t_data *data);
-// void sb(t_data *data);
+void sa_sb(t_stack **stack, int order);
+void ss(t_stack **a, t_stack **b);
+
 // void ss(t_data *data);
 // void ra(t_data *data);
 // void rb(t_data *data);
