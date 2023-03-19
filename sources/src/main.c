@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 00:06:50 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 10:50:10 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
 	ctrl_num_dupl(&data);
 	ctrl_sorted(&data);
 	quickSort(data.tp, 0, data.size - 1);
-	// index_stack(data.tp, data.a.stack, argc - 1);
+	index_stack(stack_a, data.tp, data.size);
 
 	// data.a.num = 100;
 	// data.a.index = -1;
@@ -89,5 +89,6 @@ int main(int argc, char **argv)
 	// }
 
 	free(data.tp);
+	clear_stack(stack_a);
 }
 //

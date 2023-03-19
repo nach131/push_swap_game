@@ -36,6 +36,9 @@ t_stack *add_num(t_data *data, char **n);
 t_stack *stack_new(int value);
 t_stack *stack_last(t_stack *stack);
 void stackadd_back(t_stack **stack, t_stack *new);
+void index_stack(t_stack *stack, int tb[], int size);
+
+void clear_stack(t_stack *stack);
 
 // void index_stack(int *tp, t_num *stack, int size);
 
