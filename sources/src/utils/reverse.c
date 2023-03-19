@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 12:52:08 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:10:22 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,14 +41,14 @@ void rra_rrb(t_stack **stack, int order)
 		prev->next = NULL;
 		last->next = *stack;
 		*stack = last;
+		if (order == RRA)
+			ft_printf("rra\n");
+		else if (order == RRB)
+			ft_printf("rrb\n");
 	}
-	if (order == RRA)
-		ft_printf("rra\n");
-	else if (order == RRB)
-		ft_printf("rrb\n");
 }
 
-// // Los dos a la vez
+// Los dos a la vez
 
 void rrr(t_stack **a, t_stack **b)
 {

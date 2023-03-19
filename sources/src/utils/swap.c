@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:46:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 12:43:31 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:10:55 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 // Intercambia los dos primeros elementos encima del stack B
 // No hace nada si hay uno o menos elementos.
 
-// Hayq que indicar el que orden a imprimir
+// Hay que indicar el que orden a imprimir
 
 void sa_sb(t_stack **stack, int order)
 {
@@ -34,11 +34,11 @@ void sa_sb(t_stack **stack, int order)
 		(*stack)->next = tmp->next;
 		tmp->next = (*stack);
 		(*stack) = tmp;
+		if (order == SA)
+			ft_printf("sa\n");
+		else if (order == SB)
+			ft_printf("sb\n");
 	}
-	if (order == SA)
-		ft_printf("sa\n");
-	else if (order == SB)
-		ft_printf("sb\n");
 }
 
 // // Los dos a la vez

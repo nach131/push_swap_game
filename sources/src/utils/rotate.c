@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 12:44:49 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/19 13:10:35 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,11 @@ void ra_rb(t_stack **stack, int order)
 		last->next = *stack;
 		*stack = (*stack)->next;
 		last->next->next = NULL;
+		if (order == RA)
+			ft_printf("ra\n");
+		else if (order == RB)
+			ft_printf("rb\n");
 	}
-	if (order == RA)
-		ft_printf("ra\n");
-	else if (order == RB)
-		ft_printf("rb\n");
 }
 
 //  Desplaza al mismo tiempo todos los elementos del stack A
