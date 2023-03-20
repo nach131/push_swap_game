@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:52:01 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/17 18:47:37 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:24:32 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int static partition(int arr[], int low, int high)
 	pivot = arr[high];
 	i = (low - 1);
 	j = low;
+	// while (j >= high)
 	while (j <= high)
 	{
 		if (arr[j] > pivot)

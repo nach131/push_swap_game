@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 14:35:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:06:29 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int main(int argc, char **argv)
 	quickSort(data.tp, 0, data.size - 1);
 	index_stack(stack_a, data.tp, data.size);
 
-	// //=========================================================================
+	// //=====add num tmp to B=============================================================
 	// int b[] = {30, 10, 20};
 	// stack_b = tmp_stack_b(b, 3);
 	// //=========================================================================
@@ -76,7 +76,7 @@ int main(int argc, char **argv)
 	// ss(&stack_a, &stack_b);
 
 	// ra_rb(&stack_a, RA);
-	ra_rb(&stack_b, RB);
+	// ra_rb(&stack_b, RB);
 	// rr(&stack_a, &stack_b);
 
 	// rra_rrb(&stack_b, RRB);
@@ -86,12 +86,13 @@ int main(int argc, char **argv)
 	// pa_pb(&stack_a, &stack_b, PA);
 
 	selection(&stack_a, &stack_b, argc - 1);
-	// //=========================================================================
-	// print_tp(&data);
-	// print_lst(stack_a);
-	// printf(GREEN "----B----\n");
-	// print_lst(stack_b);
-	// //=========================================================================
+	//=========================================================================
+	print_tp(&data);
+	printf(GREEN "----A----\n");
+	print_lst(stack_a);
+	printf(GREEN "----B----\n");
+	print_lst(stack_b);
+	//=========================================================================
 
 	free(data.tp);
 	clear_stack(stack_a);

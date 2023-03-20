@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 14:37:18 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/20 12:25:36 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,34 @@ void selection(t_stack **a, t_stack **b, int size)
 		sort_three(a);
 		(void)b;
 	}
+	else
+	{
+
+		int i = 0;
+		int count = 0;
+
+		while (count <= size - 1)
+		{
+			while (i <= size - 1 && (*a))
+			{
+				if ((*a)->index == i)
+					pa_pb(&(*a), &(*b), PB);
+				if (i % 2 == 0)
+					ra_rb(&(*b), RB);
+				// printf("i:%d\n", i);
+				i++;
+			}
+			i = 0;
+			count++;
+		}
+		while ((*b))
+		{
+			rra_rrb(&(*b), RRB);
+			pa_pb(&(*a), &(*b), PA);
+			pa_pb(&(*a), &(*b), PA);
+		}
+	}
+	// printf(RED "%d:%d\n", tmp->num, tmp->index);
 
 	// else if (data->size == 3)
 	// 	sort_three(data);
