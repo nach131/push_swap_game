@@ -4,23 +4,10 @@ https://www.youtube.com/watch?v=8nix1eqoMHM
 -2147483648
  2147483647
 
-hacer control is number
- controlar el + y el -
-
-liberar antes de exit en los ctrl
-
-
-controlar el valor dento del array cada vez que se pasen los datos de stack
-
-posible solucion cambiar el valor
-
-
-push
-reverse⏪
-rotate🔄
-swap
-🔃
-🔀
-⤴️⤵️🔽🔼⏬⏫⏪⏩⏸⏯⏺⏹⏮
-
-Hacer una funcion que print la orden ejecutada y sume el moviemiento
+Elegir un pivote (el primer elemento del stack A en este caso) y dividir los elementos restantes en el stack A en dos grupos: aquellos que son menores o iguales que el pivote y aquellos que son mayores.
+Mover los elementos menores o iguales al pivote al stack B utilizando la función pa_pb.
+Aplicar el algoritmo de Quick Sort al stack A y al stack B de forma recursiva.
+Cuando un stack tenga menos de dos elementos, no es necesario hacer nada.
+Cuando un stack tenga exactamente dos elementos, se debe verificar si están ordenados. Si no lo están, se debe utilizar la función sa_sb para intercambiarlos.
+Cuando ambos stacks hayan sido ordenados por separado, se deben fusionar utilizando la función pa_pb.
+Aquí está el código que implementa estos pasos:

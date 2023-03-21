@@ -50,6 +50,7 @@ t_stack *stack_last(t_stack *stack);
 void stackadd_back(t_stack **stack, t_stack *new);
 void index_stack(t_stack *stack, int tb[], int size);
 void clear_stack(t_stack *stack);
+int len_stack(t_stack **stack);
 
 void selection(t_stack **a, t_stack **b, int size);
 
@@ -62,9 +63,8 @@ void rrr(t_stack **a, t_stack **b);
 void pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
 
 void quickSort(int arr[], int low, int high);
-// void sort_three(t_data *data);
-// void sort_five(t_data *data);
 
-// void sort_big(t_data *data);
+void sort_three(t_stack **a);
+void sort_five(t_stack **a, t_stack **b, int size);
 
 #endif

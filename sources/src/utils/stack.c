@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 00:34:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 11:18:19 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/21 11:14:42 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,4 +68,17 @@ void clear_stack(t_stack *stack)
 			stack = aux;
 		}
 	}
+}
+
+int len_stack(t_stack **stack)
+{
+	t_stack *tmp = *stack;
+	int i = 0;
+
+	while (tmp)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
 }

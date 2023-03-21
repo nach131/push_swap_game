@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:52:01 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/20 12:24:32 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/20 20:20:45 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ int static partition(int arr[], int low, int high)
 	pivot = arr[high];
 	i = (low - 1);
 	j = low;
-	// while (j >= high)
 	while (j <= high)
 	{
-		if (arr[j] > pivot)
+		if (arr[j] < pivot) // EL ORDENACION ORDENACION
 		{
 			i++;
 			swap(&arr[i], &arr[j]);
@@ -57,4 +56,5 @@ void quickSort(int arr[], int low, int high)
 		quickSort(arr, pi + 1, high);
 	}
 }
+
 
