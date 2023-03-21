@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 14:22:11 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/21 15:39:08 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,31 +48,73 @@ void print_lst_dos(t_stack *num)
 		num = num->next;
 	}
 }
-void sort_more(t_stack **a, t_stack **b, int size)
-{
 
-	(void)a;
-	(void)b;
+void mitad_inf_a(t_stack **a, t_stack **b, int size)
+{
 	int i = 0;
-	int j = 0;
-	int pivot = size / 2 - 1;
-	int count = (size - 1) - pivot;
+	int pivot = len_stack(a) / 2 - 1;
 
 	printf(RED "mitad:%d, size:%d\n", pivot, size);
-	printf("count %d\n", count);
 
-	while (i < pivot)
+	while (i <= pivot)
 	{
-		while ((*a)->index <= pivot && j != count)
-		{
-			// print_lst_dos(*a);
+		while ((*a)->index <= pivot)
 			ra_rb(a, RA);
-		}
-		while (len_stack(a) > 1 && (*a)->index > pivot)
+		while ((*a)->index > pivot)
 		{
-			pa_pb(a, b, PB); // para no moverlos todos comprobar si el ultimo es el que busco
-			j++;
+			pa_pb(a, b, PB);
+			i++;
 		}
-		i++;
 	}
+}
+
+// void invertir_mitad(t_stack **a, t_stack **b, int size)
+// {
+// 	int i = 0;
+// 	int pivot = len_stack(a) - 1;
+
+// 	printf(RED "invertir_mitad:%d, size:%d\n", pivot, size);
+
+// 	while ((*a)->index > pivot)
+// 	{
+// 		pa_pb(a, b, PA);
+// 		i++;
+// 	}
+
+// 	while ((*a)->index <= pivot)
+// 	{
+// 		while ((*a)->index <= pivot)
+// 			ra_rb(a, RA);
+// 		while ((*a)->index > pivot)
+// 		{
+// 			pa_pb(a, b, PB);
+// 			i++;
+// 		}
+// 	}
+// }
+
+void mitad_mayo_a(t_stack **a, t_stack **b, int size)
+{
+	int i = len_stack(a) / 2;
+	int pivot = len_stack(a) / 2 - 1;
+
+	printf(RED "pivot:%d, size:%d i:%d\n", pivot, size, i);
+
+	while (i != 0)
+	{
+		while ((*a)->index > pivot)
+			ra_rb(a, RA);
+		while ((*a)->index <= pivot)
+		{
+			pa_pb(a, b, PB);
+			i--;
+		}
+	}
+}
+void sort_more(t_stack **a, t_stack **b, int size)
+{
+	mitad_mayo_a(a, b, size);
+	mitad_mayo_a(a, b, size);
+	// mitad_inf_a(a, b, size);
+	// invertir_mitad(a, b, size);
 }

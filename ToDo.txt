@@ -12,7 +12,6 @@ Aplicar el algoritmo de Quick Sort al stack A y al stack B de forma recursiva.
 Cuando un stack tenga menos de dos elementos, no es necesario hacer nada.
 Cuando un stack tenga exactamente dos elementos, se debe verificar si están ordenados. Si no lo están, se debe utilizar la función sa_sb para intercambiarlos.
 Cuando ambos stacks hayan sido ordenados por separado, se deben fusionar utilizando la función pa_pb.
-Aquí está el código que implementa estos pasos:
 
 
 PARA 12 elementos
