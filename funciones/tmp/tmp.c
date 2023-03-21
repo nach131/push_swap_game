@@ -131,3 +131,29 @@ void ss(t_stack **a, t_stack **b)
 	sa_sb(a, SA);
 	sa_sb(b, SB);
 }
+
+int len_stack(t_stack **stack)
+{
+	t_stack *tmp = *stack;
+	int i = 0;
+
+	while (tmp)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	return (i);
+}
+
+int find_small(t_stack **stack)
+{
+	int pivot = (*stack)->index;
+	t_stack *tmp = (*stack)->next;
+	while (tmp)
+	{
+		if (tmp->index < pivot)
+			pivot = tmp->index;
+		tmp = tmp->next;
+	}
+	return (pivot);
+}

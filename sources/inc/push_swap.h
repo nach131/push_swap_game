@@ -50,7 +50,9 @@ t_stack *stack_last(t_stack *stack);
 void stackadd_back(t_stack **stack, t_stack *new);
 void index_stack(t_stack *stack, int tb[], int size);
 void clear_stack(t_stack *stack);
+
 int len_stack(t_stack **stack);
+int find_small(t_stack **stack);
 
 void selection(t_stack **a, t_stack **b, int size);
 

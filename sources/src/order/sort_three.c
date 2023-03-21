@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   selection.c                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 11:38:22 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/21 11:22:42 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,58 +16,26 @@
 
 #include "push_swap.h"
 
-int count_posicion(t_stack **a, int n)
+void sort_three(t_stack **a)
 {
-	t_stack *tmp = *a;
-	int i = 1;
-	while (tmp)
+	int one = (*a)->num;
+	int two = (*a)->next->num;
+	int three = (*a)->next->next->num;
+
+	if (one < two && one < three && two > three)
 	{
-		if (tmp->index == n)
-		{
-			// printf(RED "%d: %d\n", (*a)->num, (*a)->index);
-			break;
-		}
-		i++;
-		tmp = tmp->next;
+		rra_rrb(a, RRA);
+		sa_sb(a, SA);
 	}
-	return (i - 1);
-}
-
-void movimiento(t_stack **a, int n)
-{
-	int i = 0;
-
-	while (i < n)
+	else if (one > two && one < three && two < three)
+		sa_sb(a, SA);
+	else if (one < two && one > three && two > three)
+		rra_rrb(a, RRA);
+	else if (two < three && one > two && one > three)
+		ra_rb(a, RA);
+	else if (two > three && one > two && one > three)
 	{
 		ra_rb(a, RA);
-		i++;
-	}
-}
-
-void selection(t_stack **a, t_stack **b, int size)
-{
-	(void)b;
-
-	if (size == 2)
 		sa_sb(a, SA);
-	else if (size == 3)
-		sort_three(a);
-	else if (size > 3 && size <= 5)
-		sort_five(a, b, size);
-	else
-	{
-		int i = 0;
-		while (i < size)
-		{
-			movimiento(a, count_posicion(a, i));
-			pa_pb(&(*a), &(*b), PB);
-			i++;
-		}
-		i = 0;
-		while (i < size)
-		{
-			pa_pb(&(*a), &(*b), PA);
-			i++;
-		}
 	}
 }
