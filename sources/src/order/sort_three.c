@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 22:13:23 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/21 22:40:32 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,10 +103,31 @@ void minors_b(t_stack **a, t_stack **b)
 	}
 }
 
+void quick_sort(t_stack **a, t_stack **b)
+{
+	if (len_stack(a) <= 1)
+		return;
+	int pivot = index_middle(*a);
+	t_stack *tmp = *a;
+	while (tmp)
+	{
+		if (tmp->index < pivot)
+			sa_sb(a, SA);
+		else
+			pa_pb(a, b, PB);
+		tmp = (*a);
+	}
+	quick_sort(a, b);
+	quick_sort(&(*b), a);
+	while (*b)
+		pa_pb(a, b, PA);
+}
+
 void sort_more(t_stack **a, t_stack **b, int size)
 {
 	(void)size;
-	minors_b(a, b);
+	// minors_b(a, b);
+	quick_sort(a, b);
 	// sort_five(a, b);
 	// minors_b(a, b, size);
 

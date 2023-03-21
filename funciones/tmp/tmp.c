@@ -160,11 +160,13 @@ int index_middle(t_stack *a)
 	return (sum);
 }
 
-void minors_b(t_stack **a, t_stack **b, int size)
+void minors_b(t_stack **a, t_stack **b)
 {
-	int i = len_stack(a) / 2;
-	int pivot = index_middle(*a) - 1;
+	int i;
+	int pivot;
 
+	i = len_stack(a) / 2;
+	pivot = index_middle(*a);
 	while (i != 0)
 	{
 		while ((*a)->index > pivot)
@@ -172,7 +174,8 @@ void minors_b(t_stack **a, t_stack **b, int size)
 		while ((*a)->index <= pivot)
 		{
 			pa_pb(a, b, PB);
-			i--;
+			if (i > 0)
+				i--;
 		}
 	}
 }
