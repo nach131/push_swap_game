@@ -19,10 +19,6 @@ PARA 12 elementos
 
 Para aplicar el algoritmo Quick Sort a una serie de 12 enteros utilizando dos pilas A y B, se puede seguir los siguientes pasos:
 
-Inicializar la pila A con los 12 enteros.
-
-Inicializar la pila B como una pila vacía.
-
 Asignar índices únicos a cada elemento de la pila A, para poder realizar la comparación de los elementos de la pila.
 
 Realizar la partición de la pila A, utilizando como pivote el elemento central de la pila.
@@ -33,4 +29,3 @@ Ordenar recursivamente la pila A y la pila B, utilizando el mismo proceso de par
 
 Una vez que se ordenen ambas pilas, se mezclan los elementos de la pila B en la pila A, respetando el orden de los elementos.
 
-A continuación, se presenta una implementación posible en C del algoritmo Quick Sort para una serie de 12 enteros utilizando dos pilas A y B:

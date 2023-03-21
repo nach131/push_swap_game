@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 11:22:42 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/21 14:22:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,42 @@ void sort_three(t_stack **a)
 	{
 		ra_rb(a, RA);
 		sa_sb(a, SA);
+	}
+}
+
+void print_lst_dos(t_stack *num)
+{
+	while (num)
+	{
+		printf(CYAN "%d index: %d\n", num->num, num->index);
+		num = num->next;
+	}
+}
+void sort_more(t_stack **a, t_stack **b, int size)
+{
+
+	(void)a;
+	(void)b;
+	int i = 0;
+	int j = 0;
+	int pivot = size / 2 - 1;
+	int count = (size - 1) - pivot;
+
+	printf(RED "mitad:%d, size:%d\n", pivot, size);
+	printf("count %d\n", count);
+
+	while (i < pivot)
+	{
+		while ((*a)->index <= pivot && j != count)
+		{
+			// print_lst_dos(*a);
+			ra_rb(a, RA);
+		}
+		while (len_stack(a) > 1 && (*a)->index > pivot)
+		{
+			pa_pb(a, b, PB); // para no moverlos todos comprobar si el ultimo es el que busco
+			j++;
+		}
+		i++;
 	}
 }

@@ -38,7 +38,7 @@ void pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
 			*stack_b = (*stack_b)->next;
 			tmp->next = *stack_a;
 			*stack_a = tmp;
-			ft_printf("pa\n");
+			printf("pa\n");
 		}
 	}
 	if (order == PB)
@@ -49,7 +49,7 @@ void pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
 			*stack_a = (*stack_a)->next;
 			tmp->next = *stack_b;
 			*stack_b = tmp;
-			ft_printf("pb\n");
+			printf("pb\n");
 		}
 	}
 }
@@ -72,9 +72,9 @@ void rra_rrb(t_stack **stack, int order)
 		last->next = *stack;
 		*stack = last;
 		if (order == RRA)
-			ft_printf("rra\n");
+			printf("rra\n");
 		else if (order == RRB)
-			ft_printf("rrb\n");
+			printf("rrb\n");
 	}
 }
 
@@ -97,9 +97,9 @@ void ra_rb(t_stack **stack, int order)
 		*stack = (*stack)->next;
 		last->next->next = NULL;
 		if (order == RA)
-			ft_printf("ra\n");
+			printf("ra\n");
 		else if (order == RB)
-			ft_printf("rb\n");
+			printf("rb\n");
 	}
 }
 
@@ -120,9 +120,9 @@ void sa_sb(t_stack **stack, int order)
 		tmp->next = (*stack);
 		(*stack) = tmp;
 		if (order == SA)
-			ft_printf("sa\n");
+			printf("sa\n");
 		else if (order == SB)
-			ft_printf("sb\n");
+			printf("sb\n");
 	}
 }
 
@@ -156,4 +156,45 @@ int find_small(t_stack **stack)
 		tmp = tmp->next;
 	}
 	return (pivot);
+}
+
+void quick_sort(int arr[], int izq, int der)
+{
+	int i = izq, j = der, pivote = arr[(izq + der) / 2];
+	int tmp;
+
+	while (i <= j)
+	{
+		while (arr[i] < pivote)
+			i++;
+		while (arr[j] > pivote)
+			j--;
+		if (i <= j)
+		{
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			i++;
+			j--;
+		}
+	}
+
+	if (izq < j)
+		quick_sort(arr, izq, j);
+	if (i < der)
+		quick_sort(arr, i, der);
+}
+
+int main()
+{
+	int arr[12] = {7, 3, 9, 1, 4, 6, 8, 2, 11, 10, 5, 12};
+
+	quick_sort(arr, 0, 11);
+
+	for (int i = 0; i < 12; i++)
+	{
+		printf("%d ", arr[i]);
+	}
+
+	return 0;
 }
