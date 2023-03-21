@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 15:39:08 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/21 22:13:23 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,44 +44,34 @@ void print_lst_dos(t_stack *num)
 {
 	while (num)
 	{
-		printf(CYAN "%d index: %d\n", num->num, num->index);
+		printf(YELLOW "%d index: %d\n", num->num, num->index);
 		num = num->next;
 	}
 }
 
-void mitad_inf_a(t_stack **a, t_stack **b, int size)
+int index_middle(t_stack *a)
 {
-	int i = 0;
-	int pivot = len_stack(a) / 2 - 1;
+	t_stack *tmp = a;
+	int sum = 0;
+	int len = len_stack(&a);
 
-	printf(RED "mitad:%d, size:%d\n", pivot, size);
-
-	while (i <= pivot)
+	while (tmp)
 	{
-		while ((*a)->index <= pivot)
-			ra_rb(a, RA);
-		while ((*a)->index > pivot)
-		{
-			pa_pb(a, b, PB);
-			i++;
-		}
+		// printf(MAGENTA "num%d:index:%d\n", tmp->num, tmp->index);
+		sum += tmp->index;
+		tmp = tmp->next;
 	}
+	sum /= len;
+	return (sum);
 }
 
-// void invertir_mitad(t_stack **a, t_stack **b, int size)
+// void major_b(t_stack **a, t_stack **b)
 // {
 // 	int i = 0;
-// 	int pivot = len_stack(a) - 1;
+// 	// int pivot = len_stack(a) / 2 - 1;
+// 	int pivot = index_middle(*a);
 
-// 	printf(RED "invertir_mitad:%d, size:%d\n", pivot, size);
-
-// 	while ((*a)->index > pivot)
-// 	{
-// 		pa_pb(a, b, PA);
-// 		i++;
-// 	}
-
-// 	while ((*a)->index <= pivot)
+// 	while (i <= pivot)
 // 	{
 // 		while ((*a)->index <= pivot)
 // 			ra_rb(a, RA);
@@ -93,13 +83,13 @@ void mitad_inf_a(t_stack **a, t_stack **b, int size)
 // 	}
 // }
 
-void mitad_mayo_a(t_stack **a, t_stack **b, int size)
+void minors_b(t_stack **a, t_stack **b)
 {
-	int i = len_stack(a) / 2;
-	int pivot = len_stack(a) / 2 - 1;
+	int i;
+	int pivot;
 
-	printf(RED "pivot:%d, size:%d i:%d\n", pivot, size, i);
-
+	i = len_stack(a) / 2;
+	pivot = index_middle(*a);
 	while (i != 0)
 	{
 		while ((*a)->index > pivot)
@@ -107,14 +97,19 @@ void mitad_mayo_a(t_stack **a, t_stack **b, int size)
 		while ((*a)->index <= pivot)
 		{
 			pa_pb(a, b, PB);
-			i--;
+			if (i > 0)
+				i--;
 		}
 	}
 }
+
 void sort_more(t_stack **a, t_stack **b, int size)
 {
-	mitad_mayo_a(a, b, size);
-	mitad_mayo_a(a, b, size);
+	(void)size;
+	minors_b(a, b);
+	// sort_five(a, b);
+	// minors_b(a, b, size);
+
 	// mitad_inf_a(a, b, size);
 	// invertir_mitad(a, b, size);
 }

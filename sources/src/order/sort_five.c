@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:13:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 11:18:16 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:29:12 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void movimiento_s(t_stack **a, int n)
 	}
 }
 
-void sort_five(t_stack **a, t_stack **b, int size)
+void sort_five(t_stack **a, t_stack **b)
 {
 	int small = find_small(a);
 
@@ -51,7 +51,7 @@ void sort_five(t_stack **a, t_stack **b, int size)
 	{
 		movimiento_s(a, count_posicion_s(a, small));
 		pa_pb(&(*a), &(*b), PB);
-		sort_five(a, b, size);
+		sort_five(a, b);
 	}
 	sort_three(a);
 	pa_pb(&(*a), &(*b), PA);

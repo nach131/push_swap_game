@@ -67,7 +67,7 @@ void pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
 void quickSort(int arr[], int low, int high);
 
 void sort_three(t_stack **a);
-void sort_five(t_stack **a, t_stack **b, int size);
+void sort_five(t_stack **a, t_stack **b);
 void sort_more(t_stack **a, t_stack **b, int size);
 
 #endif

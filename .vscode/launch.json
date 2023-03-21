@@ -10,7 +10,8 @@
 			"name": "push_swap",
 			// "program": "${fileDirname}/${fileBasenameNoExtension}.out",
 			"program": "${workspaceFolder}/sources/push_swap",
-			"args": ["9","8","7","6","5","4","3","2","1","0"],
+			"args": ["9", "1", "2", "8", "6" ,"5", "7", "4", "3"],
+			// "args": ["9","8","7","6","5","4","3","2","1","0"],
 			// "args": ["3","2","1"],
 			"stopOnEntry": false,
 			"cwd": "${fileDirname}"

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 11:45:25 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/21 16:29:23 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void selection(t_stack **a, t_stack **b, int size)
 	else if (size == 3)
 		sort_three(a);
 	else if (size > 3 && size <= 5)
-		sort_five(a, b, size);
+		sort_five(a, b);
 	else if (size > 5 && size <= 100)
 		sort_more(a, b, size);
 	else

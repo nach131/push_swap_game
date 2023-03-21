@@ -145,15 +145,34 @@ int len_stack(t_stack **stack)
 	return (i);
 }
 
-int find_small(t_stack **stack)
+int index_middle(t_stack *a)
 {
-	int pivot = (*stack)->index;
-	t_stack *tmp = (*stack)->next;
+	t_stack *tmp = a;
+	int sum = 0;
+	int len = len_stack(&a);
+
 	while (tmp)
 	{
-		if (tmp->index < pivot)
-			pivot = tmp->index;
+		sum += tmp->index;
 		tmp = tmp->next;
 	}
-	return (pivot);
+	sum /= len;
+	return (sum);
+}
+
+void minors_b(t_stack **a, t_stack **b, int size)
+{
+	int i = len_stack(a) / 2;
+	int pivot = index_middle(*a) - 1;
+
+	while (i != 0)
+	{
+		while ((*a)->index > pivot)
+			ra_rb(a, RA);
+		while ((*a)->index <= pivot)
+		{
+			pa_pb(a, b, PB);
+			i--;
+		}
+	}
 }
