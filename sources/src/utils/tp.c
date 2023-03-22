@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_hundred.c                                     :+:      :+:    :+:   */
+/*   tp.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 16:29:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 19:17:41 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/22 18:57:32 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/22 19:17:25 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,17 @@
 
 #include "push_swap.h"
 
-void sort_hundred(t_stack **a, t_stack **b, t_data *data)
+void switch_tp(int tp[], int n, int type)
 {
-	(void)a;
-	(void)b;
-	ft_bzero(data->tp, data->size * sizeof(int));
-	// printf(RED "%d\n", first_inx(*b));
-	switch_tp(data->tp, first_inx(*a), ON);
-	switch_tp(data->tp, first_inx(*b), ON);
-	switch_tp(data->tp, first_inx(*b), OFF);
-	printf(YELLOW "act? %d\n", tp_is_act(data->tp, first_inx(*b)));
+	if (type)
+		tp[n] = 1;
+	if (!type)
+		tp[n] = 0;
+}
 
-	print_tp(data);
+int tp_is_act(int tp[], int n)
+{
+	if (tp[n] == 1)
+		return (1);
+	return (0);
 }
