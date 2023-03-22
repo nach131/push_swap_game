@@ -80,6 +80,8 @@ void sort_hundred(t_stack **a, t_stack **b, t_data *data);
 int first_inx(t_stack *stack);
 void switch_tp(int tp[], int n, int type);
 int tp_is_act(int tp[], int n);
+// int ctrl_pb(int tp[], int size);
+int ctrl_pb(int tp[], int star, int end);
 
 // ===========================================================================================
 void print_tp(t_data *data);

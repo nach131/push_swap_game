@@ -206,7 +206,7 @@ Para redirigir la salida de error a un archivo.
 
 	export NUMEROS=$(jot -n 10 1 1000 | tr '\n' ' ')
 
-	export NUMEROS=$(shuf -i 100-500 -n 10 | tr '\n' ' ')
+	export NUMEROS=$(shuf -i 1-99 -n 100 | tr '\n' ' ')
 
 /push_swap $ARG | wc -l
 

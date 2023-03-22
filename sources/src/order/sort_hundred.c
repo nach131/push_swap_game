@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:29:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 20:18:42 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/22 23:34:10 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,48 +24,54 @@ void sort_hundred(t_stack **a, t_stack **b, t_data *data)
 
 	int one = data->size / 3;
 	int two = 2 * (data->size / 3);
-	// int three = 3 * (data->size / 3);
 	int three = data->size;
 
 	int md_one = one / 2;
 	int md_two = (one + two) / 2;
 	int md_three = (two + three) / 2;
 
-	printf(YELLOW "\t1/3/2: %d\n", md_one);
-	printf(MAGENTA "1/3: %d\n", one);
-	printf(YELLOW "\t2/3/2: %d\n", md_two);
-	printf(MAGENTA "2/3: %d\n", two);
-	printf(YELLOW "\t3/3/2: %d\n", md_three);
-	printf(MAGENTA "3/3: %d\n", three);
+	printf(YELLOW "\tone/2: %d\n", md_one);
+	printf(MAGENTA "one: %d\n", one);
+	printf(YELLOW "\ttwo/2: %d\n", md_two);
+	printf(MAGENTA "two: %d\n", two);
+	printf(YELLOW "\tthree/2: %d\n", md_three);
+	printf(MAGENTA "three: %d\n", three);
 
-	if (((*a)->index <= data->size / 3))
-		printf("SI\n");
-	else
-		printf("Mas grade\n");
+	// while (!ctrl_pb(data->tp, 0, one))
+	// {
 
-	// print_tp(data);
+	// printf(RED "%d\n", !ctrl_pb(data->tp, 0, one));
+	// printf(RED "%d\n", ctrl_pb(data->tp, 0, one));
+
+	// int aki = 0;
+	while (ctrl_pb(data->tp, 0, one))
+	{
+		// printf("%d_%d\n", (*a)->index, aki);
+		// aki++;
+
+		// if (((*a)->index < one + 1))
+		if (((*a)->index <= one + 1))
+		{
+			switch_tp(data->tp, (*a)->index - 1, ON);
+			pa_pb(a, b, PB);
+			if (((*b)->index <= md_one))
+				ra_rb(b, RB);
+		}
+		if (((*a)->index > one))
+		{
+			ra_rb(a, RA);
+		}
+	}
+
+	// if (((*a)->index <= one))
+	// {
+	// switch_tp(data->tp, (*a)->index - 1, ON);
+	// pa_pb(a, b, PB);
+	// if (((*b)->index <= md_one))
+	// 	ra_rb(b, RB);
+	// }
+	// ctrl_pb(data->tp, 0, one);
+	// ctrl_pb(data->tp, one + 1, two);
+	// ctrl_pb(data->tp, two + 1, data->size);
+	print_tp(data);
 }
-
-// (void)a;
-// 	(void)b;
-// 	ft_bzero(data->tp, data->size * sizeof(int));
-// 	// printf(RED "%d\n", first_inx(*b));
-
-// 	int one = data->size / 3;
-// 	int two = 2 * (data->size / 3);
-// 	int three = 3 * (data->size / 3);
-
-// 	int md_one = one / 2;
-// 	int md_two = (one + two) / 2;
-// 	int md_three = (two + three) / 2;
-
-// 	printf(MAGENTA "1/3: %d\n", one);
-// 	printf(YELLOW "\t1/3/2: %d\n", md_one);
-// 	printf(MAGENTA "2/3: %d\n", two);
-// 	printf(YELLOW "\t2/3/2: %d\n", md_two);
-// 	printf(MAGENTA "3/3: %d\n", three);
-// 	printf(YELLOW "\t3/3/2: %d\n", md_three);
-// 	if (((*a)->index <= data->size / 3))
-// 		printf("SI\n");
-// 	else
-// 		printf("Mas grade\n");
