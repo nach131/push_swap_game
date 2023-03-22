@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:29:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 23:34:10 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/22 23:38:52 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ void sort_hundred(t_stack **a, t_stack **b, t_data *data)
 	// printf(RED "%d\n", ctrl_pb(data->tp, 0, one));
 
 	// int aki = 0;
-	while (ctrl_pb(data->tp, 0, one))
+	while (ctrl_pb(data->tp, 0, one - 1))
 	{
 		// printf("%d_%d\n", (*a)->index, aki);
 		// aki++;
 
 		// if (((*a)->index < one + 1))
-		if (((*a)->index <= one + 1))
+		if (((*a)->index <= one))
 		{
 			switch_tp(data->tp, (*a)->index - 1, ON);
 			pa_pb(a, b, PB);
