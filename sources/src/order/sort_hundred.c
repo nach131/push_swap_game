@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:29:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 16:30:23 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/22 16:50:52 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@
 
 #include "push_swap.h"
 
-void sort_hundred(t_stack **a, t_stack **b, int size)
+// ft_bzero(data.tp, data.size * sizeof(int))
+
+void sort_hundred(t_stack **a, t_stack **b, t_data *data)
 {
-	(void)size;
 	(void)a;
 	(void)b;
-	printf("sort_hundred\n");
+	ft_bzero(data->tp, data->size * sizeof(int));
+	print_tp(data);
+
 	// minors_b(a, b);
 	// quick_sort(a, b);
 	// sort_five(a, b);
