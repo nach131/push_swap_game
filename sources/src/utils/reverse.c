@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 13:10:22 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:22:08 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void rra_rrb(t_stack **stack, int order)
 
 void rrr(t_stack **a, t_stack **b)
 {
-	rra_rrb(a, RRA);
-	rra_rrb(b, RRB);
+	rra_rrb(a, XX);
+	rra_rrb(b, XX);
+	ft_printf("rrr\n");
 }

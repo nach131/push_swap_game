@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 22:13:51 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:20:43 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,8 @@ int main(int argc, char **argv)
 	index_stack(stack_a, data.tp, data.size);
 
 	// //=====add num tmp to B=============================================================
-	// int b[] = {30, 10, 20};
-	// stack_b = tmp_stack_b(b, 3);
+	int b[] = {30, 10, 20};
+	stack_b = tmp_stack_b(b, 3);
 	// //=========================================================================
 
 	// sa_sb(&stack_a, SA);
@@ -79,14 +79,16 @@ int main(int argc, char **argv)
 	// ra_rb(&stack_b, RB);
 	// rr(&stack_a, &stack_b);
 
-	// rra_rrb(&stack_b, RRB);
+	rra_rrb(&stack_b, RRB);
+	rra_rrb(&stack_a, RRA);
+	rrr(&stack_a, &stack_b);
 	// rrr(&stack_a, &stack_b);
 	// pa_pb(&stack_a, &stack_b, PA);
 	// pa_pb(&stack_a, &stack_b, PA);
 	// pa_pb(&stack_a, &stack_b, PA);
 	//=========================================================================
 	// print_lst(stack_a);
-	selection(&stack_a, &stack_b, argc - 1);
+	// selection(&stack_a, &stack_b, argc - 1);
 	//=========================================================================
 	// print_tp(&data);
 	printf(GREEN "----A----\n");

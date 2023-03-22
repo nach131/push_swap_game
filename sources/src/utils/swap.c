@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:46:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/19 13:10:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/22 13:25:13 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ void sa_sb(t_stack **stack, int order)
 
 void ss(t_stack **a, t_stack **b)
 {
-	sa_sb(a, SA);
-	sa_sb(b, SB);
+	sa_sb(a, XX);
+	sa_sb(b, XX);
+	ft_printf("ss\n");
 }

@@ -24,6 +24,7 @@ enum
 	RRB,
 	PA,
 	PB,
+	XX,
 };
 
 typedef struct s_stack
@@ -61,7 +62,11 @@ void ss(t_stack **a, t_stack **b);
 void ra_rb(t_stack **stack, int order);
 void rr(t_stack **a, t_stack **b);
 void rra_rrb(t_stack **stack, int order);
+// void rra(t_stack **stack);
+// void rrb(t_stack **stack);
 void rrr(t_stack **a, t_stack **b);
+
+// void rrr(t_stack **a, t_stack **b);
 void pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
 
 void quickSort(int arr[], int low, int high);
