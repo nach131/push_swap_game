@@ -71,6 +71,8 @@ void sort_three(t_stack **a);
 void sort_five(t_stack **a, t_stack **b);
 void sort_hundred(t_stack **a, t_stack **b, t_data *data);
 
+int first_inx(t_stack *stack);
+
 // ===========================================================================================
 void print_tp(t_data *data);
 

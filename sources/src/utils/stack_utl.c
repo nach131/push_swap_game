@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:17:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 11:18:43 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/22 18:53:48 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,9 @@ int find_small(t_stack **stack)
 		tmp = tmp->next;
 	}
 	return (pivot);
+}
+
+int first_inx(t_stack *stack)
+{
+	return (stack->index);
 }
