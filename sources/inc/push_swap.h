@@ -79,7 +79,6 @@ void sort_hundred(t_stack **a, t_stack **b, t_data *data);
 
 int first_inx(t_stack *stack);
 void switch_tp(int tp[], int n, int type);
-void des_rb(int tp[], int n);
 int tp_is_act(int tp[], int n);
 
 // ===========================================================================================
