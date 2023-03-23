@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 12:59:15 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:28:28 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,19 @@
 
 #include "push_swap.h"
 
-int count_posicion(t_stack **a, int n)
+int	count_posicion(t_stack **a, int n)
 {
-	t_stack *tmp = *a;
-	int i = 1;
+	t_stack	*tmp;
+	int		i;
+
+	tmp = *a;
+	i = 1;
 	while (tmp)
 	{
 		if (tmp->index == n)
 		{
 			// printf(RED "%d: %d\n", (*a)->num, (*a)->index);
-			break;
+			break ;
 		}
 		i++;
 		tmp = tmp->next;
@@ -33,10 +36,11 @@ int count_posicion(t_stack **a, int n)
 	return (i - 1);
 }
 
-void movimiento(t_stack **a, int n)
+void	movimiento(t_stack **a, int n)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (i < n)
 	{
 		ra_rb(a, RA);
@@ -44,10 +48,11 @@ void movimiento(t_stack **a, int n)
 	}
 }
 
-void selection(t_stack **a, t_stack **b, t_data *data)
+void	selection(t_stack **a, t_stack **b, t_data *data)
 {
-	(void)b;
+	int	i;
 
+	(void)b;
 	if (data->size == 2)
 		sa_sb(a, SA);
 	else if (data->size == 3)
@@ -58,7 +63,7 @@ void selection(t_stack **a, t_stack **b, t_data *data)
 		push_hundred(a, b, data);
 	else
 	{
-		int i = 0;
+		i = 0;
 		while (i < data->size)
 		{
 			movimiento(a, count_posicion(a, i));

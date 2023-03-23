@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:17:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 18:53:48 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:24:05 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,13 @@
 
 #include "push_swap.h"
 
-int len_stack(t_stack **stack)
+int	len_stack(t_stack **stack)
 {
-	t_stack *tmp = *stack;
-	int i = 0;
+	t_stack	*tmp;
+	int		i;
 
+	tmp = *stack;
+	i = 0;
 	while (tmp)
 	{
 		i++;
@@ -29,10 +31,13 @@ int len_stack(t_stack **stack)
 	return (i);
 }
 
-int find_small(t_stack **stack)
+int	find_small(t_stack **stack)
 {
-	int pivot = (*stack)->index;
-	t_stack *tmp = (*stack)->next;
+	int		pivot;
+	t_stack	*tmp;
+
+	pivot = (*stack)->index;
+	tmp = (*stack)->next;
 	while (tmp)
 	{
 		if (tmp->index < pivot)
@@ -42,7 +47,7 @@ int find_small(t_stack **stack)
 	return (pivot);
 }
 
-int first_inx(t_stack *stack)
+int	first_inx(t_stack *stack)
 {
 	return (stack->index);
 }

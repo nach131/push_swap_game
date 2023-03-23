@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:13:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 16:29:12 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:23:32 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,18 @@
 
 #include "push_swap.h"
 
-int count_posicion_s(t_stack **a, int n)
+int	count_posicion_s(t_stack **a, int n)
 {
-	t_stack *tmp = *a;
-	int i = 1;
+	t_stack	*tmp;
+	int		i;
+
+	tmp = *a;
+	i = 1;
 	while (tmp)
 	{
 		if (tmp->index == n)
 		{
-			break;
+			break ;
 		}
 		i++;
 		tmp = tmp->next;
@@ -32,10 +35,11 @@ int count_posicion_s(t_stack **a, int n)
 	return (i - 1);
 }
 
-void movimiento_s(t_stack **a, int n)
+void	movimiento_s(t_stack **a, int n)
 {
-	int i = 0;
+	int	i;
 
+	i = 0;
 	while (i < n)
 	{
 		ra_rb(a, RA);
@@ -43,10 +47,11 @@ void movimiento_s(t_stack **a, int n)
 	}
 }
 
-void sort_five(t_stack **a, t_stack **b)
+void	sort_five(t_stack **a, t_stack **b)
 {
-	int small = find_small(a);
+	int	small;
 
+	small = find_small(a);
 	if (len_stack(a) > 3)
 	{
 		movimiento_s(a, count_posicion_s(a, small));

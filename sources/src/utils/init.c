@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 20:53:15 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:23:56 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "push_swap.h"
 #include <limits.h>
 
-void static ctrl_int(const char *str)
+void static	ctrl_int(const char *str)
 {
 	if (ft_atoi_long(str) > INT_MAX || ft_atoi_long(str) < INT_MIN)
 	{
@@ -26,18 +26,18 @@ void static ctrl_int(const char *str)
 	}
 }
 
-void init_data(t_data *data, int size)
+void	init_data(t_data *data, int size)
 {
 	ft_bzero(data, sizeof(t_data));
 	data->tp = ft_calloc(size, sizeof(int));
 	data->size = size;
 }
 
-t_stack *add_num(t_data *data, char **n)
+t_stack	*add_num(t_data *data, char **n)
 {
-	int i;
-	int j;
-	t_stack *stack;
+	int		i;
+	int		j;
+	t_stack	*stack;
 
 	i = 1;
 	j = data->size - 1;
@@ -55,10 +55,10 @@ t_stack *add_num(t_data *data, char **n)
 	return (stack);
 }
 
-void index_stack(t_stack *stack, int tb[], int size)
+void	index_stack(t_stack *stack, int tb[], int size)
 {
-	int i;
-	t_stack *new;
+	int		i;
+	t_stack	*new;
 
 	i = 0;
 	new = stack;

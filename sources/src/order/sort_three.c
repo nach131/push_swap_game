@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 12:58:23 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:25:12 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,15 @@
 
 #include "push_swap.h"
 
-void sort_three(t_stack **a)
+void	sort_three(t_stack **a)
 {
-	int one = (*a)->num;
-	int two = (*a)->next->num;
-	int three = (*a)->next->next->num;
+	int	one;
+	int	two;
+	int	three;
 
+	one = (*a)->num;
+	two = (*a)->next->num;
+	three = (*a)->next->next->num;
 	if (one < two && one < three && two > three)
 	{
 		rra_rrb(a, RRA);

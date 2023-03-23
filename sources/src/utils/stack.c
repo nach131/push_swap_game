@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 00:34:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/21 11:19:06 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:24:07 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 #include "push_swap.h"
 
-t_stack *stack_new(int value)
+t_stack	*stack_new(int value)
 {
-	t_stack *new;
+	t_stack	*new;
 
 	new = ft_calloc(1, sizeof(t_stack));
 	new->num = value;
@@ -26,7 +26,7 @@ t_stack *stack_new(int value)
 	return (new);
 }
 
-t_stack *stack_last(t_stack *stack)
+t_stack	*stack_last(t_stack *stack)
 {
 	if (!stack)
 		return (NULL);
@@ -39,12 +39,12 @@ t_stack *stack_last(t_stack *stack)
 	return (stack);
 }
 
-void stackadd_back(t_stack **stack, t_stack *new)
+void	stackadd_back(t_stack **stack, t_stack *new)
 {
-	t_stack *item;
+	t_stack	*item;
 
 	if (!stack)
-		return;
+		return ;
 	if (!(*stack))
 		*stack = new;
 	else
@@ -54,9 +54,9 @@ void stackadd_back(t_stack **stack, t_stack *new)
 	}
 }
 
-void clear_stack(t_stack *stack)
+void	clear_stack(t_stack *stack)
 {
-	t_stack *aux;
+	t_stack	*aux;
 
 	if (stack)
 	{

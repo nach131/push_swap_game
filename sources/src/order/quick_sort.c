@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 14:52:01 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/20 20:20:45 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:23:28 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@
 
 #include "push_swap.h"
 
-void swap(int *a, int *b)
+void	swap(int *a, int *b)
 {
-	int t = *a;
+	int	t;
+
+	t = *a;
 	*a = *b;
 	*b = t;
 }
 
-int static partition(int arr[], int low, int high)
+int static	partition(int arr[], int low, int high)
 {
-	int pivot;
-	int i;
-	int j;
+	int	pivot;
+	int	i;
+	int	j;
 
 	pivot = arr[high];
 	i = (low - 1);
@@ -45,16 +47,14 @@ int static partition(int arr[], int low, int high)
 	return (i + 1);
 }
 
-void quickSort(int arr[], int low, int high)
+void	quickSort(int arr[], int low, int high)
 {
-	if (low < high)
-	{
 		int pi;
 
+	if (low < high)
+	{
 		pi = partition(arr, low, high);
 		quickSort(arr, low, pi - 1);
 		quickSort(arr, pi + 1, high);
 	}
 }
-
-

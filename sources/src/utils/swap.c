@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:46:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 13:25:13 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:24:09 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 
 // Hay que indicar el que orden a imprimir
 
-void sa_sb(t_stack **stack, int order)
+void	sa_sb(t_stack **stack, int order)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if ((*stack) && (*stack)->next)
 	{
@@ -43,7 +43,7 @@ void sa_sb(t_stack **stack, int order)
 
 // // Los dos a la vez
 
-void ss(t_stack **a, t_stack **b)
+void	ss(t_stack **a, t_stack **b)
 {
 	sa_sb(a, XX);
 	sa_sb(b, XX);

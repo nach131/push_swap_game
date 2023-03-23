@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 13:24:24 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:24:03 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 
 // Hayq que indicar el que orden a imprimir
 
-void ra_rb(t_stack **stack, int order)
+void	ra_rb(t_stack **stack, int order)
 {
-	t_stack *last;
+	t_stack	*last;
 
 	if ((*stack) && (*stack)->next)
 	{
@@ -47,7 +47,7 @@ void ra_rb(t_stack **stack, int order)
 // y del stack B una posición hacia arriba,
 //  de forma que el primer elemento se convierte en el último.
 
-void rr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
 	ra_rb(a, XX);
 	ra_rb(b, XX);

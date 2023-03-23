@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/20 09:47:25 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:23:59 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,9 @@
 
 // Hay que indicar el que orden a imprimir
 
-void pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
+void	pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 
 	if (order == PA)
 	{

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:57:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 13:03:02 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:24:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "push_swap.h"
 
-void switch_tp(int tp[], int n, int type)
+void	switch_tp(int tp[], int n, int type)
 {
 	if (type)
 		tp[n] = 1;
@@ -24,14 +24,14 @@ void switch_tp(int tp[], int n, int type)
 		tp[n] = 0;
 }
 
-int tp_is_act(int tp[], int n)
+int	tp_is_act(int tp[], int n)
 {
 	if (tp[n] == 1)
 		return (1);
 	return (0);
 }
 
-int ctrl_pb(int tp[], int star, int end)
+int	ctrl_pb(int tp[], int star, int end)
 {
 	while (star <= end)
 	{

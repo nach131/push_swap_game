@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 13:22:08 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 16:24:01 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@
 
 // Hay que indicar el que orden a imprimir
 
-void rra_rrb(t_stack **stack, int order)
+void	rra_rrb(t_stack **stack, int order)
 {
-	t_stack *prev;
-	t_stack *last;
+	t_stack	*prev;
+	t_stack	*last;
 
 	if ((*stack) && (*stack)->next)
 	{
@@ -50,7 +50,7 @@ void rra_rrb(t_stack **stack, int order)
 
 // Los dos a la vez
 
-void rrr(t_stack **a, t_stack **b)
+void	rrr(t_stack **a, t_stack **b)
 {
 	rra_rrb(a, XX);
 	rra_rrb(b, XX);
