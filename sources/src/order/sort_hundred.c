@@ -82,6 +82,7 @@ void sort_hundred(t_stack **a, t_stack **b, t_data *data)
 			if (((*b)->index <= md_three))
 				ra_rb(b, RB);
 		}
+		if((*a))
 		if (((*a)->index > three))
 		{
 			ra_rb(a, RA);
@@ -98,5 +99,5 @@ void sort_hundred(t_stack **a, t_stack **b, t_data *data)
 	// ctrl_pb(data->tp, 0, one);
 	// ctrl_pb(data->tp, one + 1, two);
 	// ctrl_pb(data->tp, two + 1, data->size);
-	print_tp(data);
+	// print_tp(data);
 }

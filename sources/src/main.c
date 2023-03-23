@@ -88,8 +88,9 @@ int main(int argc, char **argv)
 	// pa_pb(&stack_a, &stack_b, PB);
 	//=========================================================================
 	// print_lst(stack_a);
+	print_tp(&data);
 	selection(&stack_a, &stack_b, &data);
-	// print_tp(&data);
+	print_tp(&data);
 	//=========================================================================
 	printf(GREEN "----A----\n");
 	print_lst(stack_a);
