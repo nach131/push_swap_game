@@ -213,3 +213,12 @@ Para redirigir la salida de error a un archivo.
 ./push_swap `ruby -e "puts (1..100).to_a.shuffle.join(' ')"`
 
 https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
+
+```mermaid
+graph TD;
+  A(12 9 3 25 24 4 17 6 29 8 26 7 30 16 10 13 19 15 23 1 21 2 5 22 28 11 18 20 27 14)
+  A-->B1(19 16 17 20 18)
+  A --> A1(10 7 8 6 9)
+  A --> A2(3 4 1 2 5)
+  A --> B2(11 14 12 13 15)
+  ```

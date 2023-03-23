@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 21:22:26 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 08:21:42 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ void print_lst(t_stack *num)
 {
 	while (num)
 	{
-		printf(CYAN "%d index: %d\n", num->num, num->index);
+		// printf(CYAN "%d index: %d\n", num->num, num->index);
+		printf(CYAN "%d ", num->num);
 		num = num->next;
 	}
 }
