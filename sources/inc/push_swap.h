@@ -75,7 +75,8 @@ void quickSort(int arr[], int low, int high);
 
 void sort_three(t_stack **a);
 void sort_five(t_stack **a, t_stack **b);
-void sort_hundred(t_stack **a, t_stack **b, t_data *data);
+void push_hundred(t_stack **a, t_stack **b, t_data *data);
+void pop_hundred(t_stack **a, t_stack **b, t_data *data);
 
 int first_inx(t_stack *stack);
 void switch_tp(int tp[], int n, int type);

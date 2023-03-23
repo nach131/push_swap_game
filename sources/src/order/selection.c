@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 16:39:51 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:59:15 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void selection(t_stack **a, t_stack **b, t_data *data)
 	else if (data->size > 3 && data->size <= 5)
 		sort_five(a, b);
 	else if (data->size > 5 && data->size <= 100)
-		sort_hundred(a, b, data);
+		push_hundred(a, b, data);
 	else
 	{
 		int i = 0;

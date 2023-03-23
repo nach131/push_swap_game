@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 12:06:15 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/22 16:30:15 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/23 12:58:23 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,5 @@ void sort_three(t_stack **a)
 	{
 		ra_rb(a, RA);
 		sa_sb(a, SA);
-	}
-}
-
-void print_lst_dos(t_stack *num)
-{
-	while (num)
-	{
-		printf(YELLOW "%d index: %d\n", num->num, num->index);
-		num = num->next;
 	}
 }
