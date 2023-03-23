@@ -216,7 +216,6 @@ https://en.wikipedia.org/wiki/Stack_(abstract_data_type)
 
 ```mermaid
 graph TD;
-graph TD;
   A(12 9 3 25 24 4 17 6 29 8 26 7 30 16 10 13 19 15 23 1 21 2 5 22 28 11 18 20 27 14)
   A-->C1(30 26 29 27 28)-->D
   A-->B1(19 16 17 20 18)-->D
