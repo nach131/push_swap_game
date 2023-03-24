@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:57:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/24 09:52:27 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/24 13:00:05 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	switch_tp(int tp[], int n, int type)
 		tp[n] = -1;
 }
 
-// aqui puedo poner -1 para la vuelta
 int	tp_is_act(int tp[], int n)
 {
 	if (tp[n] == 1)
