@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:13:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 16:23:32 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/24 13:56:57 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "push_swap.h"
 
-int	count_posicion_s(t_stack **a, int n)
+int	count_position_s(t_stack **a, int n)
 {
 	t_stack	*tmp;
 	int		i;
@@ -26,16 +26,14 @@ int	count_posicion_s(t_stack **a, int n)
 	while (tmp)
 	{
 		if (tmp->index == n)
-		{
 			break ;
-		}
 		i++;
 		tmp = tmp->next;
 	}
 	return (i - 1);
 }
 
-void	movimiento_s(t_stack **a, int n)
+void	move_s(t_stack **a, int n)
 {
 	int	i;
 
@@ -54,7 +52,7 @@ void	sort_five(t_stack **a, t_stack **b)
 	small = find_small(a);
 	if (len_stack(a) > 3)
 	{
-		movimiento_s(a, count_posicion_s(a, small));
+		move_s(a, count_position_s(a, small));
 		pa_pb(&(*a), &(*b), PB);
 		sort_five(a, b);
 	}
