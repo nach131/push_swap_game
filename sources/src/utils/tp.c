@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:57:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/24 13:00:05 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:05:40 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,5 @@ int	ctrl_pb(int tp[], int star, int end)
 			return (1);
 		star++;
 	}
-	return (0);
-}
-
-int	ctrl_back(int tp[], int i)
-{
-	if (tp[i] == -1)
-		return (1);
 	return (0);
 }

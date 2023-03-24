@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:37:03 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 16:23:53 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:00:52 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 
 #include "push_swap.h"
 
-// OK UPGRADE
 void	ctrl_num(int size, char **str)
 {
 	int	i;
@@ -41,7 +40,6 @@ void	ctrl_num(int size, char **str)
 	}
 }
 
-// OK UPGRADE
 void	ctrl_num_dupl(t_data *data)
 {
 	int	i;
@@ -65,7 +63,6 @@ void	ctrl_num_dupl(t_data *data)
 	}
 }
 
-// OK UPGRADE
 void	ctrl_sorted(t_data *data)
 {
 	int	i;

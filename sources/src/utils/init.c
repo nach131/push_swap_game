@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 16:23:56 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/24 14:01:09 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	index_stack(t_stack *stack, int tb[], int size)
 		while (new)
 		{
 			if (tb[i] == new->num)
-				new->index = i + 1; // AQUI SUME PAR QUE NO FUERA 0
+				new->index = i + 1;
 			new = new->next;
 		}
 		new = stack;
