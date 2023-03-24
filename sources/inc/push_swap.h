@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 16:27:23 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/24 09:43:22 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ enum
 {
 	OFF,
 	ON,
+	BACK,
 };
 
 typedef struct s_stack
@@ -94,8 +95,10 @@ int					first_inx(t_stack *stack);
 void				switch_tp(int tp[], int n, int type);
 int					tp_is_act(int tp[], int n);
 int					ctrl_pb(int tp[], int star, int end);
+int					ctrl_back(int tp[], int i);
 
 //=====================================
 void				print_tp(t_data *data);
+void				print_lst(t_stack *num);
 
 #endif
