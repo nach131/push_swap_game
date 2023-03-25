@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 10:50:35 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 14:42:20 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ typedef struct s_stack
 typedef struct s_data
 {
 	int				size;
-	int				flag;
+	int				chunk;
 	int				*tp;
 }					t_data;
 

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 10:22:37 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 15:15:07 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,9 @@ void	selection(t_stack **a, t_stack **b, t_data *data)
 		sort_five(a, b);
 	else if (data->size > 5 && data->size <= 100)
 	{
+		// AKI PONER EL MALLO DE CUANTOS CHUNKS
 		push_hundred(a, b, data);
-		pop_hundred(a, b, data);
+		// pop_hundred(a, b, data);
 	}
 	else
 	{
