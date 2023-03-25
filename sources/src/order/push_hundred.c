@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 16:29:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 19:35:59 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 10:23:03 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,8 @@ void	push_hundred(t_stack **a, t_stack **b, t_data *data)
 	one_chunk(a, b, data);
 	two_chunk(a, b, data);
 	three_chunk(a, b, data);
-	pop_hundred(a, b, data);
+	//pasar a A
+	// pop_hundred(a, b, data);
 }
 
 // 	one/2: 5

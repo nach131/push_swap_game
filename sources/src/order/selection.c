@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 16:28:28 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 10:22:37 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,41 @@
 
 #include "push_swap.h"
 
-int	count_posicion(t_stack **a, int n)
-{
-	t_stack	*tmp;
-	int		i;
+// int	count_posicion(t_stack **a, int n)
+// {
+// 	t_stack	*tmp;
+// 	int		i;
 
-	tmp = *a;
-	i = 1;
-	while (tmp)
-	{
-		if (tmp->index == n)
-		{
-			// printf(RED "%d: %d\n", (*a)->num, (*a)->index);
-			break ;
-		}
-		i++;
-		tmp = tmp->next;
-	}
-	return (i - 1);
-}
+// 	tmp = *a;
+// 	i = 1;
+// 	while (tmp)
+// 	{
+// 		if (tmp->index == n)
+// 		{
+// 			// printf(RED "%d: %d\n", (*a)->num, (*a)->index);
+// 			break ;
+// 		}
+// 		i++;
+// 		tmp = tmp->next;
+// 	}
+// 	return (i - 1);
+// }
 
-void	movimiento(t_stack **a, int n)
-{
-	int	i;
+// void	movimiento(t_stack **a, int n)
+// {
+// 	int	i;
 
-	i = 0;
-	while (i < n)
-	{
-		ra_rb(a, RA);
-		i++;
-	}
-}
+// 	i = 0;
+// 	while (i < n)
+// 	{
+// 		ra_rb(a, RA);
+// 		i++;
+// 	}
+// }
 
 void	selection(t_stack **a, t_stack **b, t_data *data)
 {
-	int	i;
-
+	// int	i;
 	(void)b;
 	if (data->size == 2)
 		sa_sb(a, SA);
@@ -60,21 +59,25 @@ void	selection(t_stack **a, t_stack **b, t_data *data)
 	else if (data->size > 3 && data->size <= 5)
 		sort_five(a, b);
 	else if (data->size > 5 && data->size <= 100)
+	{
 		push_hundred(a, b, data);
+		pop_hundred(a, b, data);
+	}
 	else
 	{
-		i = 0;
-		while (i < data->size)
-		{
-			movimiento(a, count_posicion(a, i));
-			pa_pb(&(*a), &(*b), PB);
-			i++;
-		}
-		i = 0;
-		while (i < data->size)
-		{
-			pa_pb(&(*a), &(*b), PA);
-			i++;
-		}
+		push_hundred(a, b, data);
+		// i = 0;
+		// while (i < data->size)
+		// {
+		// 	movimiento(a, count_posicion(a, i));
+		// 	pa_pb(&(*a), &(*b), PB);
+		// 	i++;
+		// }
+		// i = 0;
+		// while (i < data->size)
+		// {
+		// 	pa_pb(&(*a), &(*b), PA);
+		// 	i++;
+		// }
 	}
 }

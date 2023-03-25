@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/24 09:43:22 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 10:50:35 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct s_stack
 typedef struct s_data
 {
 	int				size;
+	int				flag;
 	int				*tp;
 }					t_data;
 
@@ -70,6 +71,7 @@ t_stack				*stack_last(t_stack *stack);
 void				stackadd_back(t_stack **stack, t_stack *new);
 void				index_stack(t_stack *stack, int tb[], int size);
 void				clear_stack(t_stack *stack);
+int					last_index(t_stack *stack);
 
 int					len_stack(t_stack **stack);
 int					find_small(t_stack **stack);

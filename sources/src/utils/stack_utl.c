@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:17:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/23 16:24:05 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 11:18:02 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,18 @@ int	find_small(t_stack **stack)
 int	first_inx(t_stack *stack)
 {
 	return (stack->index);
+}
+
+int	last_index(t_stack *stack)
+{
+	int	num;
+
+	if (!stack)
+		return (0);
+	while (stack)
+	{
+		num = stack->index;
+		stack = stack->next;
+	}
+	return (num);
 }
