@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 16:39:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 18:26:18 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 18:49:02 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void static	c_three(t_data *data)
 	data->chunk[2][MIDDLE] = (data->chunk[2][START] + data->chunk[2][END]) / 2;
 }
 
-void	init_chunk(t_data *data)
+void	init_chunk_a(t_data *data)
 {
 	data->chunk = ft_calloc(3, sizeof(int *));
 	c_one(data);

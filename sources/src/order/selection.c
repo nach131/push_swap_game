@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 18:35:42 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 20:54:18 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,42 +16,22 @@
 
 #include "push_swap.h"
 
-// int	count_posicion(t_stack **a, int n)
-// {
-// 	t_stack	*tmp;
-// 	int		i;
+void	print_chunk(int n, int **chunk)
+{
+	int	i;
 
-// 	tmp = *a;
-// 	i = 1;
-// 	while (tmp)
-// 	{
-// 		if (tmp->index == n)
-// 		{
-// 			// printf(RED "%d: %d\n", (*a)->num, (*a)->index);
-// 			break ;
-// 		}
-// 		i++;
-// 		tmp = tmp->next;
-// 	}
-// 	return (i - 1);
-// }
-
-// void	movimiento(t_stack **a, int n)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < n)
-// 	{
-// 		ra_rb(a, RA);
-// 		i++;
-// 	}
-// }
+	i = 0;
+	while (i < n)
+	{
+		printf(GREEN "START: %d\n", chunk[i][0]);
+		printf(ORANGE "MIDDLE: %d\n", chunk[i][1]);
+		printf(CYAN "END: %d\n", chunk[i][2]);
+		i++;
+	}
+}
 
 void	selection(t_stack **a, t_stack **b, t_data *data)
 {
-	// int	i;
-	(void)b;
 	if (data->size == 2)
 		sa_sb(a, SA);
 	else if (data->size == 3)
@@ -60,25 +40,15 @@ void	selection(t_stack **a, t_stack **b, t_data *data)
 		sort_five(a, b);
 	else if (data->size > 5 && data->size <= 100)
 	{
-		init_chunk(data);
+		init_chunk_a(data);
+		// print_chunk(3, data->chunk);
 		push_hundred(a, b, data);
 		pop_hundred(a, b, data);
 	}
 	else
 	{
-		push_hundred(a, b, data);
-		// i = 0;
-		// while (i < data->size)
-		// {
-		// 	movimiento(a, count_posicion(a, i));
-		// 	pa_pb(&(*a), &(*b), PB);
-		// 	i++;
-		// }
-		// i = 0;
-		// while (i < data->size)
-		// {
-		// 	pa_pb(&(*a), &(*b), PA);
-		// 	i++;
-		// }
+		push_biggest(a, b, data);
+		pop_hundred(a, b, data);
+		// print_chunk(7, data->chunk);
 	}
 }

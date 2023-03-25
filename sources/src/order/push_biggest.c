@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_hundred.c                                     :+:      :+:    :+:   */
+/*   push_biggest.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 16:29:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 18:56:26 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/25 18:51:25 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/25 20:53:31 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,50 @@
 
 #include "push_swap.h"
 
-void static	sort_chunk_a(t_stack **a, t_stack **b, t_data *data)
+void	init_chank_b(t_data *data)
 {
 	int	i;
 
 	i = 0;
-	while (i <= 2)
+	data->chunk = ft_calloc(7, sizeof(int *));
+	while (i <= 6)
+	{
+		data->chunk[i] = ft_calloc(3, sizeof(int));
+		i++;
+	}
+}
+
+void static	chunk_b(t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i < 7)
+	{
+		if (i == 6)
+		{
+			data->chunk[6][START] = (i)*data->size / 7;
+			data->chunk[6][END] = data->size;
+			data->chunk[i][MIDDLE] = (data->chunk[i][START]
+					+ data->chunk[i][END]) / 2;
+		}
+		else
+		{
+			data->chunk[i][START] = (i) * (data->size / 7);
+			data->chunk[i][END] = (i + 1) * (data->size / 7);
+			data->chunk[i][MIDDLE] = (data->chunk[i][START]
+					+ data->chunk[i][END]) / 2;
+		}
+		i++;
+	}
+}
+
+void static	sort_chunk_b(t_stack **a, t_stack **b, t_data *data)
+{
+	int	i;
+
+	i = 0;
+	while (i <= 6)
 	{
 		while (ctrl_pb(data->tp, data->chunk[i][START], data->chunk[i][END]
 				- 1))
@@ -41,29 +79,12 @@ void static	sort_chunk_a(t_stack **a, t_stack **b, t_data *data)
 	}
 }
 
-void	free_chunk(int **chunk)
+void	push_biggest(t_stack **a, t_stack **b, t_data *data)
 {
-	int	i;
-
-	(void)chunk;
-	i = 0;
-	while (i <= 2)
-	{
-		free(chunk[i]);
-		i++;
-	}
-}
-
-void	push_hundred(t_stack **a, t_stack **b, t_data *data)
-{
+	init_chank_b(data);
+	chunk_b(data);
 	ft_bzero(data->tp, data->size * sizeof(int));
-	sort_chunk_a(a, b, data);
-	free_chunk(data->chunk);
+	sort_chunk_b(a, b, data);
+	// chunk(a, b, data);
+	// free_chunk(data->chunk);
 }
-
-// 	one/2: 5
-// one: 10
-// 	two/2: 15
-// two: 20
-// 	three/2: 25
-// three: 30
