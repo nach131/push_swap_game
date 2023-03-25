@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 14:57:38 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 18:35:52 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,12 +92,13 @@ int	main(int argc, char **argv)
 	selection(&stack_a, &stack_b, &data);
 	// print_tp(&data);
 	//=========================================================================
-	printf(GREEN "----A----\n");
-	print_lst(stack_a);
-	printf(GREEN "----B----\n");
-	print_lst(stack_b);
+	// printf(GREEN "----A----\n");
+	// print_lst(stack_a);
+	// printf(GREEN "----B----\n");
+	// print_lst(stack_b);
 	//=========================================================================
 	free(data.tp);
+	free(data.chunk);
 	clear_stack(stack_a);
 	clear_stack(stack_b);
 }

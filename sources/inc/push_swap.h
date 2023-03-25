@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 14:42:20 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 18:10:48 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,13 @@ enum
 	BACK,
 };
 
+enum
+{
+	START,
+	MIDDLE,
+	END,
+};
+
 typedef struct s_stack
 {
 	int				num;
@@ -56,7 +63,7 @@ typedef struct s_stack
 typedef struct s_data
 {
 	int				size;
-	int				chunk;
+	int				**chunk;
 	int				*tp;
 }					t_data;
 
@@ -88,6 +95,7 @@ void				pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
 
 void				quickSort(int arr[], int low, int high);
 
+void				init_chunk(t_data *data);
 void				sort_three(t_stack **a);
 void				sort_five(t_stack **a, t_stack **b);
 void				push_hundred(t_stack **a, t_stack **b, t_data *data);
