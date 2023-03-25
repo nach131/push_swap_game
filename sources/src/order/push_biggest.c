@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 18:51:25 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 20:53:31 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/25 22:40:14 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	init_chank_b(t_data *data)
 
 	i = 0;
 	data->chunk = ft_calloc(7, sizeof(int *));
-	while (i <= 6)
+	while (i < 7)
 	{
 		data->chunk[i] = ft_calloc(3, sizeof(int));
 		i++;
@@ -36,7 +36,7 @@ void static	chunk_b(t_data *data)
 	i = 0;
 	while (i < 7)
 	{
-		if (i == 6)
+		if (i == 7 - 1)
 		{
 			data->chunk[6][START] = (i)*data->size / 7;
 			data->chunk[6][END] = data->size;
@@ -59,7 +59,7 @@ void static	sort_chunk_b(t_stack **a, t_stack **b, t_data *data)
 	int	i;
 
 	i = 0;
-	while (i <= 6)
+	while (i < 7)
 	{
 		while (ctrl_pb(data->tp, data->chunk[i][START], data->chunk[i][END]
 				- 1))
