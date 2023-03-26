@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pop.c                                              :+:      :+:    :+:   */
+/*   pop_biggest.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:56:43 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/24 16:25:49 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/26 09:54:49 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	find_big(t_stack *stack)
 	return (num);
 }
 
-void	pop_hundred(t_stack **a, t_stack **b, t_data *data)
+void	pop_biggest(t_stack **a, t_stack **b, t_data *data)
 {
 	ft_bzero(data->tp, data->size * sizeof(int));
 	while ((*b) && (*b)->next)

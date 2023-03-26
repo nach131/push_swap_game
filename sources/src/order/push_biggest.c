@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 22:48:29 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/26 09:57:17 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "push_swap.h"
 
-void	init_chank_b(t_data *data, int n)
+void static	init_chank_b(t_data *data, int n)
 {
 	int	i;
 
@@ -79,10 +79,23 @@ void static	sort_chunk_b(t_stack **a, t_stack **b, t_data *data, int n)
 	}
 }
 
-void	push_biggest(t_stack **a, t_stack **b, t_data *data)
+void static	free_chunk(int **chunk, int chunks)
 {
-	init_chank_b(data, 6);
-	chunk_b(data, 6);
+	int	i;
+
+	i = 0;
+	while (i < chunks)
+	{
+		free(chunk[i]);
+		i++;
+	}
+}
+
+void	push_biggest(t_stack **a, t_stack **b, t_data *data, int chunks)
+{
+	init_chank_b(data, chunks);
+	chunk_b(data, chunks);
 	ft_bzero(data->tp, data->size * sizeof(int));
-	sort_chunk_b(a, b, data, 6);
+	sort_chunk_b(a, b, data, chunks);
+	free_chunk(data->chunk, chunks);
 }

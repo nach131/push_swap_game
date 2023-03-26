@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 20:54:18 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/26 09:55:36 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,13 @@ void	selection(t_stack **a, t_stack **b, t_data *data)
 		sort_five(a, b);
 	else if (data->size > 5 && data->size <= 100)
 	{
-		init_chunk_a(data);
-		// print_chunk(3, data->chunk);
-		push_hundred(a, b, data);
-		pop_hundred(a, b, data);
+		// init_chunk_a(data);
+		push_biggest(a, b, data, 3);
+		pop_biggest(a, b, data);
 	}
 	else
 	{
-		push_biggest(a, b, data);
-		pop_hundred(a, b, data);
-		// print_chunk(7, data->chunk);
+		push_biggest(a, b, data, 6);
+		pop_biggest(a, b, data);
 	}
 }
