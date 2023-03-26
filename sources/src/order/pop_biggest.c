@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:56:43 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/26 09:54:49 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/26 10:08:16 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,6 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "push_swap.h"
-
-int	find_big(t_stack *stack)
-{
-	int	num;
-
-	num = stack->index;
-	while (stack && stack->next)
-	{
-		if (num < stack->next->index)
-			num = stack->next->index;
-		stack = stack->next;
-	}
-	return (num);
-}
 
 void	pop_biggest(t_stack **a, t_stack **b, t_data *data)
 {

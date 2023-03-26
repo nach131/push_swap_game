@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:57:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/24 14:06:47 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/26 10:09:20 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 void	switch_tp(int tp[], int n, int type)
 {
 	if (type)
-		tp[n] = 1; // poner ON
+		tp[n] = ON;
 	if (!type)
-		tp[n] = 0; // OFF
+		tp[n] = OFF;
 }
 
 int	tp_is_act(int tp[], int n)
