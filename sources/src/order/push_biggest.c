@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: Invalid date        by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/26 09:57:17 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/26 10:21:05 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/26 11:31:19 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,20 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "push_swap.h"
+
+void	print_chunk(int n, int **chunk)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
+	{
+		printf(GREEN "START: %d\n", chunk[i][0]);
+		printf(ORANGE "MIDDLE: %d\n", chunk[i][1]);
+		printf(CYAN "END: %d\n", chunk[i][2]);
+		i++;
+	}
+}
 
 void static	init_chank_b(t_data *data, int n)
 {
@@ -52,6 +66,7 @@ void static	chunk_b(t_data *data, int n)
 		}
 		i++;
 	}
+	print_chunk(n, data->chunk);
 }
 
 void static	sort_chunk_b(t_stack **a, t_stack **b, t_data *data, int n)
