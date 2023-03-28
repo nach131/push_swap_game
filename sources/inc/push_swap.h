@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/27 14:08:25 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:16:26 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void				quickSort(int arr[], int low, int high);
 
 void				sort_three(t_stack **a);
 void				sort_five(t_stack **a, t_stack **b);
-void				pop_biggest(t_stack **a, t_stack **b, t_data *data);
+void				pop_biggest(t_stack **a, t_stack **b, t_data *data, int n);
 void				push_biggest(t_stack **a, t_stack **b, t_data *data,
 						int chunks);
 

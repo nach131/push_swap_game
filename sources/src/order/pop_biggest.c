@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:56:43 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/27 21:46:05 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/28 11:51:16 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 #include "push_swap.h"
 
-void	sort_top(t_stack **b, t_data *data, int big)
+void static	sort_top(t_stack **b, t_data *data, int big)
 {
 	while (tp_is_act(data->tp, big - 1))
 	{
@@ -30,8 +30,8 @@ void	sort_top(t_stack **b, t_data *data, int big)
 	}
 }
 
-//ESTA MAL
-void	sort_back(t_stack **b, t_data *data, int big)
+//ESTA MAL...?
+void static	sort_back(t_stack **b, t_data *data, int big)
 {
 	while (tp_is_act(data->tp, big - 1) && big != (*b)->index)
 	{
@@ -45,7 +45,25 @@ void	sort_back(t_stack **b, t_data *data, int big)
 	}
 }
 
-void	pop_biggest(t_stack **a, t_stack **b, t_data *data)
+int static	find_chunk(int big, int n, t_data *data)
+{
+	int	i;
+	int	middle;
+	int	end;
+
+	i = n - 1;
+	while (i >= 0)
+	{
+		middle = data->chunk[i][MIDDLE];
+		end = data->chunk[i][END];
+		if (big > middle && big <= end)
+			return (1);
+		i--;
+	}
+	return (0);
+}
+
+void	pop_biggest(t_stack **a, t_stack **b, t_data *data, int n)
 {
 	int	big;
 	int	last;
@@ -55,16 +73,10 @@ void	pop_biggest(t_stack **a, t_stack **b, t_data *data)
 	{
 		last = last_index((*b));
 		big = find_big((*b));
-		if ((big > data->chunk[2][MIDDLE] && big <= data->chunk[2][END])
-			|| (big > data->chunk[1][MIDDLE] && big <= data->chunk[1][END])
-			|| (big > data->chunk[0][MIDDLE] && big <= data->chunk[0][END]))
-		{
+		if (find_chunk(big, n, data) && big != (*b)->index)
 			sort_top(b, data, big);
-		}
-		else
-		{
+		else if (!find_chunk(big, n, data) && big != (*b)->index)
 			sort_back(b, data, big);
-		}
 		if (big == (*b)->index)
 			pa_pb(a, b, PA);
 		if ((*b) && !(*b)->next)
