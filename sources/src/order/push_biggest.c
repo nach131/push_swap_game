@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 10:21:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/26 11:31:19 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/27 17:02:30 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ void static	chunk_b(t_data *data, int n)
 		}
 		i++;
 	}
-	print_chunk(n, data->chunk);
 }
 
 void static	sort_chunk_b(t_stack **a, t_stack **b, t_data *data, int n)
@@ -94,7 +93,7 @@ void static	sort_chunk_b(t_stack **a, t_stack **b, t_data *data, int n)
 	}
 }
 
-void static	free_chunk(int **chunk, int chunks)
+void	free_chunk(int **chunk, int chunks)
 {
 	int	i;
 
@@ -112,5 +111,4 @@ void	push_biggest(t_stack **a, t_stack **b, t_data *data, int chunks)
 	chunk_b(data, chunks);
 	ft_bzero(data->tp, data->size * sizeof(int));
 	sort_chunk_b(a, b, data, chunks);
-	free_chunk(data->chunk, chunks);
 }

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_utl.c                                        :+:      :+:    :+:   */
+/*   pop_biggest copy.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 11:17:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/27 13:47:04 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/23 12:56:43 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/28 10:05:01 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,66 +16,24 @@
 
 #include "push_swap.h"
 
-int	len_stack(t_stack **stack)
+void	pop_biggest(t_stack **a, t_stack **b, t_data *data)
 {
-	t_stack	*tmp;
-	int		i;
-
-	tmp = *stack;
-	i = 0;
-	while (tmp)
+	ft_bzero(data->tp, data->size * sizeof(int));
+	while ((*b) && (*b)->next)
 	{
-		i++;
-		tmp = tmp->next;
+		while (tp_is_act(data->tp, find_big((*b)) - 1))
+		{
+			rra_rrb(b, RRB);
+			switch_tp(data->tp, (*b)->index - 1, OFF);
+		}
+		if (find_big((*b)) != (*b)->index)
+		{
+			switch_tp(data->tp, (*b)->index - 1, ON);
+			ra_rb(b, RB);
+		}
+		if (find_big((*b)) == (*b)->index)
+			pa_pb(a, b, PA);
+		if ((*b) && !(*b)->next)
+			pa_pb(a, b, PA);
 	}
-	return (i);
-}
-
-int	find_small(t_stack **stack)
-{
-	int		pivot;
-	t_stack	*tmp;
-
-	pivot = (*stack)->index;
-	tmp = (*stack)->next;
-	while (tmp)
-	{
-		if (tmp->index < pivot)
-			pivot = tmp->index;
-		tmp = tmp->next;
-	}
-	return (pivot);
-}
-
-int	find_big(t_stack *stack)
-{
-	int	num;
-
-	num = stack->index;
-	while (stack && stack->next)
-	{
-		if (num < stack->next->index)
-			num = stack->next->index;
-		stack = stack->next;
-	}
-	return (num);
-}
-
-// int	first_index(t_stack *stack)
-// {
-// 	return (stack->index);
-// }
-
-int	last_index(t_stack *stack)
-{
-	int	num;
-
-	if (!stack)
-		return (0);
-	while (stack)
-	{
-		num = stack->index;
-		stack = stack->next;
-	}
-	return (num);
 }
