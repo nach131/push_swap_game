@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:13:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/24 13:56:57 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 23:06:08 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ void	sort_five(t_stack **a, t_stack **b)
 {
 	int	small;
 
-	small = find_small(a);
+	small = find_small((*a));
 	if (len_stack(a) > 3)
 	{
 		move_s(a, count_position_s(a, small));
-		pa_pb(&(*a), &(*b), PB);
+		pa_pb(a, b, PB);
 		sort_five(a, b);
 	}
 	sort_three(a);
-	pa_pb(&(*a), &(*b), PA);
-	pa_pb(&(*a), &(*b), PA);
+	pa_pb(a, b, PA);
+	pa_pb(a, b, PA);
 }

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/21 11:17:46 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/27 13:47:04 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 22:43:36 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,20 +31,37 @@ int	len_stack(t_stack **stack)
 	return (i);
 }
 
-int	find_small(t_stack **stack)
+int	find_small(t_stack *stack)
 {
-	int		pivot;
-	t_stack	*tmp;
+	int	num;
 
-	pivot = (*stack)->index;
-	tmp = (*stack)->next;
-	while (tmp)
+	num = stack->index;
+	while (stack && stack->next)
 	{
-		if (tmp->index < pivot)
-			pivot = tmp->index;
-		tmp = tmp->next;
+		if (num > stack->next->index)
+			num = stack->next->index;
+		stack = stack->next;
 	}
-	return (pivot);
+	return (num);
+}
+
+int	pos_small(t_stack *stack)
+{
+	int	num;
+	int	i;
+
+	i = 1;
+	num = stack->index;
+	while (stack && stack->next)
+	{
+		if (num > stack->next->index)
+		{
+			num = stack->next->index;
+			i++;
+		}
+		stack = stack->next;
+	}
+	return (i);
 }
 
 int	find_big(t_stack *stack)
@@ -61,11 +78,6 @@ int	find_big(t_stack *stack)
 	return (num);
 }
 
-// int	first_index(t_stack *stack)
-// {
-// 	return (stack->index);
-// }
-
 int	last_index(t_stack *stack)
 {
 	int	num;
@@ -79,3 +91,10 @@ int	last_index(t_stack *stack)
 	}
 	return (num);
 }
+
+//=========================================================================
+
+// int	first_index(t_stack *stack)
+// {
+// 	return (stack->index);
+// }

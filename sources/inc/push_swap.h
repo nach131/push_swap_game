@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/29 19:08:06 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 22:39:43 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void				clear_stack(t_stack *stack);
 int					last_index(t_stack *stack);
 
 int					len_stack(t_stack **stack);
-int					find_small(t_stack **stack);
+int					find_small(t_stack *stack);
+int					find_big(t_stack *stack);
 
 void				selection(t_stack **a, t_stack **b, t_data *data);
 
@@ -101,7 +102,6 @@ void				pop_biggest(t_stack **a, t_stack **b, t_data *data, int n);
 void				push_biggest(t_stack **a, t_stack **b, t_data *data,
 						int chunks);
 
-int					find_big(t_stack *stack);
 void				switch_tp(int tp[], int n, int type);
 int					tp_is_act(int tp[], int n);
 int					ctrl_tp(int tp[], int star, int end);
