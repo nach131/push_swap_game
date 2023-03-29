@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/29 11:35:30 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 20:34:05 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ int	main(int argc, char **argv)
 	ctrl_sorted(&data);
 	quickSort(data.tp, 0, data.size - 1);
 	index_stack(stack_a, data.tp, data.size);
+	// print_lst(stack_a);
 	selection(&stack_a, &stack_b, &data);
 	//=========================================================================
 	// printf(GREEN "----A----\n");
