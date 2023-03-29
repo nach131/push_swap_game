@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   chunks.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/11 14:52:01 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/29 16:58:23 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/29 16:35:24 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/29 16:55:50 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,45 +16,30 @@
 
 #include "push_swap.h"
 
-void	swap(int *a, int *b)
+void	free_chunk(int **chunk, int chunks)
 {
-	int	t;
-
-	t = *a;
-	*a = *b;
-	*b = t;
-}
-
-int static	partition(int arr[], int low, int high)
-{
-	int	pivot;
 	int	i;
-	int	j;
 
-	pivot = arr[high];
-	i = (low - 1);
-	j = low;
-	while (j <= high)
+	i = 0;
+	while (i < chunks)
 	{
-		if (arr[j] < pivot) // EL ORDENACION ORDENACION
-		{
-			i++;
-			swap(&arr[i], &arr[j]);
-		}
-		j++;
+		free(chunk[i]);
+		i++;
 	}
-	swap(&arr[i + 1], &arr[high]);
-	return (i + 1);
 }
 
-void	quickSort(int arr[], int low, int high)
-{
-	int	pi;
+// ========================================================
 
-	if (low < high)
+void	print_chunk(int n, int **chunk)
+{
+	int	i;
+
+	i = 0;
+	while (i < n)
 	{
-		pi = partition(arr, low, high);
-		quickSort(arr, low, pi - 1);
-		quickSort(arr, pi + 1, high);
+		printf(GREEN "START: %d\n", chunk[i][0]);
+		printf(ORANGE "MIDDLE: %d\n", chunk[i][1]);
+		printf(CYAN "END: %d\n", chunk[i][2]);
+		i++;
 	}
 }

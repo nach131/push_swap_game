@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 10:21:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/27 17:02:30 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 16:38:28 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,7 @@
 
 #include "push_swap.h"
 
-void	print_chunk(int n, int **chunk)
-{
-	int	i;
-
-	i = 0;
-	while (i < n)
-	{
-		printf(GREEN "START: %d\n", chunk[i][0]);
-		printf(ORANGE "MIDDLE: %d\n", chunk[i][1]);
-		printf(CYAN "END: %d\n", chunk[i][2]);
-		i++;
-	}
-}
-
-void static	init_chank_b(t_data *data, int n)
+void static	init_chunk(t_data *data, int n)
 {
 	int	i;
 
@@ -43,7 +29,7 @@ void static	init_chank_b(t_data *data, int n)
 	}
 }
 
-void static	chunk_b(t_data *data, int n)
+void static	chunk(t_data *data, int n)
 {
 	int	i;
 
@@ -68,14 +54,14 @@ void static	chunk_b(t_data *data, int n)
 	}
 }
 
-void static	sort_chunk_b(t_stack **a, t_stack **b, t_data *data, int n)
+void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
 {
 	int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		while (ctrl_pb(data->tp, data->chunk[i][START], data->chunk[i][END]
+		while (ctrl_tb(data->tp, data->chunk[i][START], data->chunk[i][END]
 				- 1))
 		{
 			if (((*a)->index <= data->chunk[i][END]))
@@ -93,22 +79,10 @@ void static	sort_chunk_b(t_stack **a, t_stack **b, t_data *data, int n)
 	}
 }
 
-void	free_chunk(int **chunk, int chunks)
-{
-	int	i;
-
-	i = 0;
-	while (i < chunks)
-	{
-		free(chunk[i]);
-		i++;
-	}
-}
-
 void	push_biggest(t_stack **a, t_stack **b, t_data *data, int chunks)
 {
-	init_chank_b(data, chunks);
-	chunk_b(data, chunks);
+	init_chunk(data, chunks);
+	chunk(data, chunks);
 	ft_bzero(data->tp, data->size * sizeof(int));
-	sort_chunk_b(a, b, data, chunks);
+	sort_chunk(a, b, data, chunks);
 }

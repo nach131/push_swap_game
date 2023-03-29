@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:56:43 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/29 11:30:06 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 14:41:56 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void static	sort_back(t_stack **b, t_data *data, int big)
 	}
 	if (big != (*b)->index)
 	{
-		rra_rrb(b,RRB);
+		rra_rrb(b, RRB);
 		switch_tp(data->tp, (*b)->index - 1, ON);
 	}
 }
@@ -65,12 +65,10 @@ int static	find_chunk(int big, int n, t_data *data)
 void	pop_biggest(t_stack **a, t_stack **b, t_data *data, int n)
 {
 	int	big;
-	int	last;
 
 	ft_bzero(data->tp, data->size * sizeof(int));
 	while ((*b) && (*b)->next)
 	{
-		last = last_index((*b));
 		big = find_big((*b));
 		if (find_chunk(big, n, data) && big != (*b)->index)
 			sort_top(b, data, big);

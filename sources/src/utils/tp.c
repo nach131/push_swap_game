@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:57:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/26 10:09:20 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:49:21 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	tp_is_act(int tp[], int n)
 	return (0);
 }
 
-int	ctrl_pb(int tp[], int star, int end)
+int	ctrl_tb(int tp[], int star, int end)
 {
 	while (star <= end)
 	{

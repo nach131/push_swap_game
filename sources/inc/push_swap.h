@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/28 11:16:26 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 15:49:20 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ void				push_biggest(t_stack **a, t_stack **b, t_data *data,
 int					find_big(t_stack *stack);
 void				switch_tp(int tp[], int n, int type);
 int					tp_is_act(int tp[], int n);
-int					ctrl_pb(int tp[], int star, int end);
+int					ctrl_tb(int tp[], int star, int end);
 
 void				free_chunk(int **chunk, int chunks);
 
