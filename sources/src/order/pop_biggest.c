@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 12:56:43 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/28 11:51:16 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:30:06 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void static	sort_top(t_stack **b, t_data *data, int big)
 	}
 }
 
-//ESTA MAL...?
 void static	sort_back(t_stack **b, t_data *data, int big)
 {
 	while (tp_is_act(data->tp, big - 1) && big != (*b)->index)
@@ -40,7 +39,7 @@ void static	sort_back(t_stack **b, t_data *data, int big)
 	}
 	if (big != (*b)->index)
 	{
-		rra_rrb(b, RB);
+		rra_rrb(b,RRB);
 		switch_tp(data->tp, (*b)->index - 1, ON);
 	}
 }
@@ -83,25 +82,3 @@ void	pop_biggest(t_stack **a, t_stack **b, t_data *data, int n)
 			pa_pb(a, b, PA);
 	}
 }
-
-// void	pop_biggest(t_stack **a, t_stack **b, t_data *data)
-// {
-// 	ft_bzero(data->tp, data->size * sizeof(int));
-// 	while ((*b) && (*b)->next)
-// 	{
-// 		while (tp_is_act(data->tp, find_big((*b)) - 1))
-// 		{
-// 			rra_rrb(b, RRB);
-// 			switch_tp(data->tp, (*b)->index - 1, OFF);
-// 		}
-// 		if (find_big((*b)) != (*b)->index)
-// 		{
-// 			switch_tp(data->tp, (*b)->index - 1, ON);
-// 			ra_rb(b, RB);
-// 		}
-// 		if (find_big((*b)) == (*b)->index)
-// 			pa_pb(a, b, PA);
-// 		if ((*b) && !(*b)->next)
-// 			pa_pb(a, b, PA);
-// 	}
-// }

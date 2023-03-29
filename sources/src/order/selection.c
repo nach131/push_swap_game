@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/11 13:51:38 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/28 11:16:24 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/29 11:53:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ void	selection(t_stack **a, t_stack **b, t_data *data)
 	}
 	else
 	{
-		push_biggest(a, b, data, 6);
-		pop_biggest(a, b, data, 3);
-		free_chunk(data->chunk, 6);
+		push_biggest(a, b, data, 8);
+		pop_biggest(a, b, data, 8);
+		free_chunk(data->chunk, 8);
 	}
 }
 
