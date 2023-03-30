@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 10:21:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/30 20:51:14 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/30 21:16:20 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,19 @@ void static	chunk(t_data *data, int n)
 	}
 }
 
+void static	sort_chunk_ex(t_stack **a, t_stack **b, t_data *data, int i)
+{
+	switch_tp(data->tp, (*a)->index - 1, ON);
+	pa_pb(a, b, PB);
+	if ((*a))
+		if (((*b)->index <= data->chunk[i][MIDDLE])
+			&& ((*a)->index > data->chunk[i][END]))
+			rr(a, b);
+	if (((*b)->index <= data->chunk[i][MIDDLE]) &&
+		((*b)->index > data->chunk[i][START]))
+		ra_rb(b, RB);
+}
+
 void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
 {
 	int	i;
@@ -66,17 +79,7 @@ void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
 				- 1))
 		{
 			if (((*a)->index <= data->chunk[i][END]))
-			{
-				switch_tp(data->tp, (*a)->index - 1, ON);
-				pa_pb(a, b, PB);
-				if ((*a))
-					if (((*b)->index <= data->chunk[i][MIDDLE])
-						&& ((*a)->index > data->chunk[i][END]))
-						rr(a, b);
-				if (((*b)->index <= data->chunk[i][MIDDLE]) &&
-					((*b)->index > data->chunk[i][START]))
-					ra_rb(b, RB);
-			}
+				sort_chunk_ex(a, b, data, i);
 			if ((*a))
 				if (((*a)->index > data->chunk[i][END]))
 					ra_rb(a, RA);
