@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 10:21:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/29 23:07:19 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/30 11:40:14 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "push_swap.h"
+#include <math.h>
 
 void static	init_chunk(t_data *data, int n)
 {
@@ -38,17 +39,17 @@ void static	chunk(t_data *data, int n)
 	{
 		if (i == n - 1)
 		{
-			data->chunk[n - 1][START] = (i)*data->size / n;
+			data->chunk[n - 1][START] = round(i * (data->size / n));
 			data->chunk[n - 1][END] = data->size;
-			data->chunk[i][MIDDLE] = (data->chunk[i][START]
-					+ data->chunk[i][END]) / 2;
+			data->chunk[i][MIDDLE] = round((data->chunk[i][START]
+						+ data->chunk[i][END]) / 2);
 		}
 		else
 		{
-			data->chunk[i][START] = (i) * (data->size / n);
-			data->chunk[i][END] = (i + 1) * (data->size / n);
-			data->chunk[i][MIDDLE] = (data->chunk[i][START]
-					+ data->chunk[i][END]) / 2;
+			data->chunk[i][START] = round(i * (data->size / n));
+			data->chunk[i][END] = round((i + 1) * (data->size / n));
+			data->chunk[i][MIDDLE] = round((data->chunk[i][START]
+						+ data->chunk[i][END]) / 2);
 		}
 		i++;
 	}
@@ -65,6 +66,7 @@ void static	chunk(t_data *data, int n)
 // 				- 1))
 // 		{
 // 			if (((*a)->index <= data->chunk[i][END]))
+// 			// if (((*a)->index <= data->chunk[i][END])&&((*a)->index > data->chunk[i][START]))
 // 			{
 // 				switch_tp(data->tp, (*a)->index - 1, ON);
 // 				pa_pb(a, b, PB);
@@ -101,7 +103,7 @@ void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
 					ra_rb(b, RB);
 			}
 			if ((*a))
-				if (((*a)->index > data->chunk[i][END])) // aki may
+				if (((*a)->index > data->chunk[i][END]))
 					ra_rb(a, RA);
 		}
 		i++;

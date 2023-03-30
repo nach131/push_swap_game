@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 18:57:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/29 19:08:16 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/30 10:31:53 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	switch_tp(int tp[], int n, int type)
 
 int	tp_is_act(int tp[], int n)
 {
-	if (tp[n] == 1)
+	if (tp[n] == ON)
 		return (1);
 	return (0);
 }
@@ -35,7 +35,7 @@ int	ctrl_tp(int tp[], int star, int end)
 {
 	while (star <= end)
 	{
-		if (tp[star] == 0)
+		if (tp[star] == OFF)
 			return (1);
 		star++;
 	}

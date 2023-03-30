@@ -1,79 +1,53 @@
+#include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
 
-#define START 0
-#define END 1
-#define MIDDLE 2
+#define CHUNKS 8
+#define SIZE 140
 
-typedef struct s_data
+enum
 {
-	int	size;
-	int	**chunk;
-	int	*tp;
-}		t_data;
+	START,
+	MIDDLE,
+	END,
+};
 
-void	init_chunk_b(t_data *data, int n)
-{
-	int	i;
-
-	data->chunk = calloc(n, sizeof(int *));
-	i = 0;
-	while (i < n)
-	{
-		data->chunk[i] = calloc(3, sizeof(int));
-		i++;
-	}
-}
-
-void	chunk_b(t_data *data, int n)
+void	print_chunk(int n, int chunk[])
 {
 	int	i;
 
 	i = 0;
 	while (i < n)
 	{
-		if (i == n - 1)
-		{
-			data->chunk[n - 1][START] = (i)*data->size / n;
-			data->chunk[n - 1][END] = data->size;
-			data->chunk[i][MIDDLE] = (data->chunk[i][START]
-					+ data->chunk[i][END]) / 2;
-		}
-		else
-		{
-			data->chunk[i][START] = (i) * (data->size / n);
-			data->chunk[i][END] = (i + 1) * (data->size / n);
-			data->chunk[i][MIDDLE] = (data->chunk[i][START]
-					+ data->chunk[i][END]) / 2;
-		}
+		printf("START: %d\n", chunk[i][START]);
+		printf("MIDDLE: %d\n", chunk[i][MIDDLE]);
+		printf("END: %d\n", chunk[i][END]);
 		i++;
 	}
 }
 
 int	main(int argc, char **str)
 {
-	int		i;
-	t_data	data;
-	int		size;
-	int		n;
-	int		num;
+	int	chunk[8][3];
+	int	i;
 
-	size = 100;
-	n = 3;
-	num = 43;
-	init_chunk_b(&data, n);
-	chunk_b(&data, n);
-	for (i = 0; i < n; i++)
+	i = 0;
+	while (i < CHUNKS)
 	{
-		if (num >= data.chunk[i][START] && num < data.chunk[i][END])
+		if (i == CHUNKS - 1)
 		{
-			printf("El número %d está en el chunk %d\n", num, i);
-			break ;
+			chunk[CHUNKS - 1][START] = round(i * (SIZE / (float)CHUNKS));
+			chunk[CHUNKS - 1][END] = SIZE;
+			chunk[i][MIDDLE] = round((chunk[i][START] + chunk[i][END]) / 2.0);
 		}
+		else
+		{
+			chunk[i][START] = round(i * (SIZE / (float)CHUNKS));
+			chunk[i][END] = round((i + 1) * (SIZE / (float)CHUNKS));
+			chunk[i][MIDDLE] = round((chunk[i][START] + chunk[i][END]) / 2.0);
+		}
+		i++;
 	}
-	if (i == n)
-	{
-		printf("El número %d no está en ningún chunk\n", num);
-	}
+	print_chunk(CHUNKS, chunk);
 	return (0);
 }
