@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/30 11:24:49 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/30 20:53:27 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,26 +33,8 @@ void	print_lst(t_stack *num)
 	while (num)
 	{
 		printf(CYAN "%d index: %d\n", num->num, num->index);
-		// printf(CYAN "%d ", num->num);
 		num = num->next;
 	}
-}
-
-t_stack	*tmp_stack_b(int arr[], int size)
-{
-	int		i;
-	t_stack	*aux;
-
-	i = 0;
-	while (i < size)
-	{
-		if (i == 0)
-			aux = stack_new(arr[i]);
-		else
-			stackadd_back(&aux, stack_new(arr[i]));
-		i++;
-	}
-	return (aux);
 }
 
 int	main(int argc, char **argv)
@@ -66,19 +48,18 @@ int	main(int argc, char **argv)
 	stack_a = add_num(&data, argv);
 	ctrl_num_dupl(&data);
 	ctrl_sorted(&data);
-	quickSort(data.tp, 0, data.size - 1);
+	quick_sort(data.tp, 0, data.size - 1);
 	index_stack(stack_a, data.tp, data.size);
-	// print_lst(stack_a);
 	selection(&stack_a, &stack_b, &data);
-	//=========================================================================
-	// printf(GREEN "----A----\n");
-	// print_lst(stack_a);
-	// printf(GREEN "----B----\n");
-	// print_lst(stack_b);
-	//=========================================================================
 	free(data.tp);
 	free(data.chunk);
 	clear_stack(stack_a);
 	clear_stack(stack_b);
 }
-//
+
+//=========================================================================
+// printf(GREEN "----A----\n");
+// print_lst(stack_a);
+// printf(GREEN "----B----\n");
+// print_lst(stack_b);
+//=========================================================================

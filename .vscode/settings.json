@@ -6,5 +6,7 @@
 		"*.c": "c",
 		"sstream": "c",
 		"libft.h": "c"
-	}
+	},
+	"editor.fontLigatures": false,
+	"lldb.dbgconfig": {}
 }

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/29 22:39:43 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/30 20:53:20 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ void				rra_rrb(t_stack **stack, int order);
 void				rrr(t_stack **a, t_stack **b);
 void				pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
 
-void				quickSort(int arr[], int low, int high);
+void				quick_sort(int arr[], int low, int high);
 
 void				sort_three(t_stack **a);
 void				sort_five(t_stack **a, t_stack **b);
@@ -108,7 +108,7 @@ int					ctrl_tp(int tp[], int star, int end);
 
 void				free_chunk(int **chunk, int chunks);
 
-//=====================================
+//==========Work=======================
 void				print_tp(t_data *data);
 void				print_lst(t_stack *num);
 void				print_chunk(int n, int **chunk);

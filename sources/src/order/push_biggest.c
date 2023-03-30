@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 10:21:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/30 11:40:14 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/30 20:51:14 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,36 +55,6 @@ void static	chunk(t_data *data, int n)
 	}
 }
 
-// void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
-// {
-// 	int	i;
-
-// 	i = 0;
-// 	while (i < n)
-// 	{
-// 		while (ctrl_tp(data->tp, data->chunk[i][START], data->chunk[i][END]
-// 				- 1))
-// 		{
-// 			if (((*a)->index <= data->chunk[i][END]))
-// 			// if (((*a)->index <= data->chunk[i][END])&&((*a)->index > data->chunk[i][START]))
-// 			{
-// 				switch_tp(data->tp, (*a)->index - 1, ON);
-// 				pa_pb(a, b, PB);
-// 				if ((*a))
-// 					if (((*b)->index <= data->chunk[i][MIDDLE])
-// 						&& ((*a)->index > data->chunk[i][END]))
-// 						rr(a, b);
-// 				if (((*b)->index <= data->chunk[i][MIDDLE]))
-// 					ra_rb(b, RB);
-// 			}
-// 			if ((*a))
-// 				if (((*a)->index > data->chunk[i][END]))
-// 					ra_rb(a, RA);
-// 		}
-// 		i++;
-// 	}
-// }
-
 void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
 {
 	int	i;
@@ -99,7 +69,12 @@ void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
 			{
 				switch_tp(data->tp, (*a)->index - 1, ON);
 				pa_pb(a, b, PB);
-				if (((*b)->index <= data->chunk[i][MIDDLE]))
+				if ((*a))
+					if (((*b)->index <= data->chunk[i][MIDDLE])
+						&& ((*a)->index > data->chunk[i][END]))
+						rr(a, b);
+				if (((*b)->index <= data->chunk[i][MIDDLE]) &&
+					((*b)->index > data->chunk[i][START]))
 					ra_rb(b, RB);
 			}
 			if ((*a))
@@ -109,6 +84,31 @@ void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
 		i++;
 	}
 }
+
+// void static	sort_chunk(t_stack **a, t_stack **b, t_data *data, int n)
+// {
+// 	int	i;
+
+// 	i = 0;
+// 	while (i < n)
+// 	{
+// 		while (ctrl_tp(data->tp, data->chunk[i][START], data->chunk[i][END]
+// 				- 1))
+// 		{
+// 			if (((*a)->index <= data->chunk[i][END]))
+// 			{
+// 				switch_tp(data->tp, (*a)->index - 1, ON);
+// 				pa_pb(a, b, PB);
+// 				if (((*b)->index <= data->chunk[i][MIDDLE]))
+// 					ra_rb(b, RB);
+// 			}
+// 			if ((*a))
+// 				if (((*a)->index > data->chunk[i][END]))
+// 					ra_rb(a, RA);
+// 		}
+// 		i++;
+// 	}
+// }
 
 void	push_biggest(t_stack **a, t_stack **b, t_data *data, int chunks)
 {
