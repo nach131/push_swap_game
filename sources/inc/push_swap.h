@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/30 21:21:26 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/31 11:47:54 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define ERROR_2 "Error: Duplicate numbers"
 # define ERROR_3 "Error: Numbers greater than integer"
 # define ERROR_4 "Error: Stack overflow"
-# define ERROR_5 "Error: Stack underflow"
 # define ERROR_5 "Error: Stack underflow"
 # define INFO_1 "Info: It's already sorted"
 
