@@ -33,7 +33,7 @@ ORDER_DIR = order/
 
 SRC_DIR_BONUS 	= src_bonus/
 OBJ_DIR_BONUS 	= obj_bonus/
-# UTILS_DIR_BONUS	= utils_bonus/
+UTILS_DIR_BONUS	= utils_bonus/
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ SOURCES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
@@ -61,17 +61,17 @@ DEPS_ORDER = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_ORDER_FILES)))
 # ▖▖▖▖▖▖▖▖▖▖▖▖▖▖ BONUS ▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖#
 
 MAIN_FILES_BONUS	=	main_bonus
-# UTILS_FILES_BONUS	= 
+UTILS_FILES_BONUS	= ctrl_bonus init_bonus stack_bonus swap_bonus
 
 SRC_MAIN_FILES_BONUS	+=$(MAIN_FILES_BONUS)
-# SRC_UTILS_FILES_BONUS	+=$(addprefix $(UTILS_DIR_BONUS),$(UTILS_FILES_BONUS))
+SRC_UTILS_FILES_BONUS	+=$(addprefix $(UTILS_DIR_BONUS),$(UTILS_FILES_BONUS))
 
 SRCS_MAIN_BONUS = $(addprefix $(SRC_DIR_BONUS), $(addsuffix .c, $(SRC_MAIN_FILES_BONUS)))
 OBJS_MAIN_BONUS = $(addprefix $(OBJ_DIR_BONUS), $(addsuffix .o, $(SRC_MAIN_FILES_BONUS)))
 DEPS_MAIN_BONUS = $(addprefix $(OBJ_DIR_BONUS), $(addsuffix .d, $(SRC_MAIN_FILES_BONUS)))
-# SRCS_UTILS_BONUS = $(addprefix $(SRC_DIR_BONUS), $(addsuffix .c, $(SRC_UTILS_FILES_BONUS)))
-# OBJS_UTILS_BONUS = $(addprefix $(OBJ_DIR_BONUS), $(addsuffix .o, $(SRC_UTILS_FILES_BONUS)))
-# DEPS_UTILS_BONUS = $(addprefix $(OBJ_DIR_BONUS), $(addsuffix .d, $(SRC_UTILS_FILES_BONUS)))
+SRCS_UTILS_BONUS = $(addprefix $(SRC_DIR_BONUS), $(addsuffix .c, $(SRC_UTILS_FILES_BONUS)))
+OBJS_UTILS_BONUS = $(addprefix $(OBJ_DIR_BONUS), $(addsuffix .o, $(SRC_UTILS_FILES_BONUS)))
+DEPS_UTILS_BONUS = $(addprefix $(OBJ_DIR_BONUS), $(addsuffix .d, $(SRC_UTILS_FILES_BONUS)))
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ RULES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
