@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:45:28 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 13:31:02 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/03/31 18:05:52 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,43 +25,48 @@ void	print_lst(t_stack *num)
 	}
 }
 
-t_stack	*tmp_stack_b(int arr[], int size)
-{
-	int		i;
-	t_stack	*aux;
+// t_stack	*tmp_stack_b(int arr[], int size)
+// {
+// 	int		i;
+// 	t_stack	*aux;
 
-	i = 0;
-	while (i < size)
-	{
-		if (i == 0)
-			aux = stack_new(arr[i]);
-		else
-			stackadd_back(&aux, stack_new(arr[i]));
-		i++;
-	}
-	return (aux);
-}
+// 	i = 0;
+// 	while (i < size)
+// 	{
+// 		if (i == 0)
+// 			aux = stack_new(arr[i]);
+// 		else
+// 			stackadd_back(&aux, stack_new(arr[i]));
+// 		i++;
+// 	}
+// 	return (aux);
+// }
 int	main(int argc, char **argv)
 {
 	t_data	data;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		b[3];
 
+	// int		b[3];
 	ctrl_num(argc - 1, argv);
 	init_data(&data, argc - 1);
 	stack_a = add_num(&data, argv);
 	ctrl_num_dupl(&data);
 	ctrl_sorted(&data);
 	//=====add num tmp to B=============================================================
-	b[0] = 30;
-	b[1] = 20;
-	b[2] = 10;
-	stack_b = tmp_stack_b(b, 3);
+	// b[0] = 30;
+	// b[1] = 20;
+	// b[2] = 10;
+	// stack_b = tmp_stack_b(b, 3);
 	//=========================================================================
+	ss(&stack_a, &stack_b);
 	sa_sb(&stack_a);
 	sa_sb(&stack_b);
-	ss(&stack_a, &stack_b);
+	pa_pb(&stack_a, &stack_b, PB);
+	pa_pb(&stack_a, &stack_b, PB);
+	pa_pb(&stack_a, &stack_b, PB);
+	rr(&stack_a, &stack_b);
+	// rrr(&stack_a, &stack_b);
 	//=========================================================================
 	printf(GREEN "----A----\n");
 	print_lst(stack_a);

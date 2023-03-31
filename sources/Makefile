@@ -61,8 +61,9 @@ DEPS_ORDER = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_ORDER_FILES)))
 # ▖▖▖▖▖▖▖▖▖▖▖▖▖▖ BONUS ▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖▖#
 
 MAIN_FILES_BONUS	=	main_bonus
-UTILS_FILES_BONUS	= ctrl_bonus init_bonus stack_bonus swap_bonus
-
+UTILS_FILES_BONUS	= ctrl_bonus init_bonus stack_bonus swap_bonus push_bonus \
+ rotate_bonus reverse_bonus
+ 
 SRC_MAIN_FILES_BONUS	+=$(MAIN_FILES_BONUS)
 SRC_UTILS_FILES_BONUS	+=$(addprefix $(UTILS_DIR_BONUS),$(UTILS_FILES_BONUS))
 
