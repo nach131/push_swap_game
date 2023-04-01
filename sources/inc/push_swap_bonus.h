@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/01 15:16:20 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 17:46:18 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # define ERROR_2 "Error: Duplicate numbers"
 # define ERROR_3 "Error: Numbers greater than integer"
 # define ERROR_4 "Error: Instruction does not exist or is not well formatted"
-# define ERROR_5 "Error: Stack is not ordered"
+# define ERROR_5 "Error: Stack A is not ordered"
 
 # define INFO_1 "Info: It's already sorted"
 # define INFO_2 "Info: Very good stack is ordered"
@@ -48,8 +48,8 @@ typedef struct s_stack
 
 typedef struct s_data
 {
-	int				size;
-	int				**chunk;
+	// int				size;
+	// int				**chunk;
 	int				*tp;
 }					t_data;
 

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:45:28 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/01 15:08:52 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 17:43:58 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,5 +118,8 @@ int	main(int argc, char **argv)
 	printf(GREEN "----B----\n");
 	print_lst(stack_b);
 	//=========================================================================
+	free(data.tp);
+	clear_stack(stack_a);
+	clear_stack(stack_b);
 	return (0);
 }
