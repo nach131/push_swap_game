@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 18:04:25 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 13:52:14 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ enum
 typedef struct s_stack
 {
 	int				num;
-	int				index;
 	struct s_stack	*next;
 }					t_stack;
 

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 00:34:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 13:06:34 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 13:56:12 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ t_stack	*stack_new(int value)
 
 	new = ft_calloc(1, sizeof(t_stack));
 	new->num = value;
-	new->index = -1;
 	return (new);
 }
 
