@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:45:28 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/01 17:43:58 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 18:37:58 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,19 @@ void	filter(t_stack **a, t_stack **b, char *order)
 		ctrl_order(a, b);
 }
 
+// void	print_stack(t_stack *a, t_stack *b)
+// {
+// 	system("clear");
+// 	ft_printf(GREEN "----A---- ----B----\n");
+// 	while (a || b)
+// 	{
+// 		if(a || b)
+// 		ft_printf(CYAN "\t%d \t%d \n", a->num, b->num);
+// 		a = a->next;
+// 		b = b->next;
+// 	}
+// }
+
 void	get_line(t_stack **a, t_stack **b)
 {
 	char	*line;
@@ -81,6 +94,7 @@ void	get_line(t_stack **a, t_stack **b)
 		if (!line)
 			break ;
 		filter(a, b, line);
+		// print_stack((*a), (*b));
 		if (line)
 			free(line);
 	}
@@ -113,10 +127,10 @@ int	main(int argc, char **argv)
 	// rr(&stack_a, &stack_b);
 	// rrr(&stack_a, &stack_b);
 	//=========================================================================
-	printf(GREEN "----A----\n");
-	print_lst(stack_a);
-	printf(GREEN "----B----\n");
-	print_lst(stack_b);
+	// printf(GREEN "----A----\n");
+	// print_lst(stack_a);
+	// printf(GREEN "----B----\n");
+	// print_lst(stack_b);
 	//=========================================================================
 	free(data.tp);
 	clear_stack(stack_a);

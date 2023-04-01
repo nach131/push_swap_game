@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:47:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/01 18:14:01 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 18:38:16 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define ERROR_5 "Error: Stack A is not ordered"
 
 # define INFO_1 "Info: It's already sorted"
-# define INFO_2 "Info: Very good stack is ordered"
+# define INFO_2 "Very good stack A is ordered."
 
 enum
 {
