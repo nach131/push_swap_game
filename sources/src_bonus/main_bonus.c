@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:45:28 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/01 18:37:58 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 18:39:03 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,6 @@ void	print_lst(t_stack *num)
 		num = num->next;
 	}
 }
-
-// t_stack	*tmp_stack_b(int arr[], int size)
-// {
-// 	int		i;
-// 	t_stack	*aux;
-
-// 	i = 0;
-// 	while (i < size)
-// 	{
-// 		if (i == 0)
-// 			aux = stack_new(arr[i]);
-// 		else
-// 			stackadd_back(&aux, stack_new(arr[i]));
-// 		i++;
-// 	}
-// 	return (aux);
-// }
 
 void	filter(t_stack **a, t_stack **b, char *order)
 {
@@ -106,7 +89,6 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	// int		b[3];
 	ctrl_num(argc - 1, argv);
 	init_data(&data, argc - 1);
 	stack_a = add_num(&data, argv);
@@ -115,23 +97,6 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	get_line(&stack_a, &stack_b);
 	ctrl_sorted_user(stack_a);
-	//=====add num tmp to B=============================================================
-	// b[0] = 30;
-	// b[1] = 20;
-	// b[2] = 10;
-	// stack_b = tmp_stack_b(b, 3);
-	//=========================================================================
-	// ss(&stack_a, &stack_b);
-	// sa_sb(&stack_a);
-	// sa_sb(&stack_b);
-	// rr(&stack_a, &stack_b);
-	// rrr(&stack_a, &stack_b);
-	//=========================================================================
-	// printf(GREEN "----A----\n");
-	// print_lst(stack_a);
-	// printf(GREEN "----B----\n");
-	// print_lst(stack_b);
-	//=========================================================================
 	free(data.tp);
 	clear_stack(stack_a);
 	clear_stack(stack_b);
