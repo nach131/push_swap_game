@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/31 11:45:28 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/01 13:52:41 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 15:08:52 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,8 @@ void	filter(t_stack **a, t_stack **b, char *order)
 		rra_rrb(b);
 	else if (!ft_strncmp(order, "rrr\n", 3))
 		rrr(a, b);
+	else
+		ctrl_order(a, b);
 }
 
 void	get_line(t_stack **a, t_stack **b)
@@ -98,6 +100,7 @@ int	main(int argc, char **argv)
 	ctrl_sorted(&data);
 	stack_b = NULL;
 	get_line(&stack_a, &stack_b);
+	ctrl_sorted_user(stack_a);
 	//=====add num tmp to B=============================================================
 	// b[0] = 30;
 	// b[1] = 20;

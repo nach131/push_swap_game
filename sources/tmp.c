@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 13:24:11 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/01 13:47:58 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 15:11:07 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,5 @@ int main(void)
 	printf("rra\n");
 	printf("rrb\n");
 	printf("rrr\n");
-	printf("xx\n");
 	return(0);
 }

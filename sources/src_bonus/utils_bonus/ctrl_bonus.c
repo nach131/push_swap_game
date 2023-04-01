@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 13:37:03 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 13:06:24 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/01 15:16:23 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,4 +81,26 @@ void	ctrl_sorted(t_data *data)
 		ft_message(INFO, INFO_1);
 		exit(1);
 	}
+}
+
+void	ctrl_order(t_stack **a, t_stack **b)
+{
+	(void)a;
+	(void)b;
+	ft_message(DANGER, ERROR_4);
+	exit(0);
+}
+
+void	ctrl_sorted_user(t_stack *a)
+{
+	while (a && a->next)
+	{
+		if (a->num > a->next->num)
+		{
+			ft_message(DANGER, ERROR_5);
+			exit(0);
+		}
+		a = a->next;
+	}
+	ft_message(SUCCESS, INFO_2);
 }
