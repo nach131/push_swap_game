@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 13:02:21 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/02 18:36:06 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,3 @@ void				print_chunk(int n, int **chunk);
 int					last_index(t_stack *stack);
 
 #endif
-
-// if (((*b)->ix <= d->ch[i][MD]) && ((*a)->ix > d->ch[i][ED]))

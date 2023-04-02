@@ -2,6 +2,7 @@
 
 NAME		= push_swap
 NAME_BONUS		= checker
+NAME_GAME		= game
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ COLORS ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
@@ -34,6 +35,12 @@ ORDER_DIR = order/
 SRC_DIR_BONUS 	= src_bonus/
 OBJ_DIR_BONUS 	= obj_bonus/
 UTILS_DIR_BONUS	= utils_bonus/
+
+# ▪▪▪▪▪▪▪▪▪▪▪▪▪ GAME ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪#
+
+SRC_DIR_GAME 	= src_game/
+OBJ_DIR_GAME 	= obj_game/
+UTILS_DIR_GAME	= utils_game
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ SOURCES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
@@ -74,6 +81,21 @@ SRCS_UTILS_BONUS = $(addprefix $(SRC_DIR_BONUS), $(addsuffix .c, $(SRC_UTILS_FIL
 OBJS_UTILS_BONUS = $(addprefix $(OBJ_DIR_BONUS), $(addsuffix .o, $(SRC_UTILS_FILES_BONUS)))
 DEPS_UTILS_BONUS = $(addprefix $(OBJ_DIR_BONUS), $(addsuffix .d, $(SRC_UTILS_FILES_BONUS)))
 
+# ▪▪▪▪▪▪▪▪▪▪▪▪▪ GAME ▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪▪#
+
+MAIN_FILES_GAME	=	main_game
+UTILS_FILES_GAME	= 
+ 
+SRC_MAIN_FILES_GAME	+=$(MAIN_FILES_GAME)
+SRC_UTILS_FILES_GAME	+=$(addprefix $(UTILS_DIR_GAME),$(UTILS_FILES_GAME))
+
+SRCS_MAIN_GAME = $(addprefix $(SRC_DIR_GAME), $(addsuffix .c, $(SRC_MAIN_FILES_GAME)))
+OBJS_MAIN_GAME = $(addprefix $(OBJ_DIR_GAME), $(addsuffix .o, $(SRC_MAIN_FILES_GAME)))
+DEPS_MAIN_GAME = $(addprefix $(OBJ_DIR_GAME), $(addsuffix .d, $(SRC_MAIN_FILES_GAME)))
+SRCS_UTILS_GAME = $(addprefix $(SRC_DIR_GAME), $(addsuffix .c, $(SRC_UTILS_FILES_GAME)))
+OBJS_UTILS_GAME = $(addprefix $(OBJ_DIR_GAME), $(addsuffix .o, $(SRC_UTILS_FILES_GAME)))
+DEPS_UTILS_GAME = $(addprefix $(OBJ_DIR_GAME), $(addsuffix .d, $(SRC_UTILS_FILES_GAME)))
+
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ RULES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
 $(OBJ_DIR)%.o : $(SRC_DIR)%.c
@@ -86,9 +108,16 @@ $(OBJ_DIR_BONUS)%.o : $(SRC_DIR_BONUS)%.c
 			@echo "$(ORANGE) Compilando objetos  ➟  $(BLUE)$< $(WHITE)"
 			@$(CC) -MMD -MP $(CFLAGS) -I $(INCLUDES) -c $< -o $@
 
+$(OBJ_DIR_GAME)%.o : $(SRC_DIR_GAME)%.c
+			@$(MKDIR) $(dir $@)
+			@echo "$(ORANGE) Compilando objetos  ➟  $(BLUE)$< $(WHITE)"
+			@$(CC) -MMD -MP $(CFLAGS) -I $(INCLUDES) -c $< -o $@
+
 all: LIBFS $(NAME)
 
 bonus: LIBFS $(NAME_BONUS)
+
+game: $(NAME_GAME)
 
 LIBFS:
 			@make -C $(LIBFT_DIR)
@@ -101,6 +130,10 @@ $(NAME_BONUS):	$(OBJS_MAIN_BONUS) $(OBJS_UTILS_BONUS)
 			@$(CC) $(CFLAGS)  $(LIBSFT) $^ -o $@
 			@echo "$(ORANGE) Compilando Ejecutable  ➟  $(RED)$@ $(WHITE)"
 
+$(NAME_GAME):	$(OBJS_MAIN_GAME) $(OBJS_UTILS_GAME)
+			@$(CC) $(CFLAGS)  $(LIBSFT) $^ -o $@
+			@echo "$(ORANGE) Compilando Ejecutable  ➟  $(RED)$@ $(WHITE)"
+
 clean :
 			@make fclean -s -C $(LIBFT_DIR)
 			@$(RM) $(OBJ_DIR)
@@ -110,12 +143,16 @@ clean :
 fclean : clean
 			@$(RM) $(NAME)
 			@$(RM) $(NAME_BONUS)
+			@$(RM) $(NAME_GAME)
 			@echo "$(GREEN) Todo Super limpito...✌🏼 $(WHITE)" 
 
 re: fclean all
 			@echo "$(YELLOW) Borrado todo y recompilado...✌🏼$(WHITE)"
 
 reb: fclean bonus
+			@echo "$(YELLOW) Borrado todo y recompilado...✌🏼$(WHITE)"
+
+reg: fclean game
 			@echo "$(YELLOW) Borrado todo y recompilado...✌🏼$(WHITE)"
 
 norm:
@@ -128,4 +165,4 @@ norm_bonus:
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ Non-file targets ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
-.PHONY: all clean fclean re norm bonus norm_bonus
+.PHONY: all clean fclean re norm bonus norm_bonus game
