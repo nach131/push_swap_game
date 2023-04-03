@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunk.c                                            :+:      :+:    :+:   */
+/*   win.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/25 16:39:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/25 18:49:02 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/04/03 11:12:24 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/04/03 13:49:25 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,36 +14,42 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "push_swap.h"
+#include "../../sources/mlx/mlx.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-void static	c_one(t_data *data)
+typedef struct s_game
 {
-	data->chunk[0] = ft_calloc(3, sizeof(int));
-	data->chunk[0][START] = 0;
-	data->chunk[0][END] = data->size / 3;
-	data->chunk[0][MIDDLE] = data->chunk[0][END] / 2;
+	void	*mlx;
+	void	*win;
+	void	*img;
+}			t_game;
+
+enum
+{
+	ON_KEYPRESS = 2,
+	ON_DESTROY = 17,
+	KEY_1 = 18, // new img & put img to windows
+	KEY_2 = 19,
+	KEY_3 = 20,
+	KEY_ESC = 53,
+};
+
+int	main(void)
+{
+	t_game	game;
+	int		w;
+	int		h;
+
+	game.mlx = mlx_init();
+	game.win = mlx_new_window(game.mlx, 560, 520, "nach131 So Long");
+	game.img = mlx_xpm_file_to_image(game.mlx, "../../sources/xpm/01.xpm", &w,
+			&h);
+	mlx_put_image_to_window(game.mlx, game.win, game.img, 0, 0);
+	mlx_hook(game.win, ON_DESTROY, 1L << 0, (void *)exit, &game);
+	// mlx_key_hook(game.win, (void *)key_push, &game);
+	mlx_loop(game.mlx);
+	return (0);
 }
 
-void static	c_two(t_data *data)
-{
-	data->chunk[1] = ft_calloc(3, sizeof(int));
-	data->chunk[1][START] = data->size / 3;
-	data->chunk[1][END] = 2 * (data->size / 3);
-	data->chunk[1][MIDDLE] = (data->chunk[1][START] + data->chunk[1][END]) / 2;
-}
-
-void static	c_three(t_data *data)
-{
-	data->chunk[2] = ft_calloc(3, sizeof(int));
-	data->chunk[2][START] = 2 * (data->size / 3);
-	data->chunk[2][END] = data->size;
-	data->chunk[2][MIDDLE] = (data->chunk[2][START] + data->chunk[2][END]) / 2;
-}
-
-void	init_chunk_a(t_data *data)
-{
-	data->chunk = ft_calloc(3, sizeof(int *));
-	c_one(data);
-	c_two(data);
-	c_three(data);
-}
+// gcc -framework OpenGL -framework AppKit win.c ../../sources/mlx/libmlx.a
