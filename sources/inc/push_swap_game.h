@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/03 21:26:15 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/03 21:43:21 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,12 @@ enum
 	RRB,
 	PA,
 	PB,
-	XX,
 };
 
 typedef struct s_images
 {
 	char		*wall;
-	char		*button[1][2];
+	char		*btt[1][2];
 }				t_images;
 
 typedef struct s_graphic
@@ -67,8 +66,7 @@ typedef struct s_game
 {
 	void		*mlx;
 	void		*win;
-	void		*img;
-	t_images	images;
+	t_images	img;
 }				t_game;
 
 #endif
