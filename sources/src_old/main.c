@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_bonus.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 13:43:52 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/06 17:25:05 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/31 11:45:52 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,36 +16,51 @@
 
 #include "push_swap.h"
 
-// Toma el primer elemento del stack B y lo pone encima del stack A.
-// No hace nada si B está vacío.
-
-// Toma el primer elemento del stack A y lo pone encima del stack B.
-// No hace nada si A está vacío.
-
-// Hay que indicar el que orden a imprimir
-
-void	pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
+void	print_tp(t_data *data)
 {
-	t_stack	*tmp;
+	int	i;
 
-	if (order == PA)
+	i = data->size - 1;
+	while (i >= 0)
 	{
-		if (*stack_b)
-		{
-			tmp = *stack_b;
-			*stack_b = (*stack_b)->next;
-			tmp->next = *stack_a;
-			*stack_a = tmp;
-		}
-	}
-	if (order == PB)
-	{
-		if (*stack_a)
-		{
-			tmp = *stack_a;
-			*stack_a = (*stack_a)->next;
-			tmp->next = *stack_b;
-			*stack_b = tmp;
-		}
+		printf(ORANGE "%d :%d\n", data->tp[i], i);
+		i--;
 	}
 }
+
+void	print_lst(t_stack *num)
+{
+	while (num)
+	{
+		printf(CYAN "%d index: %d\n", num->num, num->index);
+		num = num->next;
+	}
+}
+
+int	main(int argc, char **argv)
+{
+	t_data	data;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
+	ctrl_num(argc - 1, argv);
+	init_data(&data, argc - 1);
+	stack_a = add_num(&data, argv);
+	ctrl_num_dupl(&data);
+	ctrl_sorted(&data);
+	quick_sort(data.tp, 0, data.size - 1);
+	index_stack(stack_a, data.tp, data.size);
+	selection(&stack_a, &stack_b, &data);
+	free(data.tp);
+	free(data.chunk);
+	clear_stack(stack_a);
+	clear_stack(stack_b);
+	return (0);
+}
+
+//=========================================================================
+// printf(GREEN "----A----\n");
+// print_lst(stack_a);
+// printf(GREEN "----B----\n");
+// print_lst(stack_b);
+//=========================================================================
