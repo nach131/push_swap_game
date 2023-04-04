@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:01:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/04 16:26:25 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:54:04 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,13 @@ void	load_img(t_game *g, char *name, int type)
 void	init_img(t_game *g)
 {
 	load_img(g, "sa", SA);
+	load_img(g, "sb", SB);
 	load_img(g, "pa", PA);
+	load_img(g, "pb", PB);
 	load_img(g, "ra", RA);
+	load_img(g, "rb", RB);
 	load_img(g, "rra", RRA);
+	load_img(g, "rrb", RRB);
 }
 
 // "../sources/xpm/button/sa_d.xpm",

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/04 16:28:44 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:58:01 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 int	mouse_down(int button, int x, int y, t_game *g)
 {
 	printf(CYAN "x:%d, y:%d\n", x, y);
-	(void)button;
+	printf(ORANGE "button:%d\n", button);
 	if (x >= 57 && x <= 127 && y >= 429 && y <= 455)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SA][DOWN], 52, 422);
 	else if (x >= 57 && x <= 127 && y >= 471 && y <= 497)
@@ -27,6 +27,15 @@ int	mouse_down(int button, int x, int y, t_game *g)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RA][DOWN], 141, 422);
 	else if (x >= 147 && x <= 216 && y >= 471 && y <= 497)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRA][DOWN], 141,
+				465);
+	else if (x >= 347 && x <= 417 && y >= 428 && y <= 455)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SB][DOWN], 342, 422);
+	else if (x >= 347 && x <= 417 && y >= 471 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[PB][DOWN], 342, 465);
+	else if (x >= 437 && x <= 507 && y >= 428 && y <= 455)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RB][DOWN], 431, 422);
+	else if (x >= 437 && x <= 507 && y >= 472 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRB][DOWN], 431,
 				465);
 	return (0);
 }
@@ -43,6 +52,14 @@ int	mouse_up(int button, int x, int y, t_game *g)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RA][UP], 141, 422);
 	else if (x >= 147 && x <= 216 && y >= 471 && y <= 497)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRA][UP], 141, 465);
+	else if (x >= 347 && x <= 417 && y >= 428 && y <= 455)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SB][UP], 342, 422);
+	else if (x >= 347 && x <= 417 && y >= 471 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[PB][UP], 342, 465);
+	else if (x >= 437 && x <= 507 && y >= 428 && y <= 455)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RB][UP], 431, 422);
+	else if (x >= 437 && x <= 507 && y >= 472 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRB][UP], 431, 465);
 	return (0);
 }
 
