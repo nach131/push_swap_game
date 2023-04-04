@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/04 16:58:01 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/04 17:14:33 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,13 @@ int	mouse_down(int button, int x, int y, t_game *g)
 	else if (x >= 437 && x <= 507 && y >= 472 && y <= 497)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRB][DOWN], 431,
 				465);
+	else if (x >= 247 && x <= 318 && y >= 429 && y <= 455)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SS][DOWN], 242, 422);
+	else if (x >= 247 && x <= 275 && y >= 470 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RR][DOWN], 242, 465);
+	else if (x >= 289 && x <= 318 && y >= 470 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRR][DOWN], 284,
+				465);
 	return (0);
 }
 
@@ -60,6 +67,12 @@ int	mouse_up(int button, int x, int y, t_game *g)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RB][UP], 431, 422);
 	else if (x >= 437 && x <= 507 && y >= 472 && y <= 497)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRB][UP], 431, 465);
+	else if (x >= 247 && x <= 318 && y >= 429 && y <= 455)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SS][UP], 242, 422);
+	else if (x >= 247 && x <= 275 && y >= 470 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RR][UP], 242, 465);
+	else if (x >= 289 && x <= 318 && y >= 470 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRR][UP], 284, 465);
 	return (0);
 }
 
