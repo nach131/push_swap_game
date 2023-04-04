@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_img.c                                         :+:      :+:    :+:   */
+/*   load_chip.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 12:01:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/04 22:41:05 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/04/04 19:35:53 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/04/04 22:43:41 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,51 +17,47 @@
 #include "../mlx/mlx.h"
 #include "push_swap_game.h"
 
-char static	*path_img(char *name_img, int type)
+char static	*path_img_chip(int n)
 {
+	char	*nbr;
 	char	*s1;
 	char	*s2;
 
-	s1 = ft_strjoin("../sources/xpm/button/", name_img);
-	s2 = ft_strjoin(s1, "_");
-	free(s1);
-	if (type == UP)
-		s1 = ft_strjoin(s2, "u");
-	else
-		s1 = ft_strjoin(s2, "d");
-	free(s2);
+	nbr = ft_itoa(n);
+	s1 = ft_strjoin("../sources/xpm/chip/", nbr);
 	s2 = ft_strjoin(s1, ".xpm");
 	free(s1);
 	return (s2);
 }
 
-void	load_img(t_game *g, char *name, int type)
+void	load_img_chip(t_game *g)
+{
+	char	*path;
+	int		i;
+	int		w;
+	int		h;
+
+	i = -1;
+	while (++i < 18)
+	{
+		path = path_img_chip(i);
+		g->img.chip[i] = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
+		// printf(RED "%s\n", path);
+		free(path);
+	}
+}
+void	load_move(t_game *g)
 {
 	char	*path;
 	int		w;
 	int		h;
 
-	path = path_img(name, DOWN);
-	g->img.btt[type][DOWN] = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
-	free(path);
-	path = path_img(name, UP);
-	g->img.btt[type][UP] = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
-	free(path);
+	path = "../sources/xpm/move.xpm";
+	g->img.mov = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
 }
 
-void	init_img_btt(t_game *g)
+void	init_img_chip(t_game *g)
 {
-	load_img(g, "sa", SA);
-	load_img(g, "sb", SB);
-	load_img(g, "ss", SS);
-	load_img(g, "pa", PA);
-	load_img(g, "pb", PB);
-	load_img(g, "ra", RA);
-	load_img(g, "rb", RB);
-	load_img(g, "rr", RR);
-	load_img(g, "rra", RRA);
-	load_img(g, "rrb", RRB);
-	load_img(g, "rrr", RRR);
+	load_img_chip(g);
+	// load_move(g);
 }
-
-// "../sources/xpm/button/sa_d.xpm",

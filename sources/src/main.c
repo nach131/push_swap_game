@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/04 17:14:33 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/04 22:42:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int	mouse_down(int button, int x, int y, t_game *g)
+void	mouse_down(int button, int x, int y, t_game *g)
 {
 	printf(CYAN "x:%d, y:%d\n", x, y);
 	printf(ORANGE "button:%d\n", button);
@@ -44,10 +44,9 @@ int	mouse_down(int button, int x, int y, t_game *g)
 	else if (x >= 289 && x <= 318 && y >= 470 && y <= 497)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRR][DOWN], 284,
 				465);
-	return (0);
 }
 
-int	mouse_up(int button, int x, int y, t_game *g)
+void	mouse_up(int button, int x, int y, t_game *g)
 {
 	printf(CYAN "x:%d, y:%d\n", x, y);
 	(void)button;
@@ -73,7 +72,6 @@ int	mouse_up(int button, int x, int y, t_game *g)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RR][UP], 242, 465);
 	else if (x >= 289 && x <= 318 && y >= 470 && y <= 497)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRR][UP], 284, 465);
-	return (0);
 }
 
 // int	mouse_press(int button, int x, int y, t_game *g)
@@ -86,6 +84,13 @@ int	mouse_up(int button, int x, int y, t_game *g)
 // 	return (0);
 // }
 
+void	key_hook(int keycode, t_game *game)
+{
+	(void)game;
+	if (keycode == KEY_ESC)
+		exit(0);
+}
+
 int	main(void)
 {
 	t_game	g;
@@ -93,15 +98,18 @@ int	main(void)
 	int		h;
 
 	g.mlx = mlx_init();
-	g.win = mlx_new_window(g.mlx, 560, 520, "nach131 So Long");
-	init_img(&g);
+	g.win = mlx_new_window(g.mlx, 560, 520, "nach131 Push Swap");
+	init_img_btt(&g);
+	init_img_chip(&g);
 	g.img.wall = mlx_xpm_file_to_image(g.mlx, "../sources/xpm/game_v1.xpm", &w,
 			&h);
 	mlx_put_image_to_window(g.mlx, g.win, g.img.wall, 0, 0);
+	put_chip(&g);
+	// mlx_put_image_to_window(g.mlx, g.win, g.img.mov, 230, 7);
 	mlx_hook(g.win, ON_DESTROY, 1L << 0, (void *)exit, &g);
-	mlx_hook(g.win, ON_MOUSEDOWN, 1L << 2, mouse_down, &g);
-	mlx_hook(g.win, ON_MOUSEUP, 1L << 1, mouse_up, &g);
-	// mlx_key_hook(g.win, (void *)key_push, &game);
+	mlx_hook(g.win, ON_MOUSEDOWN, 1L << 2, (void *)mouse_down, &g);
+	mlx_hook(g.win, ON_MOUSEUP, 1L << 1, (void *)mouse_up, &g);
+	mlx_key_hook(g.win, (void *)key_hook, &g);
 	// mlx_mouse_hook(g.win, mouse_press, &game);
 	mlx_loop(g.mlx);
 	return (0);
