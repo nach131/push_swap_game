@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/04 14:33:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/04 16:28:44 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,14 @@ int	mouse_down(int button, int x, int y, t_game *g)
 	printf(CYAN "x:%d, y:%d\n", x, y);
 	(void)button;
 	if (x >= 57 && x <= 127 && y >= 429 && y <= 455)
-	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[0][0], 52, 422);
-	}
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SA][DOWN], 52, 422);
+	else if (x >= 57 && x <= 127 && y >= 471 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[PA][DOWN], 52, 465);
+	else if (x >= 147 && x <= 216 && y >= 428 && y <= 455)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RA][DOWN], 141, 422);
+	else if (x >= 147 && x <= 216 && y >= 471 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRA][DOWN], 141,
+				465);
 	return (0);
 }
 
@@ -31,24 +36,25 @@ int	mouse_up(int button, int x, int y, t_game *g)
 	printf(CYAN "x:%d, y:%d\n", x, y);
 	(void)button;
 	if (x >= 57 && x <= 127 && y >= 429 && y <= 455)
-	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[0][1], 52, 422);
-	}
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SA][UP], 52, 422);
+	else if (x >= 57 && x <= 127 && y >= 471 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[PA][UP], 52, 465);
+	else if (x >= 147 && x <= 216 && y >= 428 && y <= 455)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RA][UP], 141, 422);
+	else if (x >= 147 && x <= 216 && y >= 471 && y <= 497)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRA][UP], 141, 465);
 	return (0);
 }
 
-int	mouse_press(int button, int x, int y, t_game *g)
-{
-	printf(CYAN "x:%d, y:%d\n", x, y);
-	(void)g;
-	(void)button;
-	if (x >= 57 && x <= 127 && y >= 429 && y <= 455)
-	{
-		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[0], 52, 422);
-		printf("pulsado\n");
-	}
-	return (0);
-}
+// int	mouse_press(int button, int x, int y, t_game *g)
+// {
+// 	printf(CYAN "x:%d, y:%d\n", x, y);
+// 	(void)g;
+// 	(void)button;
+// 	if (x >= 57 && x <= 127 && y >= 429 && y <= 455)
+// 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SA][DOWN], 52, 422);
+// 	return (0);
+// }
 
 int	main(void)
 {
@@ -56,25 +62,12 @@ int	main(void)
 	int		w;
 	int		h;
 
-	// void	*toma;
 	g.mlx = mlx_init();
 	g.win = mlx_new_window(g.mlx, 560, 520, "nach131 So Long");
-	// toma = mlx_xpm_file_to_image(g.mlx,
-	// 								"../sources/xpm/button/sa_d.xpm",
-	// 								&w,
-	// 								&h);
 	init_img(&g);
-	g.img.wall = mlx_xpm_file_to_image(g.mlx, "../sources/xpm/01.xpm", &w, &h);
-	g.img.btt[SA][DOWN] = mlx_xpm_file_to_image(g.mlx,
-												"../sources/xpm/button/sa_d.xpm",
-												&w,
-												&h);
-	g.img.btt[SA][UP] = mlx_xpm_file_to_image(g.mlx,
-												"../sources/xpm/button/sa_u.xpm",
-												&w,
-												&h);
-	// mlx_put_image_to_window(g.mlx, g.win, g.img.wall, 0, 0);
-	// mlx_put_image_to_window(g.mlx, g.win, toma, 0, 0);
+	g.img.wall = mlx_xpm_file_to_image(g.mlx, "../sources/xpm/game_v1.xpm", &w,
+			&h);
+	mlx_put_image_to_window(g.mlx, g.win, g.img.wall, 0, 0);
 	mlx_hook(g.win, ON_DESTROY, 1L << 0, (void *)exit, &g);
 	mlx_hook(g.win, ON_MOUSEDOWN, 1L << 2, mouse_down, &g);
 	mlx_hook(g.win, ON_MOUSEUP, 1L << 1, mouse_up, &g);
