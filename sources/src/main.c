@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/04 22:42:11 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/05 10:14:31 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,10 @@ int	main(void)
 	int		h;
 
 	g.mlx = mlx_init();
-	g.win = mlx_new_window(g.mlx, 560, 520, "nach131 Push Swap");
+	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");
 	init_img_btt(&g);
 	init_img_chip(&g);
-	g.img.wall = mlx_xpm_file_to_image(g.mlx, "../sources/xpm/game_v1.xpm", &w,
+	g.img.wall = mlx_xpm_file_to_image(g.mlx, "../sources/xpm/wall.xpm", &w,
 			&h);
 	mlx_put_image_to_window(g.mlx, g.win, g.img.wall, 0, 0);
 	put_chip(&g);
