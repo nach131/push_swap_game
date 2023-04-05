@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_chip.c                                        :+:      :+:    :+:   */
+/*   init_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 19:35:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/05 10:33:39 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/04/01 13:56:28 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,43 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "../mlx/mlx.h"
-#include "push_swap_game.h"
+#include "push_swap_bonus.h"
+#include <limits.h>
 
-char static	*path_img_chip(int n)
+void static	ctrl_int(const char *str)
 {
-	char	*nbr;
-	char	*s1;
-	char	*s2;
-
-	nbr = ft_itoa(n);
-	s1 = ft_strjoin("../sources/xpm/chip/", nbr);
-	s2 = ft_strjoin(s1, ".xpm");
-	free(s1);
-	return (s2);
-}
-
-void	load_img_chip(t_game *g)
-{
-	char	*path;
-	int		i;
-	int		w;
-	int		h;
-
-	i = -1;
-	while (++i < 18)
+	if (ft_atoi_long(str) > INT_MAX || ft_atoi_long(str) < INT_MIN)
 	{
-		path = path_img_chip(i);
-		g->img.chip[i] = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
-		// printf(RED "%s\n", path);
-		free(path);
+		ft_message(DANGER, ERROR_3);
+		exit(1);
 	}
 }
-void	load_move(t_game *g)
-{
-	char	*path;
-	int		w;
-	int		h;
 
-	path = "../sources/xpm/move.xpm";
-	g->img.mov = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
+void	init_data(t_data *data, int size)
+{
+	ft_bzero(data, sizeof(t_data));
+	data->tp = ft_calloc(size, sizeof(int));
+	data->size = size;
 }
 
-void	init_img_chip(t_game *g)
+t_stack	*add_num(t_data *data, char **n)
 {
-	load_img_chip(g);
-	load_move(g);
+	int		i;
+	int		j;
+	t_stack	*stack;
+
+	i = 1;
+	j = data->size - 1;
+	while (j >= 0)
+	{
+		ctrl_int(n[i]);
+		data->tp[j] = ft_atoi(n[i]);
+		if (i == 1)
+			stack = stack_new(data->tp[j]);
+		else
+			stackadd_back(&stack, stack_new(data->tp[j]));
+		i++;
+		j--;
+	}
+	return (stack);
 }

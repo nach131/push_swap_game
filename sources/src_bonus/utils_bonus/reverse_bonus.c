@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_chip.c                                        :+:      :+:    :+:   */
+/*   reverse_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/04 19:35:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/05 10:33:39 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/03/31 18:04:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,40 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "../mlx/mlx.h"
-#include "push_swap_game.h"
+#include "push_swap_bonus.h"
 
-char static	*path_img_chip(int n)
+// desplaza hacia abajo todos los elementos del stack A una posición,
+// de forma que el último elemento se convierte en el primero.
+
+// Desplaza hacia abajo todos los elementos del stack B una posición,
+// de forma que el último elemento se convierte en el primero.
+
+// Hay que indicar el que orden a imprimir
+
+void	rra_rrb(t_stack **stack)
 {
-	char	*nbr;
-	char	*s1;
-	char	*s2;
+	t_stack	*prev;
+	t_stack	*last;
 
-	nbr = ft_itoa(n);
-	s1 = ft_strjoin("../sources/xpm/chip/", nbr);
-	s2 = ft_strjoin(s1, ".xpm");
-	free(s1);
-	return (s2);
-}
-
-void	load_img_chip(t_game *g)
-{
-	char	*path;
-	int		i;
-	int		w;
-	int		h;
-
-	i = -1;
-	while (++i < 18)
+	if ((*stack) && (*stack)->next)
 	{
-		path = path_img_chip(i);
-		g->img.chip[i] = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
-		// printf(RED "%s\n", path);
-		free(path);
+		prev = NULL;
+		last = *stack;
+		while (last->next)
+		{
+			prev = last;
+			last = last->next;
+		}
+		prev->next = NULL;
+		last->next = *stack;
+		*stack = last;
 	}
 }
-void	load_move(t_game *g)
-{
-	char	*path;
-	int		w;
-	int		h;
 
-	path = "../sources/xpm/move.xpm";
-	g->img.mov = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
-}
+// Los dos a la vez
 
-void	init_img_chip(t_game *g)
+void	rrr(t_stack **a, t_stack **b)
 {
-	load_img_chip(g);
-	load_move(g);
+	rra_rrb(a);
+	rra_rrb(b);
 }

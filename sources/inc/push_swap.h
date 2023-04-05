@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/04 19:27:35 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/05 10:48:25 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,6 @@
 # define ERROR_3 "Error: Numbers greater than integer"
 # define INFO_1 "Info: It's already sorted"
 
-enum
-{
-	SA,
-	SB,
-	RA,
-	RB,
-	RRA,
-	RRB,
-	PA,
-	PB,
-	XX,
-};
 
 enum
 {
@@ -50,12 +38,6 @@ enum
 	BACK,
 };
 
-enum
-{
-	START,
-	MIDDLE,
-	END,
-};
 
 typedef struct s_stack
 {

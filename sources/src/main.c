@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/05 10:27:34 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/05 10:34:19 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int	main(void)
 			&h);
 	mlx_put_image_to_window(g.mlx, g.win, g.img.wall, 0, 0);
 	put_chip(&g);
-	// mlx_put_image_to_window(g.mlx, g.win, g.img.mov, 230, 7);
+	mlx_put_image_to_window(g.mlx, g.win, g.img.mov, 230, 7);
 	mlx_hook(g.win, ON_DESTROY, 1L << 0, (void *)exit, &g);
 	mlx_hook(g.win, ON_MOUSEDOWN, 1L << 2, (void *)mouse_down, &g);
 	mlx_hook(g.win, ON_MOUSEUP, 1L << 1, (void *)mouse_up, &g);
