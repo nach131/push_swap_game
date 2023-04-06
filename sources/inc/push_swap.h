@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/06 11:54:31 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/06 12:40:11 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ enum
 	BACK,
 };
 
-
 typedef struct s_stack
 {
 	int				num;
@@ -50,7 +49,7 @@ typedef struct s_data
 // void				ctrl_num(int len, char **str);
 // void				ctrl_num_dupl(t_data *data);
 // void				ctrl_sorted(t_data *data);
-// void				init_data(t_data *data, int len);
+void				init_data(t_data *data, int len);
 
 // t_stack				*add_num(t_data *data, char **n);
 // t_stack				*stack_new(int value);
@@ -89,8 +88,8 @@ typedef struct s_data
 // void				free_chunk(int **chunk, int chunks);
 
 //==========Work=======================
-// void				print_tp(t_data *data);
-// void				print_lst(t_stack *num);
+void				print_tp(t_data *data);
+void				print_lst(t_stack *num);
 // void				print_chunk(int n, int **chunk);
 // int					last_index(t_stack *stack);
 
