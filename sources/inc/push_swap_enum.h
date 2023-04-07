@@ -58,7 +58,7 @@ enum
 	CHIP_8 = 238,
 	CHIP_7 = 260,
 	CHIP_6 = 282,
-	CHIP_5 = 303,
+	CHIP_5 = 304,
 	CHIP_4 = 326,
 	STACK_B = 294,
 	CHIP_3 = 348,

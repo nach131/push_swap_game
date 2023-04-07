@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_bonus.c                                       :+:      :+:    :+:   */
+/*   hooks.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 13:43:52 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/04/07 18:43:41 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/04/07 18:47:13 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,21 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "push_swap.h"
+#include "../mlx/mlx.h"
+#include "push_swap_enum.h"
+#include "push_swap_game.h"
 
-// Toma el primer elemento del stack B y lo pone encima del stack A.
-// No hace nada si B está vacío.
-
-// Toma el primer elemento del stack A y lo pone encima del stack B.
-// No hace nada si A está vacío.
-
-// Hay que indicar el que orden a imprimir
-
-void	pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
+void	key_hook(int keycode, t_game *game)
 {
-	t_stack	*tmp;
+	(void)game;
+	if (keycode == KEY_ESC)
+		exit(0);
+}
 
-	if (order == PA)
-	{
-		if (*stack_b)
-		{
-			tmp = *stack_b;
-			*stack_b = (*stack_b)->next;
-			tmp->next = *stack_a;
-			*stack_a = tmp;
-		}
-	}
-	if (order == PB)
-	{
-		if (*stack_a)
-		{
-			tmp = *stack_a;
-			*stack_a = (*stack_a)->next;
-			tmp->next = *stack_b;
-			*stack_b = tmp;
-		}
-	}
+void	ctrl_win(t_game *g)
+{
+	mlx_hook(g->win, ON_DESTROY, 1L << 0, (void *)exit, g);
+	mlx_hook(g->win, ON_MOUSEDOWN, 1L << 2, (void *)mouse_down, g);
+	mlx_hook(g->win, ON_MOUSEUP, 1L << 1, (void *)mouse_up, g);
+	mlx_key_hook(g->win, (void *)key_hook, g);
 }

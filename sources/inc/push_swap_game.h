@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 18:27:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:47:01 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "../libft/inc/error.h"
 # include "../libft/inc/ft_printf.h"
 # include "../libft/inc/libft.h"
+# include "push_swap_enum.h"
 
 typedef struct s_stack
 {
@@ -49,6 +50,8 @@ typedef struct s_game
 	t_data			*data;
 }					t_game;
 
+void				key_hook(int keycode, t_game *game);
+void				ctrl_win(t_game *g);
 void				init_img_btt(t_game *g);
 void				init_img_chip(t_game *g);
 void				put_chip_tmp(t_game *g);
@@ -56,8 +59,7 @@ void				mouse_down(int button, int x, int y, t_game *g);
 void				mouse_up(int button, int x, int y, t_game *g);
 void				lap_chip(t_game *g, void (*function)(int chip, int i,
 							t_game *g, int stack));
-// void				lap_chip(t_stack *stack, t_game *g,
-// 						void (*function)(int chip, int i, t_game *g));
+
 void				locate_chip(int chip, int i, t_game *g, int stack);
 
 //========= push_swap============================================================
@@ -70,6 +72,11 @@ t_stack				*stack_new(int value);
 void				stackadd_back(t_stack **stack, t_stack *new);
 void				sa_sb(t_stack **stack);
 void				ss(t_stack **a, t_stack **b);
+void				pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
+void				ra_rb(t_stack **stack);
+void				rr(t_stack **a, t_stack **b);
+void				rra_rrb(t_stack **stack);
+void				rrr(t_stack **a, t_stack **b);
 
 //==========Work=======================
 void				print_tp_dos(int *arr, int len);

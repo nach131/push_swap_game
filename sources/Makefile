@@ -35,7 +35,7 @@ UTILS_DIR	= utils/
 LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
-UTILS_FILES	= load_img load_chip chip mouse init stack swap
+UTILS_FILES	= load_img load_chip chip mouse init stack swap hooks push rotate reverse
 
 SRC_MAIN_FILES	+=$(MAIN_FILES)
 SRC_UTILS_FILES	+=$(addprefix $(UTILS_DIR),$(UTILS_FILES))

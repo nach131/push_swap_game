@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 20:08:24 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 18:28:25 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:23:39 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,26 +122,29 @@ void	locate_chip(int num, int i, t_game *g, int stack)
 void	lap_chip(t_game *g, void (*function)(int chip, int i, t_game *g,
 			int stack))
 {
-	int	i;
+	int		i;
+	t_stack	*a;
+	t_stack	*b;
 
-	// ft_printf(ORANGE "%d\n", g->data->size);
+	a = g->data->a;
+	b = g->data->b;
 	i = g->data->size - 1;
-	if (g->data->a)
+	if (a)
 	{
-		while (g->data->a)
+		while (a)
 		{
-			function(g->data->a->num, i, g, 0);
-			g->data->a = g->data->a->next;
+			function(a->num, i, g, 0);
+			a = a->next;
 			i--;
 		}
 	}
 	i = g->data->size - 1;
-	if (g->data->b)
+	if (b)
 	{
-		while (g->data->b)
+		while (b)
 		{
-			function(g->data->b->num, i, g, 1);
-			g->data->b = g->data->b->next;
+			function(b->num, i, g, 1);
+			b = b->next;
 			i--;
 		}
 	}

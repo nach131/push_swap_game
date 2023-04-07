@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_bonus.c                                    :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 18:04:11 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/04/07 20:32:46 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,40 +14,39 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "push_swap_bonus.h"
+#include "push_swap_enum.h"
+#include "push_swap_game.h"
 
-// desplaza hacia abajo todos los elementos del stack A una posición,
-// de forma que el último elemento se convierte en el primero.
+// Toma el primer elemento del stack B y lo pone encima del stack A.
+// No hace nada si B está vacío.
 
-// Desplaza hacia abajo todos los elementos del stack B una posición,
-// de forma que el último elemento se convierte en el primero.
+// Toma el primer elemento del stack A y lo pone encima del stack B.
+// No hace nada si A está vacío.
 
 // Hay que indicar el que orden a imprimir
 
-void	rra_rrb(t_stack **stack)
+void	pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
 {
-	t_stack	*prev;
-	t_stack	*last;
+	t_stack	*tmp;
 
-	if ((*stack) && (*stack)->next)
+	if (order == PA)
 	{
-		prev = NULL;
-		last = *stack;
-		while (last->next)
+		if (*stack_b)
 		{
-			prev = last;
-			last = last->next;
+			tmp = *stack_b;
+			*stack_b = (*stack_b)->next;
+			tmp->next = *stack_a;
+			*stack_a = tmp;
 		}
-		prev->next = NULL;
-		last->next = *stack;
-		*stack = last;
 	}
-}
-
-// Los dos a la vez
-
-void	rrr(t_stack **a, t_stack **b)
-{
-	rra_rrb(a);
-	rra_rrb(b);
+	if (order == PB)
+	{
+		if (*stack_a)
+		{
+			tmp = *stack_a;
+			*stack_a = (*stack_a)->next;
+			tmp->next = *stack_b;
+			*stack_b = tmp;
+		}
+	}
 }

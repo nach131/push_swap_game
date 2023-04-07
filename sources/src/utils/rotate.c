@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate_bonus.c                                     :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:05 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/31 18:01:14 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 20:42:34 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "push_swap_bonus.h"
+#include "push_swap_game.h"
 
 // Desplaza hacia arriba todos los elementos del stack A una posición,
 // de forma que el primer elemento se convierte en el último.
