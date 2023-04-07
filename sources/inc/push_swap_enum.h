@@ -19,6 +19,12 @@ enum
 	UP,
 };
 
+enum
+{
+	ON,
+	OFF,
+};
+
 // enum
 // {
 // 	CHIP_0 = 41,

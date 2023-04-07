@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/07 22:41:06 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 23:43:26 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,15 +46,15 @@ void	print_lst(t_stack *stack)
 
 //=========================================================================
 
-void	put_wall(t_game *g)
-{
-	int	w;
-	int	h;
+// void	put_wall(t_game *g)
+// {
+// 	int	w;
+// 	int	h;
 
-	g->img.wall = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/wall.xpm", &w,
-			&h);
-	mlx_put_image_to_window(g->mlx, g->win, g->img.wall, 0, 0);
-}
+// 	g->img.wall[0] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/wall_0.xpm",
+// 			&w, &h);
+// 	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[0], 0, 0);
+// }
 
 int	main(void)
 {
@@ -79,7 +79,7 @@ int	main(void)
 	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");
 	init_img_btt(&g);
 	init_img_chip(&g);
-	put_wall(&g);
+	// put_wall(&g);
 	// put_chip_tmp(&g);
 	// lap_chip(data.a, &g, locate_chip);
 	lap_chip(&g, locate_chip);

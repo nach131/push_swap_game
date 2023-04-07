@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 23:01:52 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 23:41:17 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	mouse_down(int button, int x, int y, t_game *g)
 		print_lst(g->data->a);
 		printf(GREEN "----B----\n");
 		print_lst(g->data->b);
+		put_wall(g, OFF);
 		lap_chip(g, locate_chip);
 	}
 }

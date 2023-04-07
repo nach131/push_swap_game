@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 22:57:36 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 23:43:09 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_data
 
 typedef struct s_images
 {
-	char			*wall;
+	char			*wall[2];
 	char			*mov;
 	char			*btt[11][2];
 	char			*chip[18];
@@ -79,7 +79,7 @@ t_stack				*add_num(t_data *data);
 t_stack				*stack_new(int value);
 void				stackadd_back(t_stack **stack, t_stack *new);
 // void				pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
-
+void				put_wall(t_game *g, int type);
 //==========Work=======================
 void				print_tp_dos(int *arr, int len);
 void				print_lst(t_stack *num);
