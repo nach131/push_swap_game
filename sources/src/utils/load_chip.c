@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 19:35:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/05 10:33:39 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:13:00 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ char static	*path_img_chip(int n)
 	s1 = ft_strjoin("../sources/xpm/chip/", nbr);
 	s2 = ft_strjoin(s1, ".xpm");
 	free(s1);
+	free(nbr);
 	return (s2);
 }
 

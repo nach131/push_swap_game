@@ -18,6 +18,7 @@ AR 			= ar -rcs
 RM			= rm -rf
 MKDIR		= -mkdir -p
 CFLAGS	= -Wall -Wextra -Werror -g3
+LEAKS		= -fsanitize=address
 MLXFLAGS = -framework OpenGL -framework AppKit
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ DIRECTORIES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#

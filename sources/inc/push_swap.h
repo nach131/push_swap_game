@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/06 12:40:11 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 10:57:40 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // # include "../libft/inc/colors.h"
 // # include "../libft/inc/error.h"
 // # include "../libft/inc/ft_printf.h"
-// # include "../libft/inc/libft.h"
+# include "../libft/inc/libft.h"
 
 enum
 {

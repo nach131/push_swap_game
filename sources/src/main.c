@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/06 12:45:33 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:11:29 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,21 +67,22 @@ void	ctrl_win(t_game *g)
 int	main(void)
 {
 	t_game	g;
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	t_data	data;
 
-	init_data(&data, 3);
+	// t_data	data;
+	// t_stack	*stack_a;
+	// t_stack	*stack_b;
+	// init_data(&data, 3);
 	//=========================================================================
-	printf(GREEN "----A----\n");
-	print_lst(stack_a);
-	printf(GREEN "----B----\n");
-	print_lst(stack_b);
-	print_tp(&data);
+	// printf(GREEN "----A----\n");
+	// print_lst(stack_a);
+	// printf(GREEN "----B----\n");
+	// print_lst(stack_b);
+	// print_tp(&data);
 	//=========================================================================
 	g.mlx = mlx_init();
 	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");
 	init_img_btt(&g);
+	system("leaks push_swap_game");
 	init_img_chip(&g);
 	put_wall(&g);
 	put_chip(&g);
