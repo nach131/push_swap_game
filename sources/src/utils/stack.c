@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 00:34:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 13:11:34 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:57:25 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "push_swap.h"
+#include "push_swap_game.h"
 
 t_stack	*stack_new(int value)
 {

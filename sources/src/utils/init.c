@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:39:21 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 13:12:04 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 17:34:09 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "push_swap.h"
+#include "push_swap_game.h"
 
 void	print_tp_dos(int *arr, int len)
 {
@@ -48,6 +48,7 @@ void	random_chip(t_data *data)
 	while (num_added < data->size)
 	{
 		num = rand() % data->size + 1;
+		// num = rand() % 18 + 1;
 		unique = 1;
 		i = 0;
 		while (i < data->size)
@@ -78,8 +79,6 @@ t_stack	*add_num(t_data *data)
 	j = data->size - 1;
 	while (j >= 0)
 	{
-		// ctrl_int(n[i]);
-		// data->tp[j] = ft_atoi(n[i]);
 		if (i == 1)
 			stack = stack_new(data->tp[j]);
 		else

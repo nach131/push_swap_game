@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:01:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 11:00:05 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:00:37 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
 #include "../mlx/mlx.h"
+#include "push_swap_enum.h"
 #include "push_swap_game.h"
 
 char static	*path_img(char *name_img, int type)

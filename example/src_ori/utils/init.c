@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 09:44:58 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/03/24 14:01:09 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 14:55:53 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,6 @@
 
 #include "push_swap.h"
 #include <limits.h>
-
-void static	ctrl_int(const char *str)
-{
-	if (ft_atoi_long(str) > INT_MAX || ft_atoi_long(str) < INT_MIN)
-	{
-		ft_message(DANGER, ERROR_3);
-		exit(1);
-	}
-}
 
 void	init_data(t_data *data, int size)
 {
@@ -53,24 +44,4 @@ t_stack	*add_num(t_data *data, char **n)
 		j--;
 	}
 	return (stack);
-}
-
-void	index_stack(t_stack *stack, int tb[], int size)
-{
-	int		i;
-	t_stack	*new;
-
-	i = 0;
-	new = stack;
-	while (i < size)
-	{
-		while (new)
-		{
-			if (tb[i] == new->num)
-				new->index = i + 1;
-			new = new->next;
-		}
-		new = stack;
-		i++;
-	}
 }
