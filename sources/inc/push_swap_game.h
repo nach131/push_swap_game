@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 22:36:15 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 22:57:36 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void				mouse_ra_rb(t_game *g, int type);
 void				mouse_rr(t_game *g);
 void				mouse_rra_rrb(t_game *g, int type);
 void				mouse_rrr(t_game *g);
+void				mouse_pa_pb(t_game *g, int type);
 
 //========= push_swap============================================================
 
@@ -77,7 +78,7 @@ void				random_chip(t_data *data);
 t_stack				*add_num(t_data *data);
 t_stack				*stack_new(int value);
 void				stackadd_back(t_stack **stack, t_stack *new);
-void				pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
+// void				pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
 
 //==========Work=======================
 void				print_tp_dos(int *arr, int len);

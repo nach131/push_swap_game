@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 20:32:46 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 23:00:54 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
+#include "../mlx/mlx.h"
 #include "push_swap_enum.h"
 #include "push_swap_game.h"
 
@@ -48,5 +49,19 @@ void	pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
 			tmp->next = *stack_b;
 			*stack_b = tmp;
 		}
+	}
+}
+
+void	mouse_pa_pb(t_game *g, int type)
+{
+	if (type == PA)
+	{
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[PA][DOWN], 52, 505);
+		pa_pb(&g->data->a, &g->data->b, PA);
+	}
+	else if (type == PB)
+	{
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[PB][DOWN], 342, 505);
+		pa_pb(&g->data->a, &g->data->b, PB);
 	}
 }
