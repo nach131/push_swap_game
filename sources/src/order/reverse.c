@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 20:46:48 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 22:34:37 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
+#include "../mlx/mlx.h"
 #include "push_swap_enum.h"
 #include "push_swap_game.h"
 
@@ -51,4 +52,26 @@ void	rrr(t_stack **a, t_stack **b)
 {
 	rra_rrb(a);
 	rra_rrb(b);
+}
+
+void	mouse_rra_rrb(t_game *g, int type)
+{
+	if (type == RRA)
+	{
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRA][DOWN], 141,
+				505);
+		rra_rrb(&g->data->a);
+	}
+	else if (type == RRB)
+	{
+		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRB][DOWN], 431,
+				505);
+		rra_rrb(&g->data->b);
+	}
+}
+
+void	mouse_rrr(t_game *g)
+{
+	mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRR][DOWN], 284, 505);
+	rrr(&g->data->a, &g->data->b);
 }

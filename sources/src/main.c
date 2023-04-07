@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/07 20:54:11 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 21:01:20 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int	main(void)
 	init_data(&data, 18);
 	random_chip(&data);
 	data.a = add_num(&data);
-	// data.b = add_num(&data);
+	data.b = add_num(&data);
 	//=========================================================================
 	// printf(GREEN "----A----\n");
 	// print_lst(data.a);

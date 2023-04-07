@@ -29,23 +29,32 @@ INCLUDES 	= inc/
 SRC_DIR 	= src/
 OBJ_DIR 	= obj/
 UTILS_DIR	= utils/
+ORDER_DIR	= order/
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ SOURCES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
 LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
-UTILS_FILES	= load_img load_chip chip mouse init stack swap hooks push rotate reverse
+UTILS_FILES	= load_img load_chip chip mouse init stack hooks 
+ORDER_FILES = reverse push rotate swap
 
 SRC_MAIN_FILES	+=$(MAIN_FILES)
-SRC_UTILS_FILES	+=$(addprefix $(UTILS_DIR),$(UTILS_FILES))
-
 SRCS_MAIN = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_MAIN_FILES)))
 OBJS_MAIN = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_MAIN_FILES)))
 DEPS_MAIN = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_MAIN_FILES)))
+
+SRC_UTILS_FILES	+=$(addprefix $(UTILS_DIR),$(UTILS_FILES))
 SRCS_UTILS = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_UTILS_FILES)))
 OBJS_UTILS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_UTILS_FILES)))
 DEPS_UTILS = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_UTILS_FILES)))
+
+SRC_ORDER_FILES	+=$(addprefix $(ORDER_DIR),$(ORDER_FILES))
+SRCS_ORDER = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_ORDER_FILES)))
+OBJS_ORDER = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_ORDER_FILES)))
+DEPS_ORDER = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_ORDER_FILES)))
+
+ALL_OBJS += $(OBJS_ORDER) $(OBJS_UTILS) $(OBJS_MAIN) 
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ RULES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
@@ -60,7 +69,7 @@ LIBFS:
 			@make -C $(LIBFT_DIR)
 			@make -C $(LIBMLX_DIR)
 
-$(NAME):	$(OBJS_MAIN) $(OBJS_UTILS)
+$(NAME):	$(ALL_OBJS)
 			@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBSFT) mlx/libmlx.a $^ -o $@
 			@echo "$(ORANGE) Compilando Ejecutables  ➟  $(BLUE)$@ $(WHITE)"
 
@@ -76,7 +85,6 @@ fclean : clean
 
 re: fclean all
 			@echo "$(YELLOW) Borrado todo y recompilado...✌🏼$(WHITE)"
-
 
 norm:
 			@norminette $(SRCS_MAIN) $(SRCS_UTILS) $(INCLUDES) | grep -v Norme -B1 || true

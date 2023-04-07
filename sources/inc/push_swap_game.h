@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 20:47:01 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 22:36:15 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,13 @@ void				lap_chip(t_game *g, void (*function)(int chip, int i,
 
 void				locate_chip(int chip, int i, t_game *g, int stack);
 
+void				mouse_sa_sb(t_game *g, int type);
+void				mouse_ss(t_game *g);
+void				mouse_ra_rb(t_game *g, int type);
+void				mouse_rr(t_game *g);
+void				mouse_rra_rrb(t_game *g, int type);
+void				mouse_rrr(t_game *g);
+
 //========= push_swap============================================================
 
 void				init_data(t_data *data, int len);
@@ -70,13 +77,7 @@ void				random_chip(t_data *data);
 t_stack				*add_num(t_data *data);
 t_stack				*stack_new(int value);
 void				stackadd_back(t_stack **stack, t_stack *new);
-void				sa_sb(t_stack **stack);
-void				ss(t_stack **a, t_stack **b);
 void				pa_pb(t_stack **stack_a, t_stack **stack_b, int order);
-void				ra_rb(t_stack **stack);
-void				rr(t_stack **a, t_stack **b);
-void				rra_rrb(t_stack **stack);
-void				rrr(t_stack **a, t_stack **b);
 
 //==========Work=======================
 void				print_tp_dos(int *arr, int len);
