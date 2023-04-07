@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/07 11:40:17 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:15:37 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,8 @@ void	print_lst(t_stack *num)
 {
 	while (num)
 	{
-		printf(CYAN "%d index: %d\n", num->num, num->index);
+		// printf(CYAN "%d index: %d\n", num->num, num->index);
+		printf(CYAN "num: %d \n", num->num);
 		num = num->next;
 	}
 }
@@ -68,15 +69,16 @@ int	main(void)
 {
 	t_game	g;
 	t_data	data;
+	t_stack	*stack_a;
 
-	// t_stack	*stack_a;
 	// t_stack	*stack_b;
 	init_data(&data, 7);
 	random_chip(&data);
 	print_tp_dos(data.tp, data.size);
+	stack_a = add_num(&data);
 	//=========================================================================
-	// printf(GREEN "----A----\n");
-	// print_lst(stack_a);
+	printf(GREEN "----A----\n");
+	print_lst(stack_a);
 	// printf(GREEN "----B----\n");
 	// print_lst(stack_b);
 	// print_tp(&data);

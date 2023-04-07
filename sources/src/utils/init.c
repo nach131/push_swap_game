@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:39:21 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 11:40:13 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:12:04 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,26 @@ void	random_chip(t_data *data)
 		}
 	}
 	// print_tp(data->tp, data->size);
+}
+
+t_stack	*add_num(t_data *data)
+{
+	int		i;
+	int		j;
+	t_stack	*stack;
+
+	i = 1;
+	j = data->size - 1;
+	while (j >= 0)
+	{
+		// ctrl_int(n[i]);
+		// data->tp[j] = ft_atoi(n[i]);
+		if (i == 1)
+			stack = stack_new(data->tp[j]);
+		else
+			stackadd_back(&stack, stack_new(data->tp[j]));
+		i++;
+		j--;
+	}
+	return (stack);
 }

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 11:40:12 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 13:14:18 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ enum
 typedef struct s_stack
 {
 	int				num;
-	int				index;
+	// int				index;
 	struct s_stack	*next;
 }					t_stack;
 
@@ -55,10 +55,10 @@ typedef struct s_data
 void				init_data(t_data *data, int len);
 void				random_chip(t_data *data);
 
-// t_stack				*add_num(t_data *data, char **n);
-// t_stack				*stack_new(int value);
+t_stack				*add_num(t_data *data);
+t_stack				*stack_new(int value);
 // t_stack				*stack_last(t_stack *stack);
-// void				stackadd_back(t_stack **stack, t_stack *new);
+void				stackadd_back(t_stack **stack, t_stack *new);
 // void				index_stack(t_stack *stack, int tb[], int size);
 // void				clear_stack(t_stack *stack);
 // int					last_index(t_stack *stack);
