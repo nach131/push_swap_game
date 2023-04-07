@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 16:26:42 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 10:57:40 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 11:40:12 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 // # include "../libft/inc/error.h"
 // # include "../libft/inc/ft_printf.h"
 # include "../libft/inc/libft.h"
+# include <stdio.h>
+# include <stdlib.h>
 
 enum
 {
@@ -42,6 +44,7 @@ typedef struct s_stack
 typedef struct s_data
 {
 	int				size;
+	// int				level;
 	// int				**chunk;
 	int				*tp;
 }					t_data;
@@ -50,6 +53,7 @@ typedef struct s_data
 // void				ctrl_num_dupl(t_data *data);
 // void				ctrl_sorted(t_data *data);
 void				init_data(t_data *data, int len);
+void				random_chip(t_data *data);
 
 // t_stack				*add_num(t_data *data, char **n);
 // t_stack				*stack_new(int value);
@@ -88,11 +92,9 @@ void				init_data(t_data *data, int len);
 // void				free_chunk(int **chunk, int chunks);
 
 //==========Work=======================
-void				print_tp(t_data *data);
+void				print_tp_dos(int *arr, int len);
 void				print_lst(t_stack *num);
 // void				print_chunk(int n, int **chunk);
 // int					last_index(t_stack *stack);
 
 #endif
-
-// if (((*b)->ix <= d->ch[i][MD]) && ((*a)->ix > d->ch[i][ED]))
