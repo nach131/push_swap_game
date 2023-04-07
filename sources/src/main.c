@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/07 17:44:54 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/07 18:28:45 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,14 @@ void	print_tp(t_data *data)
 
 void	print_lst(t_stack *num)
 {
-	while (num)
+	if (num && num->next)
 	{
-		// printf(CYAN "%d index: %d\n", num->num, num->index);
-		printf(CYAN "num: %d \n", num->num);
-		num = num->next;
+		while (num)
+		{
+			// printf(CYAN "%d index: %d\n", num->num, num->index);
+			printf(CYAN "num: %d \n", num->num);
+			num = num->next;
+		}
 	}
 }
 
@@ -69,48 +72,27 @@ int	main(void)
 {
 	t_game	g;
 	t_data	data;
-	t_stack	*stack_a;
-	t_stack	*stack_b;
 
-	stack_b = NULL;
 	g.data = &data;
-	init_data(&data, 3);
+	init_data(&data, 18);
 	random_chip(&data);
-	// data.tp[0] = 1;
-	// data.tp[1] = 2;
-	// data.tp[2] = 3;
-	// data.tp[3] = 4;
-	// data.tp[4] = 5;
-	// data.tp[5] = 6;
-	// data.tp[6] = 7;
-	// data.tp[7] = 8;
-	// data.tp[8] = 9;
-	// data.tp[9] = 10;
-	// data.tp[10] = 11;
-	// data.tp[11] = 12;
-	// data.tp[12] = 13;
-	// data.tp[13] = 14;
-	// data.tp[14] = 15;
-	// data.tp[15] = 16;
-	// data.tp[16] = 17;
-	// data.tp[17] = 18;
-	// print_tp_dos(data.tp, data.size);
-	stack_a = add_num(&data);
+	data.a = add_num(&data);
+	// data.b = add_num(&data);
 	//=========================================================================
 	printf(GREEN "----A----\n");
-	print_lst(stack_a);
+	print_lst(data.a);
 	printf(GREEN "----B----\n");
-	print_lst(stack_b);
+	print_lst(data.b);
 	// print_tp(&data);
 	//=========================================================================
 	g.mlx = mlx_init();
 	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");
 	init_img_btt(&g);
-	// system("leaks push_swap_game");
 	init_img_chip(&g);
 	put_wall(&g);
-	put_chip_tmp(&g);
-	lap_chip(stack_a, &g, locate_chip);
+	// put_chip_tmp(&g);
+	// lap_chip(data.a, &g, locate_chip);
+	lap_chip(&g, locate_chip);
 	mlx_put_image_to_window(g.mlx, g.win, g.img.mov, 230, 7);
 	ctrl_win(&g);
 	mlx_loop(g.mlx);
@@ -118,3 +100,5 @@ int	main(void)
 }
 
 //=========================================================================
+
+// system("leaks push_swap_game");
