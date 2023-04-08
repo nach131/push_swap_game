@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 17:58:20 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 18:09:30 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ typedef struct s_game
 	t_data			*data;
 }					t_game;
 
+void				start_game(t_data *data, int size);
 void				key_hook(int keycode, t_game *game);
 void				ctrl_win(t_game *g);
 void				init_img_btt(t_game *g);
@@ -92,7 +93,5 @@ int					ctrl_sorted(t_stack *a, int size);
 void				print_tp_dos(int *arr, int len);
 void				print_lst(t_stack *num);
 void				print_lst_dos(t_stack *a, t_stack *b);
-
-void				start_game(t_game *g, t_data *data, int size);
 
 #endif
