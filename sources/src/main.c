@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/08 15:16:57 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 15:42:47 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,37 +73,19 @@ void	print_lst_dos(t_stack *a, t_stack *b)
 void	start_game(t_game *g, t_data *data, int size)
 {
 	//HAY QUE FREE DATA->TP
+	// free las listas
 	(void)g;
 	data->size = size;
 	data->tp = ft_calloc(data->size, sizeof(int));
 	random_chip(data);
 	data->a = add_num(data);
 }
-// void	start_game(t_game *g, t_data *data, int size)
-// {
-// 	g->level = size;
-// 	data->tp = ft_calloc(g->level, sizeof(int));
-// 	data->size = g->level;
-// 	random_chip(data);
-// 	data->a = add_num(data);
-// }
-
-//=========================================================================
-// g.level = 6;
-// init_data(&data, g.level);
 
 int	main(void)
 {
 	t_game	g;
 	t_data	data;
 
-	// ft_bzero(&g, sizeof(t_game));
-	// start_game(&g, &data);
-	// g.data = &data;
-	// data.tp = ft_calloc(g.level, sizeof(int));
-	// data.size = g.level;
-	// random_chip(&data);
-	// data.a = add_num(&data);
 	ft_bzero(&g, sizeof(t_game));
 	g.data = &data;
 	start_game(&g, &data, 3);
