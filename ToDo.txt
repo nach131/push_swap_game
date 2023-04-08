@@ -1,30 +1,5 @@
-https://www.youtube.com/watch?v=8nix1eqoMHM
 
+funcion que devuelva 1 o 0 si esta ordenada la lista a
 
--2147483648
- 2147483647
-
-Elegir un pivote (el primer elemento del stack A en este caso) y dividir los elementos restantes en el stack A en dos grupos: aquellos que son menores o iguales que el pivote y aquellos que son mayores.
-
-Mover los elementos menores o iguales al pivote al stack B utilizando la función pa_pb.
-
-Aplicar el algoritmo de Quick Sort al stack A y al stack B de forma recursiva.
-Cuando un stack tenga menos de dos elementos, no es necesario hacer nada.
-Cuando un stack tenga exactamente dos elementos, se debe verificar si están ordenados. Si no lo están, se debe utilizar la función sa_sb para intercambiarlos.
-Cuando ambos stacks hayan sido ordenados por separado, se deben fusionar utilizando la función pa_pb.
-
-
-PARA 12 elementos
-
-Para aplicar el algoritmo Quick Sort a una serie de 12 enteros utilizando dos pilas A y B, se puede seguir los siguientes pasos:
-
-Asignar índices únicos a cada elemento de la pila A, para poder realizar la comparación de los elementos de la pila.
-
-Realizar la partición de la pila A, utilizando como pivote el elemento central de la pila.
-
-Los elementos menores al pivote se trasladan a la pila B, mientras que los elementos mayores al pivote permanecen en la pila A.
-
-Ordenar recursivamente la pila A y la pila B, utilizando el mismo proceso de partición y traslado.
-
-Una vez que se ordenen ambas pilas, se mezclan los elementos de la pila B en la pila A, respetando el orden de los elementos.
+parar el juego, volver a lanzar con un chip mas,
 

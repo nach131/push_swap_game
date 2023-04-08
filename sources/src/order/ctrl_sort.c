@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.c                                            :+:      :+:    :+:   */
+/*   ctrl_sort.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/19 00:34:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 13:29:16 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/04/08 13:04:44 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/04/08 13:29:57 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,70 +16,20 @@
 
 #include "push_swap_game.h"
 
-t_stack	*stack_new(int value)
-{
-	t_stack	*new;
-
-	new = ft_calloc(1, sizeof(t_stack));
-	new->num = value;
-	return (new);
-}
-
-t_stack	*stack_last(t_stack *stack)
-{
-	if (!stack)
-		return (NULL);
-	while (stack)
-	{
-		if (stack->next == NULL)
-			return (stack);
-		stack = stack->next;
-	}
-	return (stack);
-}
-
-void	stackadd_back(t_stack **stack, t_stack *new)
-{
-	t_stack	*item;
-
-	if (!stack)
-		return ;
-	if (!(*stack))
-		*stack = new;
-	else
-	{
-		item = stack_last(*stack);
-		item->next = new;
-	}
-}
-
-void	clear_stack(t_stack *stack)
-{
-	t_stack	*aux;
-
-	if (stack)
-	{
-		while (stack)
-		{
-			aux = stack->next;
-			ft_bzero(stack, sizeof(t_stack));
-			free(stack);
-			stack = aux;
-		}
-	}
-}
-
-int	len_stack(t_stack **stack)
+int	ctrl_sorted(t_stack *a, int size)
 {
 	t_stack	*tmp;
-	int		i;
 
-	tmp = *stack;
-	i = 0;
-	while (tmp)
+	tmp = a;
+	if (size == len_stack(&a))
 	{
-		i++;
-		tmp = tmp->next;
+		while (tmp && tmp->next)
+		{
+			if (tmp->num > tmp->next->num)
+				return (0);
+			tmp = tmp->next;
+		}
+		return (1);
 	}
-	return (i);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 12:02:05 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 13:35:54 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,10 @@ typedef struct s_data
 {
 	t_stack			*a;
 	t_stack			*b;
+	int				sort;
 	int				size;
 	int				*tp;
+
 }					t_data;
 
 typedef struct s_images
@@ -47,6 +49,7 @@ typedef struct s_game
 	void			*win;
 	int				mouse;
 	int				count;
+	int				level;
 	t_images		img;
 	t_data			*data;
 }					t_game;
@@ -71,6 +74,8 @@ void				mouse_rra_rrb(t_game *g, int type);
 void				mouse_rrr(t_game *g);
 void				mouse_pa_pb(t_game *g, int type);
 
+int					len_stack(t_stack **stack);
+
 //========= push_swap============================================================
 
 void				init_data(t_data *data, int len);
@@ -80,6 +85,8 @@ t_stack				*add_num(t_data *data);
 t_stack				*stack_new(int value);
 void				stackadd_back(t_stack **stack, t_stack *new);
 void				put_wall(t_game *g, int type);
+int					ctrl_sorted(t_stack *a, int size);
+
 //==========Work=======================
 void				print_tp_dos(int *arr, int len);
 void				print_lst(t_stack *num);

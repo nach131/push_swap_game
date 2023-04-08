@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 12:20:14 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 13:53:25 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,27 @@
 #include "push_swap_enum.h"
 #include "push_swap_game.h"
 
-void static	ctrl_move(t_game *g)
+void static	count_move(t_game *g)
 {
 	char	*movements;
 
 	movements = ft_itoa(g->count);
 	mlx_string_put(g->mlx, g->win, 308, 26, 0xFFFFFFFF, movements);
 	free(movements);
+}
+
+void	after_mouse(t_game *g)
+{
+	system("clear");
+	print_lst_dos(g->data->a, g->data->b);
+	put_wall(g, OFF);
+	lap_chip(g, locate_chip);
+	g->data->sort = ctrl_sorted(g->data->a, g->data->size);
+	count_move(g);
+	if (g->data->sort)
+	{
+		ft_printf(RED "tomate\n");
+	}
 }
 
 void	mouse_down(int button, int x, int y, t_game *g)
@@ -54,11 +68,7 @@ void	mouse_down(int button, int x, int y, t_game *g)
 			mouse_rr(g);
 		else if (x >= 289 && x <= 318 && y >= 510 && y <= 537)
 			mouse_rrr(g);
-		system("clear");
-		print_lst_dos(g->data->a, g->data->b);
-		put_wall(g, OFF);
-		lap_chip(g, locate_chip);
-		ctrl_move(g);
+		after_mouse(g);
 	}
 }
 

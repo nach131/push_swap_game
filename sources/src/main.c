@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/08 12:20:10 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 13:49:41 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,23 @@ void	print_lst_dos(t_stack *a, t_stack *b)
 			ft_printf("     ");
 		if (tmp_b)
 		{
-			// ft_printf(CYAN "          %d", tmp_b->num);
 			ft_printf(CYAN "\t\t%d", tmp_b->num);
 			tmp_b = tmp_b->next;
 		}
 		ft_printf("\n");
 	}
 }
+
+// void	start_game(t_game *g)
+// {
+// 	// t_data	data;
+// 	// g->data = &data;
+// 	// g->level = 3;
+// 	// init_data(&data, g->level);
+// 	init_data(g->data, 4);
+// 	random_chip(g->data);
+// 	g->data->a = add_num(g->data);
+// }
 
 //=========================================================================
 
@@ -80,9 +90,12 @@ int	main(void)
 
 	ft_bzero(&g, sizeof(t_game));
 	g.data = &data;
-	init_data(&data, 18);
+	g.level = 6;
+	init_data(&data, g.level);
 	random_chip(&data);
 	data.a = add_num(&data);
+	// start_game(&g);
+	//=========================================================================
 	g.mlx = mlx_init();
 	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");
 	init_img_btt(&g);

@@ -37,7 +37,7 @@ LIBSFT = $(LIBFT_DIR)libft.a
 
 MAIN_FILES	=	main
 UTILS_FILES	= load_img load_chip chip mouse init stack hooks 
-ORDER_FILES = reverse push rotate swap
+ORDER_FILES = reverse push rotate swap ctrl_sort
 
 SRC_MAIN_FILES	+=$(MAIN_FILES)
 SRCS_MAIN = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_MAIN_FILES)))

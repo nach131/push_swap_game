@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 17:39:48 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 11:50:34 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 13:24:51 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,21 +50,6 @@ void	pa_pb(t_stack **stack_a, t_stack **stack_b, int order)
 			*stack_b = tmp;
 		}
 	}
-}
-
-int	len_stack(t_stack **stack)
-{
-	t_stack	*tmp;
-	int		i;
-
-	tmp = *stack;
-	i = 0;
-	while (tmp)
-	{
-		i++;
-		tmp = tmp->next;
-	}
-	return (i);
 }
 
 void	mouse_pa_pb(t_game *g, int type)
