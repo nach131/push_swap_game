@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/07 23:43:26 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 12:20:10 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,40 @@ void	print_lst(t_stack *stack)
 		while (tmp)
 		{
 			// printf(CYAN "%d index: %d\n", tmp->tmp, tmp->index);
-			printf(CYAN "tmp: %d \n", tmp->num);
+			printf(CYAN "   %d \n", tmp->num);
 			tmp = tmp->next;
 		}
 	}
 }
 
+void	print_lst_dos(t_stack *a, t_stack *b)
+{
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
+
+	tmp_a = a;
+	tmp_b = b;
+	ft_printf(GREEN "----A----    ----B----\n");
+	while (tmp_a || tmp_b)
+	{
+		if (tmp_a)
+		{
+			ft_printf(YELLOW "   %d", tmp_a->num);
+			tmp_a = tmp_a->next;
+		}
+		else
+			ft_printf("     ");
+		if (tmp_b)
+		{
+			// ft_printf(CYAN "          %d", tmp_b->num);
+			ft_printf(CYAN "\t\t%d", tmp_b->num);
+			tmp_b = tmp_b->next;
+		}
+		ft_printf("\n");
+	}
+}
+
 //=========================================================================
-
-// void	put_wall(t_game *g)
-// {
-// 	int	w;
-// 	int	h;
-
-// 	g->img.wall[0] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/wall_0.xpm",
-// 			&w, &h);
-// 	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[0], 0, 0);
-// }
 
 int	main(void)
 {
@@ -66,15 +83,6 @@ int	main(void)
 	init_data(&data, 18);
 	random_chip(&data);
 	data.a = add_num(&data);
-	// data.b = add_num(&data);
-	//=========================================================================
-	// printf(GREEN "----A----\n");
-	// print_lst(data.a);
-	// printf(GREEN "----B----\n");
-	// print_lst(data.b);
-	// print_tp(&data);
-	// sa_sb(&data.a);
-	//=========================================================================
 	g.mlx = mlx_init();
 	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");
 	init_img_btt(&g);

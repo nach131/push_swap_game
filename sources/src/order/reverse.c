@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 22:34:37 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 11:34:41 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,12 @@ void	mouse_rra_rrb(t_game *g, int type)
 				505);
 		rra_rrb(&g->data->b);
 	}
+	g->count++;
 }
 
 void	mouse_rrr(t_game *g)
 {
 	mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRR][DOWN], 284, 505);
 	rrr(&g->data->a, &g->data->b);
+	g->count++;
 }
