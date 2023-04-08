@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/08 13:49:41 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 15:16:57 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,31 +70,43 @@ void	print_lst_dos(t_stack *a, t_stack *b)
 	}
 }
 
-// void	start_game(t_game *g)
+void	start_game(t_game *g, t_data *data, int size)
+{
+	//HAY QUE FREE DATA->TP
+	(void)g;
+	data->size = size;
+	data->tp = ft_calloc(data->size, sizeof(int));
+	random_chip(data);
+	data->a = add_num(data);
+}
+// void	start_game(t_game *g, t_data *data, int size)
 // {
-// 	// t_data	data;
-// 	// g->data = &data;
-// 	// g->level = 3;
-// 	// init_data(&data, g->level);
-// 	init_data(g->data, 4);
-// 	random_chip(g->data);
-// 	g->data->a = add_num(g->data);
+// 	g->level = size;
+// 	data->tp = ft_calloc(g->level, sizeof(int));
+// 	data->size = g->level;
+// 	random_chip(data);
+// 	data->a = add_num(data);
 // }
 
 //=========================================================================
+// g.level = 6;
+// init_data(&data, g.level);
 
 int	main(void)
 {
 	t_game	g;
 	t_data	data;
 
+	// ft_bzero(&g, sizeof(t_game));
+	// start_game(&g, &data);
+	// g.data = &data;
+	// data.tp = ft_calloc(g.level, sizeof(int));
+	// data.size = g.level;
+	// random_chip(&data);
+	// data.a = add_num(&data);
 	ft_bzero(&g, sizeof(t_game));
 	g.data = &data;
-	g.level = 6;
-	init_data(&data, g.level);
-	random_chip(&data);
-	data.a = add_num(&data);
-	// start_game(&g);
+	start_game(&g, &data, 3);
 	//=========================================================================
 	g.mlx = mlx_init();
 	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");

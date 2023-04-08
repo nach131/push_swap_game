@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 13:53:25 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 15:40:32 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,14 @@ void	after_mouse(t_game *g)
 	lap_chip(g, locate_chip);
 	g->data->sort = ctrl_sorted(g->data->a, g->data->size);
 	count_move(g);
+	ft_printf(RED "level:%d\n", g->data->size);
+	if (g->data->size == 17 && g->data->sort)
+		exit(1); // aqui pantalla de puntos total y salir
 	if (g->data->sort)
 	{
-		ft_printf(RED "tomate\n");
+		start_game(g, g->data, g->data->size + 1);
+		put_wall(g, OFF); // aqui el nivel que estas poner
+		lap_chip(g, locate_chip);
 	}
 }
 

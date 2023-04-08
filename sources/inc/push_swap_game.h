@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 13:35:54 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 15:14:57 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_game
 	void			*win;
 	int				mouse;
 	int				count;
-	int				level;
+	// int				level;
 	t_images		img;
 	t_data			*data;
 }					t_game;
@@ -78,7 +78,7 @@ int					len_stack(t_stack **stack);
 
 //========= push_swap============================================================
 
-void				init_data(t_data *data, int len);
+// void				init_data(t_data *data, int len);
 void				random_chip(t_data *data);
 
 t_stack				*add_num(t_data *data);
@@ -91,5 +91,7 @@ int					ctrl_sorted(t_stack *a, int size);
 void				print_tp_dos(int *arr, int len);
 void				print_lst(t_stack *num);
 void				print_lst_dos(t_stack *a, t_stack *b);
+
+void				start_game(t_game *g, t_data *data, int size);
 
 #endif
