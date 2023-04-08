@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 15:14:57 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 17:58:20 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,7 @@ void				mouse_rrr(t_game *g);
 void				mouse_pa_pb(t_game *g, int type);
 
 int					len_stack(t_stack **stack);
+void				clear_stack(t_stack *stack);
 
 //========= push_swap============================================================
 

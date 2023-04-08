@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 15:40:32 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 15:52:23 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	after_mouse(t_game *g)
 	if (g->data->sort)
 	{
 		start_game(g, g->data, g->data->size + 1);
-		put_wall(g, OFF); // aqui el nivel que estas poner
+		put_wall(g, OFF); // aqui poner el nivel que estas
 		lap_chip(g, locate_chip);
 	}
 }

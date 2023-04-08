@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 12:39:21 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 15:05:55 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 17:56:14 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,6 @@ void	print_tp_dos(int *arr, int len)
 }
 
 //=========================================================================
-
-// void	init_data(t_data *data, int size)
-// {
-// 	// ft_bzero(data, sizeof(t_data));
-// 	data->tp = ft_calloc(size, sizeof(int));
-// 	data->size = size;
-// }
 
 void	random_chip(t_data *data)
 {

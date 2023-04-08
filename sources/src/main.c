@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/08 15:42:47 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 18:06:19 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,12 +72,14 @@ void	print_lst_dos(t_stack *a, t_stack *b)
 
 void	start_game(t_game *g, t_data *data, int size)
 {
-	//HAY QUE FREE DATA->TP
-	// free las listas
 	(void)g;
+	if (data->tp)
+		free(data->tp);
 	data->size = size;
 	data->tp = ft_calloc(data->size, sizeof(int));
 	random_chip(data);
+	clear_stack(data->a);
+	clear_stack(data->b);
 	data->a = add_num(data);
 }
 
@@ -94,9 +96,6 @@ int	main(void)
 	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");
 	init_img_btt(&g);
 	init_img_chip(&g);
-	// put_wall(&g);
-	// put_chip_tmp(&g);
-	// lap_chip(data.a, &g, locate_chip);
 	lap_chip(&g, locate_chip);
 	mlx_put_image_to_window(g.mlx, g.win, g.img.mov, 230, 7);
 	ctrl_win(&g);
