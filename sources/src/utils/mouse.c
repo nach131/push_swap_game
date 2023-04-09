@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 10:27:36 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 11:19:19 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include "push_swap_enum.h"
 #include "push_swap_game.h"
 
-void static	count_move(t_game *g)
+void	put_movements(t_game *g)
 {
 	char	*movements;
 
@@ -42,12 +42,9 @@ void	after_mouse(t_game *g)
 	put_wall(g, OFF);
 	lap_chip(g, locate_chip);
 	g->data->sort = ctrl_sorted(g->data->a, g->data->size);
-	count_move(g);
+	put_movements(g);
 	ft_printf(RED "level:%d\n", g->data->size);
-	if (g->data->size == 4 && g->data->sort)
-		// cerrar la ventana y poner otra con la imagen final y los movimientos
-		// mlx_put_image_to_window(g->mlx, g->win, g->img.wall[3], 0, 0);
-		// exit(1); // aqui pantalla de puntos total y salir
+	if (g->data->size == 17 && g->data->sort)
 		end_game(g);
 	else if (g->data->sort)
 	{

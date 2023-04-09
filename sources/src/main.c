@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/09 11:04:01 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 11:10:03 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	end_game(t_game *g)
 	g->win = mlx_new_window(g->mlx, 560, 560, "nach131 Push Swap");
 	ctrl_win_end(g);
 	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[3], 0, 0);
+	put_movements(g);
 }
 
 void	init_win(t_game *g)

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 10:55:18 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 11:09:17 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ void				ctrl_win_end(t_game *g);
 void				init_img_btt(t_game *g);
 void				init_img_chip(t_game *g);
 void				put_chip_tmp(t_game *g);
+void				put_movements(t_game *g);
 void				mouse_down(int button, int x, int y, t_game *g);
 void				mouse_up(int button, int x, int y, t_game *g);
 void				lap_chip(t_game *g, void (*function)(int chip, int i,
