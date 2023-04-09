@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 19:35:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 22:57:15 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 12:50:44 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,6 @@ void	load_move(t_game *g)
 	int	w;
 	int	h;
 
-	// char	*path;
-	// path = "../sources/xpm/move.xpm";
-	// g->img.mov = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
 	g->img.wall[0] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/wall_0.xpm",
 			&w, &h);
 	g->img.wall[1] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/wall_1.xpm",
@@ -63,7 +60,10 @@ void	load_move(t_game *g)
 			&w, &h);
 	g->img.wall[3] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/end.xpm", &w,
 			&h);
+	g->img.wall[4] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/hover.xpm",
+			&w, &h);
 }
+
 void	put_wall(t_game *g, int type)
 {
 	if (type == ON)

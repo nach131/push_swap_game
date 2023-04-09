@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 11:09:17 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 12:23:08 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_data
 
 typedef struct s_images
 {
-	char			*wall[4];
+	char			*wall[5];
 	char			*btt[11][2];
 	char			*chip[18];
 }					t_images;

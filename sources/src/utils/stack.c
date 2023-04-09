@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 00:34:32 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 13:29:16 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 13:35:18 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	clear_stack(t_stack *stack)
 {
 	t_stack	*aux;
 
+	aux = NULL;
 	if (stack)
 	{
 		while (stack)
@@ -67,6 +68,8 @@ void	clear_stack(t_stack *stack)
 			stack = aux;
 		}
 	}
+	// if (aux) NO ES AKI EL LEAKS
+	// 	clear_stack(aux);
 }
 
 int	len_stack(t_stack **stack)

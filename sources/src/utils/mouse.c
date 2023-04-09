@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 11:19:19 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 13:39:50 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	put_movements(t_game *g)
 	mlx_string_put(g->mlx, g->win, 308, 26, 0xFFFFFFFF, movements);
 	free(movements);
 }
+
 void static	put_level(t_game *g)
 {
 	char	*level;
@@ -33,17 +34,18 @@ void static	put_level(t_game *g)
 	level = ft_itoa(g->data->size - 2);
 	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[2], 0, 0);
 	mlx_string_put(g->mlx, g->win, 308, 26, 0xFFFFFFFF, level);
+	free(level);
 }
 
 void	after_mouse(t_game *g)
 {
 	system("clear");
 	print_lst_dos(g->data->a, g->data->b);
+	ft_printf(RED "level:%d\n", g->data->size - 2);
 	put_wall(g, OFF);
 	lap_chip(g, locate_chip);
 	g->data->sort = ctrl_sorted(g->data->a, g->data->size);
 	put_movements(g);
-	ft_printf(RED "level:%d\n", g->data->size);
 	if (g->data->size == 17 && g->data->sort)
 		end_game(g);
 	else if (g->data->sort)
@@ -83,12 +85,12 @@ void	mouse_down(int button, int x, int y, t_game *g)
 			mouse_rrr(g);
 		after_mouse(g);
 	}
+	else if (button == 2)
+		mlx_put_image_to_window(g->mlx, g->win, g->img.wall[4], 0, 0);
 }
 
 void	mouse_up(int button, int x, int y, t_game *g)
 {
-	// printf(CYAN "x:%d, y:%d\n", x, y);
-	printf(ORANGE "button:%d\n", button);
 	(void)x;
 	(void)y;
 	if (g->mouse && button == 1)
@@ -104,5 +106,10 @@ void	mouse_up(int button, int x, int y, t_game *g)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[SS][UP], 242, 462);
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RR][UP], 242, 506);
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRR][UP], 284, 506);
+	}
+	if (button == 2)
+	{
+		put_wall(g, OFF);
+		lap_chip(g, locate_chip);
 	}
 }

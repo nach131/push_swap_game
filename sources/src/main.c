@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/09 11:10:03 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 13:41:00 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 
 void	start_game(t_data *data, int size)
 {
-	if (data->tp)
-		free(data->tp);
 	data->size = size;
 	data->tp = ft_calloc(data->size, sizeof(int));
 	random_chip(data);
