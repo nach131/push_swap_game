@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 12:23:08 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 13:50:58 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_data
 {
 	t_stack			*a;
 	t_stack			*b;
+	int				game;
 	int				sort;
 	int				size;
 	int				*tp;

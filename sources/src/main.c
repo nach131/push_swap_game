@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/09 13:41:00 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 13:52:18 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 void	start_game(t_data *data, int size)
 {
 	data->size = size;
+	data->game = ON;
 	data->tp = ft_calloc(data->size, sizeof(int));
 	random_chip(data);
 	clear_stack(data->a);
@@ -28,6 +29,7 @@ void	start_game(t_data *data, int size)
 
 void	end_game(t_game *g)
 {
+	g->data->game = OFF;
 	mlx_destroy_window(g->mlx, g->win);
 	g->win = mlx_new_window(g->mlx, 560, 560, "nach131 Push Swap");
 	ctrl_win_end(g);
