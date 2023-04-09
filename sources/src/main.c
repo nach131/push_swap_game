@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/08 18:09:42 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 11:04:01 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,60 +15,6 @@
 #include "push_swap_game.h"
 #include <stdio.h>
 #include <stdlib.h>
-
-void	print_tp(t_data *data)
-{
-	int	i;
-
-	i = data->size - 1;
-	while (i >= 0)
-	{
-		printf(ORANGE "%d :%d\n", data->tp[i], i);
-		i--;
-	}
-}
-
-void	print_lst(t_stack *stack)
-{
-	t_stack	*tmp;
-
-	tmp = stack;
-	if (tmp)
-	{
-		while (tmp)
-		{
-			// printf(CYAN "%d index: %d\n", tmp->tmp, tmp->index);
-			printf(CYAN "   %d \n", tmp->num);
-			tmp = tmp->next;
-		}
-	}
-}
-
-void	print_lst_dos(t_stack *a, t_stack *b)
-{
-	t_stack	*tmp_a;
-	t_stack	*tmp_b;
-
-	tmp_a = a;
-	tmp_b = b;
-	ft_printf(GREEN "----A----    ----B----\n");
-	while (tmp_a || tmp_b)
-	{
-		if (tmp_a)
-		{
-			ft_printf(YELLOW "   %d", tmp_a->num);
-			tmp_a = tmp_a->next;
-		}
-		else
-			ft_printf("     ");
-		if (tmp_b)
-		{
-			ft_printf(CYAN "\t\t%d", tmp_b->num);
-			tmp_b = tmp_b->next;
-		}
-		ft_printf("\n");
-	}
-}
 
 void	start_game(t_data *data, int size)
 {
@@ -82,6 +28,25 @@ void	start_game(t_data *data, int size)
 	data->a = add_num(data);
 }
 
+void	end_game(t_game *g)
+{
+	mlx_destroy_window(g->mlx, g->win);
+	g->win = mlx_new_window(g->mlx, 560, 560, "nach131 Push Swap");
+	ctrl_win_end(g);
+	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[3], 0, 0);
+}
+
+void	init_win(t_game *g)
+{
+	if (g->win)
+		mlx_destroy_window(g->mlx, g->win);
+	g->win = mlx_new_window(g->mlx, 560, 560, "nach131 Push Swap");
+	init_img_btt(g);
+	init_img_chip(g);
+	lap_chip(g, locate_chip);
+	ctrl_win(g);
+}
+
 int	main(void)
 {
 	t_game	g;
@@ -90,14 +55,8 @@ int	main(void)
 	ft_bzero(&g, sizeof(t_game));
 	g.data = &data;
 	start_game(&data, 3);
-	//=========================================================================
 	g.mlx = mlx_init();
-	g.win = mlx_new_window(g.mlx, 560, 560, "nach131 Push Swap");
-	init_img_btt(&g);
-	init_img_chip(&g);
-	lap_chip(&g, locate_chip);
-	mlx_put_image_to_window(g.mlx, g.win, g.img.mov, 230, 7);
-	ctrl_win(&g);
+	init_win(&g);
 	mlx_loop(g.mlx);
 	return (0);
 }

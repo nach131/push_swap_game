@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 18:09:30 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 10:55:18 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,7 @@ typedef struct s_data
 
 typedef struct s_images
 {
-	char			*wall[2];
-	char			*mov;
+	char			*wall[4];
 	char			*btt[11][2];
 	char			*chip[18];
 }					t_images;
@@ -49,14 +48,16 @@ typedef struct s_game
 	void			*win;
 	int				mouse;
 	int				count;
-	// int				level;
 	t_images		img;
 	t_data			*data;
 }					t_game;
 
 void				start_game(t_data *data, int size);
+void				end_game(t_game *g);
+void				init_win(t_game *g);
 void				key_hook(int keycode, t_game *game);
 void				ctrl_win(t_game *g);
+void				ctrl_win_end(t_game *g);
 void				init_img_btt(t_game *g);
 void				init_img_chip(t_game *g);
 void				put_chip_tmp(t_game *g);
@@ -80,7 +81,6 @@ void				clear_stack(t_stack *stack);
 
 //========= push_swap============================================================
 
-// void				init_data(t_data *data, int len);
 void				random_chip(t_data *data);
 
 t_stack				*add_num(t_data *data);

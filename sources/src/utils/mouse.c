@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 18:09:34 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/09 10:27:36 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ void static	count_move(t_game *g)
 	mlx_string_put(g->mlx, g->win, 308, 26, 0xFFFFFFFF, movements);
 	free(movements);
 }
+void static	put_level(t_game *g)
+{
+	char	*level;
+
+	level = ft_itoa(g->data->size - 2);
+	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[2], 0, 0);
+	mlx_string_put(g->mlx, g->win, 308, 26, 0xFFFFFFFF, level);
+}
 
 void	after_mouse(t_game *g)
 {
@@ -36,12 +44,15 @@ void	after_mouse(t_game *g)
 	g->data->sort = ctrl_sorted(g->data->a, g->data->size);
 	count_move(g);
 	ft_printf(RED "level:%d\n", g->data->size);
-	if (g->data->size == 17 && g->data->sort)
-		exit(1); // aqui pantalla de puntos total y salir
-	if (g->data->sort)
+	if (g->data->size == 4 && g->data->sort)
+		// cerrar la ventana y poner otra con la imagen final y los movimientos
+		// mlx_put_image_to_window(g->mlx, g->win, g->img.wall[3], 0, 0);
+		// exit(1); // aqui pantalla de puntos total y salir
+		end_game(g);
+	else if (g->data->sort)
 	{
 		start_game(g->data, g->data->size + 1);
-		put_wall(g, OFF); // aqui poner el nivel que estas
+		put_level(g);
 		lap_chip(g, locate_chip);
 	}
 }

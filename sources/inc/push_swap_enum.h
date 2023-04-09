@@ -9,6 +9,7 @@ enum
 	ON_MOUSEUP = 5,
 	ON_MOUSEMOVE = 6,
 	ON_EXPOSE = 12,
+	RESET = 15,
 	ON_DESTROY = 17,
 	KEY_ESC = 53,
 };
@@ -23,6 +24,12 @@ enum
 {
 	ON,
 	OFF,
+};
+
+enum
+{
+	STK_A,
+	STK_B,
 };
 
 // enum

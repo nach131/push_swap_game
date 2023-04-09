@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hooks.c                                            :+:      :+:    :+:   */
+/*   work.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/07 18:43:41 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 10:55:30 by nmota-bu         ###   ########.fr       */
+/*   Created: 2023/04/09 10:20:05 by nmota-bu          #+#    #+#             */
+/*   Updated: 2023/04/09 10:25:10 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +14,58 @@
 /* ║                 https://github.com/nach131/42Barcelona                 ║ */
 /* ╚════════════════════════════════════════════════════════════════════════╝ */
 
-#include "../mlx/mlx.h"
-#include "push_swap_enum.h"
 #include "push_swap_game.h"
 
-void	key_hook(int keycode, t_game *g)
+void	print_tp(t_data *data)
 {
-	if (keycode == KEY_ESC)
-		exit(0);
-	else if (keycode == RESET)
+	int	i;
+
+	i = data->size - 1;
+	while (i >= 0)
 	{
-		start_game(g->data, 3);
-		init_win(g);
+		printf(ORANGE "%d :%d\n", data->tp[i], i);
+		i--;
 	}
 }
 
-void	ctrl_win(t_game *g)
+void	print_lst(t_stack *stack)
 {
-	mlx_hook(g->win, ON_DESTROY, 1L << 0, (void *)exit, g);
-	mlx_hook(g->win, ON_MOUSEDOWN, 1L << 2, (void *)mouse_down, g);
-	mlx_hook(g->win, ON_MOUSEUP, 1L << 1, (void *)mouse_up, g);
-	mlx_key_hook(g->win, (void *)key_hook, g);
+	t_stack	*tmp;
+
+	tmp = stack;
+	if (tmp)
+	{
+		while (tmp)
+		{
+			// printf(CYAN "%d index: %d\n", tmp->tmp, tmp->index);
+			printf(CYAN "   %d \n", tmp->num);
+			tmp = tmp->next;
+		}
+	}
 }
 
-void	ctrl_win_end(t_game *g)
+void	print_lst_dos(t_stack *a, t_stack *b)
 {
-	mlx_hook(g->win, ON_DESTROY, 1L << 0, (void *)exit, g);
-	mlx_key_hook(g->win, (void *)key_hook, g);
+	t_stack	*tmp_a;
+	t_stack	*tmp_b;
+
+	tmp_a = a;
+	tmp_b = b;
+	ft_printf(GREEN "----A----    ----B----\n");
+	while (tmp_a || tmp_b)
+	{
+		if (tmp_a)
+		{
+			ft_printf(YELLOW "   %d", tmp_a->num);
+			tmp_a = tmp_a->next;
+		}
+		else
+			ft_printf("     ");
+		if (tmp_b)
+		{
+			ft_printf(CYAN "\t\t%d", tmp_b->num);
+			tmp_b = tmp_b->next;
+		}
+		ft_printf("\n");
+	}
 }

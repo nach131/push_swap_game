@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 19:35:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 23:42:49 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/08 22:57:15 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,30 +44,28 @@ void	load_img_chip(t_game *g)
 	{
 		path = path_img_chip(i);
 		g->img.chip[i] = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
-		// printf(RED "%s\n", path);
 		free(path);
 	}
 }
 void	load_move(t_game *g)
 {
-	char	*path;
-	int		w;
-	int		h;
+	int	w;
+	int	h;
 
-	path = "../sources/xpm/move.xpm";
-	g->img.mov = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
+	// char	*path;
+	// path = "../sources/xpm/move.xpm";
+	// g->img.mov = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
 	g->img.wall[0] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/wall_0.xpm",
 			&w, &h);
 	g->img.wall[1] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/wall_1.xpm",
 			&w, &h);
+	g->img.wall[2] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/wall_2.xpm",
+			&w, &h);
+	g->img.wall[3] = mlx_xpm_file_to_image(g->mlx, "../sources/xpm/end.xpm", &w,
+			&h);
 }
 void	put_wall(t_game *g, int type)
 {
-	// int	w;
-	// int	h;
-	// g->img.wall[0] = mlx_xpm_file_to_image(g->mlx,
-	// "../sources/xpm/wall_0.xpm",
-	// 		&w, &h);
 	if (type == ON)
 		mlx_put_image_to_window(g->mlx, g->win, g->img.wall[0], 0, 0);
 	if (type == OFF)
