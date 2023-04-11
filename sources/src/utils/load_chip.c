@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 19:35:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 12:50:44 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/11 17:11:14 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	load_img_chip(t_game *g)
 		free(path);
 	}
 }
+
 void	load_move(t_game *g)
 {
 	int	w;

@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 16:47:14 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/08 11:34:41 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/11 16:53:21 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,13 +59,13 @@ void	mouse_rra_rrb(t_game *g, int type)
 	if (type == RRA)
 	{
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRA][DOWN], 141,
-				505);
+			505);
 		rra_rrb(&g->data->a);
 	}
 	else if (type == RRB)
 	{
 		mlx_put_image_to_window(g->mlx, g->win, g->img.btt[RRB][DOWN], 431,
-				505);
+			505);
 		rra_rrb(&g->data->b);
 	}
 	g->count++;
