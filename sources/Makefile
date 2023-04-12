@@ -11,6 +11,21 @@ RED			=\033[0;31m
 YELLOW	=\033[0;33m
 WHITE		=\033[0;37m
 
+# ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ SANITIZER ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
+
+# Address sanitizing flags
+ASAN := -fsanitize=address -fsanitize-recover=address
+ASAN += -fno-omit-frame-pointer -fno-common
+ASAN += -fsanitize=pointer-subtract -fsanitize=pointer-compare
+# Technicaly UBSan but works with ASan
+ASAN += -fsanitize=undefined
+# Technicaly LSan but works with ASan
+# ASAN += -fsanitize=leak
+# Thread sanitizing flags
+TSAN := -fsanitize=thread
+# Memory sanitizing flags
+MSAN := -fsanitize=memory -fsanitize-memory-track-origins
+
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ COMPILATE ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
 CC			= gcc
@@ -70,7 +85,7 @@ LIBFS:
 			@make -C $(LIBMLX_DIR)
 
 $(NAME):	$(ALL_OBJS)
-			@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBSFT) mlx/libmlx.a $^ -o $@
+			@$(CC) $(CFLAGS) $(ASAN) $(MLXFLAGS) $(LIBSFT) mlx/libmlx.a $^ -o $@
 			@echo "$(ORANGE) Compilando Ejecutables  ➟  $(BLUE)$@ $(WHITE)"
 
 clean :
