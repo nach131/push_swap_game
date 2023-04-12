@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
+/*   By: bmoll-pe <bmoll-pe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/09 13:52:18 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:30:32 by bmoll-pe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,15 +50,16 @@ void	init_win(t_game *g)
 
 int	main(void)
 {
-	t_game	g;
-	t_data	data;
+	t_game	*g;
+	t_data	*data;
 
-	ft_bzero(&g, sizeof(t_game));
-	g.data = &data;
-	start_game(&data, 3);
-	g.mlx = mlx_init();
-	init_win(&g);
-	mlx_loop(g.mlx);
+	g = ft_calloc(sizeof(t_game), 1);
+	data = ft_calloc(sizeof(t_data), 1);
+	g->data = data;
+	start_game(data, 3);
+	g->mlx = mlx_init();
+	init_win(g);
+	mlx_loop(g->mlx);
 	return (0);
 }
 
