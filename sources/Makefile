@@ -20,6 +20,9 @@ MKDIR		= -mkdir -p
 CFLAGS	= -Wall -Wextra -Werror -g3
 LEAKS		= -fsanitize=address
 MLXFLAGS = -framework OpenGL -framework AppKit
+ASAN := -fsanitize=address -fsanitize-recover=address
+ASAN += -fno-omit-frame-pointer -fno-common
+ASAN += -fsanitize=pointer-subtract -fsanitize=pointer-compare
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ DIRECTORIES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
@@ -70,7 +73,7 @@ LIBFS:
 			@make -C $(LIBMLX_DIR)
 
 $(NAME):	$(ALL_OBJS)
-			@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBSFT) mlx/libmlx.a $^ -o $@
+			@$(CC) $(CFLAGS) $(ASAN) $(MLXFLAGS) $(LIBSFT) mlx/libmlx.a $^ -o $@
 			@echo "$(ORANGE) Compilando Ejecutables  ➟  $(BLUE)$@ $(WHITE)"
 
 clean :
