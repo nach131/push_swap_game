@@ -1,1 +1,0 @@
-Hacer una funcion que print la orden ejecutada y sume el moviemiento

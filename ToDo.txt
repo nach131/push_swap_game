@@ -1,5 +1,0 @@
-
-funcion que devuelva 1 o 0 si esta ordenada la lista a
-
-parar el juego, volver a lanzar con un chip mas,
-
