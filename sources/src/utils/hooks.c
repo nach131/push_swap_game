@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/07 18:43:41 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 13:52:18 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/23 23:01:53 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	key_hook(int keycode, t_game *g)
 		exit(0);
 	else if (keycode == RESET && g->data->game)
 	{
+		g->count = 0;
 		start_game(g->data, 3);
 		init_win(g);
 	}

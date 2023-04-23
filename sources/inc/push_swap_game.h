@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/23 18:06:46 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/23 22:29:21 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_images
 	char			*wall[5];
 	char			*btt[11][2];
 	char			*chip[18];
+	char			*num[10];
 }					t_images;
 
 typedef struct s_game

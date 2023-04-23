@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/04 12:01:47 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/07 14:00:37 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/23 22:34:45 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,37 @@
 #include "../mlx/mlx.h"
 #include "push_swap_enum.h"
 #include "push_swap_game.h"
+
+char static	*path_img_num(int n)
+{
+	char	*nbr;
+	char	*s1;
+	char	*s2;
+
+	nbr = ft_itoa(n);
+	s1 = ft_strjoin("../sources/xpm/num/", nbr);
+	s2 = ft_strjoin(s1, ".xpm");
+	free(s1);
+	free(nbr);
+	return (s2);
+}
+
+void static	load_num(t_game *g)
+{
+	int		w;
+	int		h;
+	int		i;
+	char	*path;
+
+	i = 0;
+	while (i < 10)
+	{
+		path = path_img_num(i);
+		g->img.num[i] = mlx_xpm_file_to_image(g->mlx, path, &w, &h);
+		free(path);
+		i++;
+	}
+}
 
 char static	*path_img(char *name_img, int type)
 {
@@ -36,7 +67,7 @@ char static	*path_img(char *name_img, int type)
 	return (s2);
 }
 
-void	load_img(t_game *g, char *name, int type)
+void static	load_img(t_game *g, char *name, int type)
 {
 	char	*path;
 	int		w;
@@ -63,6 +94,7 @@ void	init_img_btt(t_game *g)
 	load_img(g, "rra", RRA);
 	load_img(g, "rrb", RRB);
 	load_img(g, "rrr", RRR);
+	load_num(g);
 }
 
 // "../sources/xpm/button/sa_d.xpm",

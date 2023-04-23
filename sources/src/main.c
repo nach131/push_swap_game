@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bmoll-pe <bmoll-pe@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 11:55:25 by nacho             #+#    #+#             */
-/*   Updated: 2023/04/12 15:30:32 by bmoll-pe         ###   ########.fr       */
+/*   Updated: 2023/04/23 22:41:49 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,29 @@ void	start_game(t_data *data, int size)
 	data->a = add_num(data);
 }
 
+void static	put_num(t_game *g)
+{
+	int	i;
+	int	num;
+
+	num = g->count;
+	i = 0;
+	while (num)
+	{
+		if (i == 0)
+			mlx_put_image_to_window(g->mlx, g->win, g->img.num[num % 10], 287,
+					83);
+		if (i == 1)
+			mlx_put_image_to_window(g->mlx, g->win, g->img.num[num % 10], 262,
+					83);
+		if (i == 2)
+			mlx_put_image_to_window(g->mlx, g->win, g->img.num[num % 10], 237,
+					83);
+		i++;
+		num /= 10;
+	}
+}
+
 void	end_game(t_game *g)
 {
 	g->data->game = OFF;
@@ -34,7 +57,8 @@ void	end_game(t_game *g)
 	g->win = mlx_new_window(g->mlx, 560, 560, "nach131 Push Swap");
 	ctrl_win_end(g);
 	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[3], 0, 0);
-	put_movements(g);
+	// put_movements(g);
+	put_num(g);
 }
 
 void	init_win(t_game *g)

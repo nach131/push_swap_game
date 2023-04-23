@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/23 19:21:29 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/23 22:50:56 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,6 @@ void	put_movements(t_game *g)
 	free(movements);
 }
 
-void static	put_level(t_game *g)
-{
-	// char	*level;
-	// level = ft_itoa(g->data->size - 2);
-	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[2], 0, 0);
-	// mlx_string_put(g->mlx, g->win, 308, 26, 0xFFFFFFFF, level);
-	// free(level);
-}
-
 void	after_mouse(t_game *g)
 {
 	system("clear");
@@ -50,7 +41,7 @@ void	after_mouse(t_game *g)
 	else if (g->data->sort)
 	{
 		start_game(g->data, g->data->size + 1);
-		put_level(g);
+		mlx_put_image_to_window(g->mlx, g->win, g->img.wall[2], 0, 0);
 		lap_chip(g, locate_chip);
 	}
 }
