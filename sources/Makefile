@@ -92,7 +92,7 @@ $(NAME):	$(ALL_OBJS)
 			@echo "$(ORANGE) Compilando Ejecutables  ➟  $(BLUE)$@ $(WHITE)"
 
 clean :
-			@make clean -s -C $(LIBFT_DIR)
+			@make fclean -s -C $(LIBFT_DIR)
 			@$(RM) $(OBJ_DIR)
 			@echo "$(RED)\n ✗ Archivos objetos So_Long borrados.‼️\n$(WHITE)";
 
