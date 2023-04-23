@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 11:22:02 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 13:53:14 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/23 19:21:29 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,11 @@ void	put_movements(t_game *g)
 
 void static	put_level(t_game *g)
 {
-	char	*level;
-
-	level = ft_itoa(g->data->size - 2);
+	// char	*level;
+	// level = ft_itoa(g->data->size - 2);
 	mlx_put_image_to_window(g->mlx, g->win, g->img.wall[2], 0, 0);
-	mlx_string_put(g->mlx, g->win, 308, 26, 0xFFFFFFFF, level);
-	free(level);
+	// mlx_string_put(g->mlx, g->win, 308, 26, 0xFFFFFFFF, level);
+	// free(level);
 }
 
 void	after_mouse(t_game *g)
