@@ -6,7 +6,7 @@
 /*   By: nmota-bu <nmota-bu@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 18:34:53 by nmota-bu          #+#    #+#             */
-/*   Updated: 2023/04/09 13:50:58 by nmota-bu         ###   ########.fr       */
+/*   Updated: 2023/04/23 18:06:46 by nmota-bu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void				put_wall(t_game *g, int type);
 int					ctrl_sorted(t_stack *a, int size);
 
 //==========Work=======================
+
 void				print_tp_dos(int *arr, int len);
 void				print_lst(t_stack *num);
 void				print_lst_dos(t_stack *a, t_stack *b);

@@ -32,30 +32,6 @@ enum
 	STK_B,
 };
 
-// enum
-// {
-// 	CHIP_0 = 41,
-// 	STACK_A = 5,
-// 	CHIP_1 = 62,
-// 	CHIP_2 = 84,
-// 	CHIP_3 = 106,
-// 	CHIP_4 = 128,
-// 	CHIP_5 = 150,
-// 	CHIP_6 = 172,
-// 	CHIP_7 = 194,
-// 	CHIP_8 = 216,
-// 	CHIP_9 = 238,
-// 	CHIP_10 = 260,
-// 	CHIP_11 = 282,
-// 	CHIP_12 = 303,
-// 	CHIP_13 = 326,
-// 	STACK_B = 294,
-// 	CHIP_14 = 348,
-// 	CHIP_15 = 370,
-// 	CHIP_16 = 392,
-// 	CHIP_17 = 414
-
-// };
 enum
 {
 	CHIP_17 = 41,
