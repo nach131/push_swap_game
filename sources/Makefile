@@ -16,7 +16,8 @@ WHITE		=\033[0;37m
 # Address sanitizing flags
 ASAN := -fsanitize=address -fsanitize-recover=address
 ASAN += -fno-omit-frame-pointer -fno-common
-ASAN += -fsanitize=pointer-subtract -fsanitize=pointer-compare
+# no psoportadas por High Sierra
+# ASAN += -fsanitize=pointer-subtract -fsanitize=pointer-compare
 # Technicaly UBSan but works with ASan
 ASAN += -fsanitize=undefined
 # Technicaly LSan but works with ASan
@@ -70,10 +71,11 @@ OBJS_ORDER = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_ORDER_FILES)))
 DEPS_ORDER = $(addprefix $(OBJ_DIR), $(addsuffix .d, $(SRC_ORDER_FILES)))
 
 ALL_OBJS += $(OBJS_ORDER) $(OBJS_UTILS) $(OBJS_MAIN) 
+DEPS += $(DEPS_MAIN) $(DEPS_UTILS) $(DEPS_ORDER) $(DEPS_UTILS_BONUS)
 
 # ▄▄▄▄▄▄▄▄▄▄▄▄▄▄ RULES ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄#
 
-$(OBJ_DIR)%.o : $(SRC_DIR)%.c
+$(OBJ_DIR)%.o : $(SRC_DIR)%.c Makefile
 			@$(MKDIR) $(dir $@)
 			@echo "$(ORANGE) Compilando objetos  ➟  $(BLUE)$< $(WHITE)"
 			@$(CC) -MMD -MP $(CFLAGS) -I $(INCLUDES) -c $< -o $@
@@ -85,6 +87,7 @@ LIBFS:
 			@make -C $(LIBMLX_DIR)
 
 $(NAME):	$(ALL_OBJS)
+#			@$(CC) $(CFLAGS) $(MLXFLAGS) $(LIBSFT) mlx/libmlx.a $^ -o $@
 			@$(CC) $(CFLAGS) $(ASAN) $(MLXFLAGS) $(LIBSFT) mlx/libmlx.a $^ -o $@
 			@echo "$(ORANGE) Compilando Ejecutables  ➟  $(BLUE)$@ $(WHITE)"
 
