@@ -28,9 +28,9 @@
 
 | user | score | campus |
 | ---- | ----- | ------ |
-| nach131 | 324 | 42Barcelona |
-| Carlos1073 | 345 | 42Barcelona |
-| ChewyToast | 432 | 42Barcelona |
+| nach131 | 421 | 42Barcelona |
+| Carlos1073 | 445 | 42Barcelona |
+| ChewyToast | 470 | 42Barcelona |
 
 </p>
 
