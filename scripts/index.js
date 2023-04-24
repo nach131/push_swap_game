@@ -3,7 +3,7 @@ const fscore = require('fs');
 
 const json2md = require('json2md');
 
-const scores = fscore.readFileSync('./scores.json', 'utf8');
+const scores = fscore.readFileSync('./data/scores.json', 'utf8');
 const json = JSON.parse(scores);
 
 const tabla = json2md([
@@ -15,7 +15,7 @@ const tabla = json2md([
 	}
 ]);
 
-(async()=>{
+(async () => {
 
 	const MarkdownTemplate = await fs.readFile('./README.md.tpl', { encoding: 'utf-8' })
 	const newMarkdown = MarkdownTemplate

@@ -28,3 +28,22 @@
 
 best_scores
 </p>
+
+
+## How to update score table
+
+1. Fork this repository
+1. Clone the fork
+
+   - Using SSH
+
+     ```shell
+     git clone --recurse https://github.com/ndr11411/push_swap_game.git
+     ```
+
+1. Create a new branch from the latest `scores`
+1. Save screenchot with your score, with png format, filaname `<github user name>` in `./scores`
+1. include your username and score in the `/data/scores.json`
+1. run ```npm run update```
+1. Commit and push to the new branch
+1. Make a pull request
