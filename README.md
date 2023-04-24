@@ -1,11 +1,11 @@
-# push_swap
+# push_swap_game
 
-<h1 align="center">
+<span align="center">
     
-![gif](https://github.com/nach131/push_swap_game/blob/master/img/push_swap_game.gif)
+<img  width="350" alt="push_swap"  src="https://github.com/nach131/push_swap_game/blob/master/img/push_swap_game.gif"> 
+
+<br></br>
   
-  <br></br>
+<img  width="350" alt="push_swap"  src="https://github.com/nach131/push_swap_game/blob/master/img/push_swap.png">
   
-  <img  width="500" alt="push_swap"  src="https://github.com/nach131/push_swap_game/blob/master/img/push_swap.png">
-  
-</h1>
+</span>
